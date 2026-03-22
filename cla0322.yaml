@@ -1,0 +1,4751 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: false
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+    - 114.114.114.114
+    - 180.76.76.76
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+proxies:
+  - name: US
+    type: trojan
+    server: saas.sin.fan
+    port: 443
+    password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    sni: sni.111000.dynv6.net
+    alpn:
+      - http/1.1
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 🇸🇬 新加坡 | SGP 12
+    type: vless
+    server: 162.159.38.78
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: US_1
+    type: ss
+    server: cf.008500.xyz
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 美国
+    type: vless
+    server: alist.sm.uy
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: US_337f1_0011
+    type: vless
+    server: 172.64.52.210
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: KR-ss
+    type: ss
+    server: cf.130519.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: JP-ss
+    type: ss
+    server: saas.sin.fan
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 03-Trojan-cloudflare88
+    type: trojan
+    server: freeyx.cloudflare88.eu.org
+    port: 443
+    password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    sni: sni.111000.dynv6.net
+    alpn:
+      - http/1.1
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: HK-ss
+    type: ss
+    server: cf.008500.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 00-Trojan-jp-AI
+    type: trojan
+    server: jp.111000.cc.cd
+    port: 443
+    password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    sni: sni.111000.dynv6.net
+    alpn:
+      - http/1.1
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: KR-ss_1
+    type: ss
+    server: cf.130519.xyz
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 美国_1
+    type: vless
+    server: 172.64.52.81
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇺🇸 美国 | USA
+    type: vless
+    server: 162.159.45.232
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇺🇸 美国 | USA 18
+    type: vless
+    server: vip1.kaixincloud.top
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国_2
+    type: vless
+    server: 162.159.44.142
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: " JP-ss"
+    type: ss
+    server: saas.sin.fan
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 美国_3
+    type: vless
+    server: 172.64.229.165
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: US_2
+    type: ss
+    server: cf.090227.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: US_3
+    type: ss
+    server: cf.zhetengsha.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 美国_4
+    type: vless
+    server: 162.159.7.2
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国_5
+    type: vless
+    server: 162.159.24.111
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇯🇵 日本 | JPN
+    type: ss
+    server: cf.090227.xyz
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: SG-ss
+    type: ss
+    server: store.ubi.com
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 美国_6
+    type: vless
+    server: 104.18.40.56
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: US_4
+    type: ss
+    server: sub.danfeng.eu.org
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇺🇸 美国 | USA_1
+    type: vless
+    server: 162.159.7.2
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国_7
+    type: vless
+    server: 108.162.195.58
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇺🇸 美国 | USA 10
+    type: vless
+    server: 104.18.41.43
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: SG-ss_1
+    type: ss
+    server: mfa.gov.ua
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: SG VLESS-122 | free-nodes
+    type: vless
+    server: 104.19.174.68
+    port: 2053
+    uuid: d37a75db-76b6-4db8-b213-0d5b044d138d
+    network: ws
+    servername: hio-awx.pages.dev
+    tls: true
+    ws-opts:
+      path: /fast
+      headers:
+        Host: hio-awx.pages.dev
+  - name: " 美國"
+    type: trojan
+    server: 172.66.44.230
+    port: 8443
+    password: 8r<[9'l6hAO#8ZQi
+    sni: Koma-YT.PAGeS.Dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /tro8sFW1S91B6sZrM1?ed=2560
+      headers:
+        Host: Koma-YT.PAGeS.Dev
+  - name: SG-ss_2
+    type: ss
+    server: store.ubi.com
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇺🇸 美国 | USA_2
+    type: ss
+    server: 50.62.90.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: 美国_8
+    type: vless
+    server: 172.64.156.0
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: SG-ss_3
+    type: ss
+    server: mfa.gov.ua
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇺🇸 美国 | USA_3
+    type: ss
+    server: 69.84.182.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: 美国_9
+    type: vless
+    server: 104.19.58.74
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇺🇸 美国 | USA_4
+    type: vless
+    server: 162.159.48.142
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国_10
+    type: vless
+    server: 172.64.229.85
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 01-Trojan-030101.xyz
+    type: trojan
+    server: bestcf.030101.xyz
+    port: 443
+    password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    sni: sni.111000.dynv6.net
+    alpn:
+      - http/1.1
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 美国_11
+    type: vless
+    server: 104.17.28.89
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 俄罗斯
+    type: vless
+    server: 193.9.49.65
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇺🇸 美国 | USA_5
+    type: vless
+    server: 104.18.40.56
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇺🇸 美国 | USA 14
+    type: vless
+    server: 104.19.85.38
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇩🇪 德国 | DEU
+    type: ss
+    server: 94.159.98.140
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: HK-ss_1
+    type: ss
+    server: cf.877774.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: TR_
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    alpn:
+      - h2
+    skip-cert-verify: true
+    tls: true
+    udp: false
+  - name: 美国33
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇺🇸US_10 | ⬇️ 2.2MB/s
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    skip-cert-verify: true
+    tls: true
+    udp: false
+  - name: 🇺🇸US_332 | ⬇️ 2.1MB/s
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    alpn:
+      - h2
+    skip-cert-verify: true
+    tls: true
+    udp: false
+    client-fingerprint: chrome
+  - name: TR__1
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    sni: 45.221.98.14
+    skip-cert-verify: true
+    tls: true
+    udp: false
+  - name: " HK-ss"
+    type: ss
+    server: cf.zhetengsha.eu.org
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: Youtube
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    sni: 45.221.98.14
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
+    tls: true
+    udp: false
+    client-fingerprint: chrome
+  - name: 🇸🇪 瑞典 | SWE
+    type: ss
+    server: 51.20.160.11
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\
+  - name: TW-ss
+    type: ss
+    server: sub.danfeng.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: JP-ss_1
+    type: ss
+    server: cdns.doon.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: " JP-ss_1"
+    type: ss
+    server: cdns.doon.eu.org
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: DE_66e7c_0012
+    type: vless
+    server: 45.145.42.170
+    port: 8005
+    uuid: 00000000-0000-4000-8000-000000000000
+    network: ws
+    servername: sub.mot.ip-ddns.com
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sub.mot.ip-ddns.com
+  - name: 美国_12
+    type: vless
+    server: 104.18.32.47
+    port: 2052
+    uuid: 5e62ddcf-78c9-4b15-803a-436c8c839ddc
+    network: ws
+    tls: false
+    ws-opts:
+      path: /
+      headers:
+        Host: oBEDiENt-noiseqJf5ja18yF.wIndLer.CO.UK.
+  - name: 🇩🇪 德国 | DEU 2
+    type: vless
+    server: 185.94.29.156
+    port: 4001
+    uuid: 00000000-0000-4000-8000-000000000000
+    network: ws
+    servername: sub.mot.ip-ddns.com
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /
+      headers:
+        Host: sub.mot.ip-ddns.com
+  - name: 🇺🇸_US_美国
+    type: vless
+    server: 138.226.240.199
+    port: 4433
+    uuid: 00000000-0000-4000-8000-000000000000
+    network: ws
+    servername: sub.mot.ip-ddns.com
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /
+      headers:
+        Host: sub.mot.ip-ddns.com
+  - name: 美国521
+    type: vless
+    server: 64.120.89.69
+    port: 20231
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: DE VLESS-119 | free-nodes
+    type: vless
+    server: desta.axinode.sbs
+    port: 10965
+    uuid: d1209ffb-c159-48d5-b40d-542ce11fc768
+    servername: deepl.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: lHxeD2nYtDb1V7JseV-sUTEuqH6_jie7U_iOARX7cT0
+      short-id: 9f3a7c6d2e8b41af
+  - name: US VLESS-110 | free-nodes
+    type: vless
+    server: 157.254.223.44
+    port: 18959
+    uuid: d0b3e27d-bbfc-4a3b-8e60-6973de8fcefa
+    servername: itunes.apple.com
+    tls: true
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: -hwVEdgFkvjku8ESuDoAA7id5yGGv_zXBvBW_RdhmHA
+      short-id: d557c6895d014075
+  - name: VLESS-132 | free-nodes
+    type: vless
+    server: 192.200.160.20
+    port: 443
+    uuid: ee248e40-9468-4ef6-81b7-707a1e47c54a
+    network: ws
+    servername: 639073677243557970.camry-perma.info
+    tls: true
+    ws-opts:
+      path: /yaeungws
+      headers:
+        Host: 639073677243557970.camry-perma.info
+  - name: 美国(）
+    type: vless
+    server: 192.200.160.20
+    port: 443
+    uuid: ee248e40-9468-4ef6-81b7-707a1e47c54a
+    network: ws
+    servername: 639073677243557970.camry-perma.info
+    tls: true
+    ws-opts:
+      path: /yaeungws?ed=2560
+      headers:
+        Host: 639073677243557970.camry-perma.info
+  - name: 🇺🇸US_25 | ⬇️ 2.9MB/s
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    sni: 45.221.98.14
+    alpn:
+      - h2
+    skip-cert-verify: true
+    tls: true
+    udp: false
+  - name: 日本026
+    type: vless
+    server: 162.159.45.220
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.cfn.indevs.in
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.cfn.indevs.in
+  - name: 美国026
+    type: vless
+    server: 172.64.53.191
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrf.bbroot.com
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrf.bbroot.com
+  - name: 美国026_1
+    type: vless
+    server: 172.64.52.81
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_2
+    type: ss
+    server: efzhuzhu01.whtjdasha.com
+    port: 27891
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_3
+    type: vless
+    server: 108.162.198.121
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.eea.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.eea.pp.ua
+  - name: 美国026_4
+    type: ss
+    server: efzhuzhu01.whtjdasha.com
+    port: 27896
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_5
+    type: vless
+    server: 172.64.52.57
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.ddly.dpdns.org
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.ddly.dpdns.org
+  - name: 美国026_6
+    type: vless
+    server: 162.159.44.99
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfme.cc.cd
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfme.cc.cd
+  - name: 美国026_7
+    type: vless
+    server: 162.159.38.81
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.wes.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.wes.pp.ua
+  - name: 美国026_8
+    type: vless
+    server: 162.159.44.193
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip2.zrfme.site
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip2.zrfme.site
+  - name: 美国026_9
+    type: vless
+    server: blog.811520.xyz
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfs.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfs.pp.ua
+  - name: 美国026_10
+    type: vless
+    server: 172.64.52.210
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_11
+    type: vless
+    server: 162.159.38.78
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_12
+    type: vless
+    server: 162.159.39.94
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrf.loc.cc
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrf.loc.cc
+  - name: 美国026_13
+    type: vless
+    server: 172.64.52.86
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.gm.ug.cx
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.gm.ug.cx
+  - name: 美国026_14
+    type: ss
+    server: efzhuzhu01.whtjdasha.com
+    port: 25601
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_15
+    type: vless
+    server: 172.64.53.155
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.wrr.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.wrr.pp.ua
+  - name: 美国026_16
+    type: ss
+    server: efzhuzhu02.idsduf.com
+    port: 28891
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_17
+    type: vless
+    server: 162.159.39.239
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip1.zrfme.site
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip1.zrfme.site
+  - name: 美国026_18
+    type: vless
+    server: 162.159.45.66
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.drd.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.drd.pp.ua
+  - name: 美国026_19
+    type: ss
+    server: efzhuzhu02.idsduf.com
+    port: 28893
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_20
+    type: vless
+    server: 198.41.223.179
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfme.site
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfme.site
+  - name: 美国026_21
+    type: vless
+    server: 104.18.41.43
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_22
+    type: vless
+    server: 162.159.7.2
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_23
+    type: vless
+    server: 8.39.125.203
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip1.xcf.de5.net
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip1.xcf.de5.net
+  - name: 美国026_24
+    type: vless
+    server: 8.35.211.69
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.ere.de5.net
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.ere.de5.net
+  - name: 美国026_25
+    type: vless
+    server: 172.64.151.78
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfme.ndjp.net
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfme.ndjp.net
+  - name: 美国026_26
+    type: vless
+    server: 162.159.49.27
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: zrfs.sylu.net
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: zrfs.sylu.net
+  - name: 美国026_27
+    type: vless
+    server: vip2.kaixincloud.top
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_28
+    type: vless
+    server: 8.39.125.87
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.lsmoo.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.lsmoo.pp.ua
+  - name: 美国026_29
+    type: vless
+    server: 108.162.195.58
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_30
+    type: vless
+    server: 198.41.223.193
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrr.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrr.pp.ua
+  - name: 美国026_31
+    type: vless
+    server: cloudflare.182682.xyz
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.aww.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.aww.pp.ua
+  - name: 美国026_32
+    type: vless
+    server: 8.39.125.51
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.wif.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.wif.pp.ua
+  - name: 美国026_33
+    type: ss
+    server: efzhuzhu01.whtjdasha.com
+    port: 27894
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_34
+    type: vless
+    server: 162.159.24.111
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_35
+    type: vless
+    server: 172.64.156.0
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_36
+    type: vless
+    server: 162.159.38.154
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.qqq.hidns.vip
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.qqq.hidns.vip
+  - name: 新加坡026
+    type: vless
+    server: 27.50.48.8
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.subs.indevs.in
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.subs.indevs.in
+  - name: 美国026_37
+    type: vless
+    server: 104.16.164.7
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrf.ee.cd
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrf.ee.cd
+  - name: 美国026_38
+    type: vless
+    server: 104.18.240.4
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfme.xyz
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfme.xyz
+  - name: 香港026
+    type: vless
+    server: 154.211.8.18
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.111.hidns.vip
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.111.hidns.vip
+  - name: 美国026_39
+    type: vless
+    server: 104.19.58.74
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_40
+    type: vless
+    server: 193.9.49.65
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_41
+    type: vless
+    server: 104.19.85.38
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_42
+    type: vless
+    server: 104.19.57.153
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfme.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfme.pp.ua
+  - name: 美国026_43
+    type: vless
+    server: 198.41.208.231
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrf.ndjp.net
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrf.ndjp.net
+  - name: 新加坡026_1
+    type: vless
+    server: 27.50.48.8
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfme.dedyn.io
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfme.dedyn.io
+  - name: 美国026_44
+    type: vless
+    server: 104.17.28.89
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_45
+    type: vless
+    server: 104.19.62.246
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.gm.94v.net
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.gm.94v.net
+  - name: 新加坡026_2
+    type: vless
+    server: 27.50.48.8
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfme.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfme.pp.ua
+  - name: 美国026_46
+    type: vless
+    server: 104.17.187.150
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.addd.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.addd.pp.ua
+  - name: 美国026_47
+    type: vless
+    server: 104.19.54.187
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfs.nn.kg
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfs.nn.kg
+  - name: 美国035
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国027
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国036
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国033
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国026_48
+    type: vless
+    server: 104.19.62.157
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.cfv.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.cfv.pp.ua
+  - name: 美国034
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国037
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国025
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国026_49
+    type: ss
+    server: efzhuzhu02.idsduf.com
+    port: 28919
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_50
+    type: vless
+    server: www.visa.cn
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_51
+    type: ss
+    server: efzhuzhu02.idsduf.com
+    port: 28895
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_52
+    type: vless
+    server: 162.159.153.50
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfme.indevs.in
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfme.indevs.in
+  - name: 美国026_53
+    type: vless
+    server: time.is
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.asss.pp.ua
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.asss.pp.ua
+  - name: 美国026_54
+    type: ss
+    server: efzhuzhu01.whtjdasha.com
+    port: 27909
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_55
+    type: vless
+    server: 172.67.77.155
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfs.indevs.in
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfs.indevs.in
+  - name: 英国038
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国024
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国026_56
+    type: ss
+    server: efzhuzhu01.whtjdasha.com
+    port: 27913
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_57
+    type: vless
+    server: 64.120.89.69
+    port: 20231
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_58
+    type: vless
+    server: 192.200.160.20
+    port: 443
+    uuid: 3b034275-27f8-437d-9ac0-5982708ae143
+    network: ws
+    servername: 639073677243249982.camry-perma.info
+    tls: true
+    ws-opts:
+      path: /ferhbiws?ed=2560
+      headers:
+        Host: 639073677243249982.camry-perma.info
+  - name: 美国026_59
+    type: ss
+    server: efzhuzhu02.idsduf.com
+    port: 27899
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_60
+    type: ss
+    server: efzhuzhu02.idsduf.com
+    port: 27922
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 澳洲026
+    type: trojan
+    server: steady-lemming.rooster465.autos
+    port: 443
+    password: IL37892054
+    sni: steady-lemming.rooster465.autos
+    skip-cert-verify: false
+    tls: true
+  - name: 美国026_61
+    type: vless
+    server: 192.200.160.20
+    port: 443
+    uuid: c1a5ecfa-8a01-4070-91e0-0328b82388ad
+    network: ws
+    servername: 639073677243396643.camry-perma.info
+    tls: true
+    ws-opts:
+      path: /phnkfhws?ed=2560
+      headers:
+        Host: 639073677243396643.camry-perma.info
+  - name: 德国026
+    type: trojan
+    server: steady-lemming.rooster465.autos
+    port: 443
+    password: IL37892054
+    skip-cert-verify: false
+    tls: true
+  - name: 美国026_62
+    type: ss
+    server: efzhuzhu01.whtjdasha.com
+    port: 27918
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_63
+    type: ss
+    server: efzhuzhu01.whtjdasha.com
+    port: 25602
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_64
+    type: ss
+    server: efzhuzhu01.whtjdasha.com
+    port: 27895
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_65
+    type: vless
+    server: 192.200.160.20
+    port: 443
+    uuid: e9254fe9-dd7e-4f90-ab06-4c96c5cd7362
+    network: ws
+    servername: 639073677243704890.camry-perma.info
+    tls: true
+    ws-opts:
+      path: /qszxrsws?ed=2560
+      headers:
+        Host: 639073677243704890.camry-perma.info
+  - name: 美国026_66
+    type: vless
+    server: registry.cyou
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.zrfs.bbroot.com
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.zrfs.bbroot.com
+  - name: 香港026_1
+    type: vless
+    server: 154.211.8.18
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.txsb.de5.net
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.txsb.de5.net
+  - name: 英国031
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国039
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国032
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国029
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国026_67
+    type: vless
+    server: 104.19.50.148
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip1.aizrf.de5.net
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip1.aizrf.de5.net
+  - name: 英国028
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国026_68
+    type: ss
+    server: efzhuzhu01.whtjdasha.com
+    port: 27893
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 美国026_69
+    type: vless
+    server: 83.229.121.78
+    port: 8443
+    uuid: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    network: ws
+    servername: ylnhh.cc.cd
+    tls: true
+    ws-opts:
+      path: /Telegram🇨🇳@WangCai2
+      headers:
+        Host: ylnhh.cc.cd
+  - name: 美国026_70
+    type: trojan
+    server: kto1.ttddd.xyz
+    port: 443
+    password: 14326_tf497f7b0
+    sni: kto1.cnedu2.com
+    skip-cert-verify: false
+    tls: true
+  - name: 美国026_71
+    type: vless
+    server: 104.18.40.56
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 美国026_72
+    type: vless
+    server: cf.877774.xyz
+    port: 443
+    uuid: 4d6fa520-b8c1-4811-93f6-a91fd6f87b59
+    network: ws
+    servername: snip.vurl.dpdns.org
+    tls: true
+    ws-opts:
+      path: /zrf?ed=2560
+      headers:
+        Host: snip.vurl.dpdns.org
+  - name: 英国(yudou789.top 玉豆免费节点)_1
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_1
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_2
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_3
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_4
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_5
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_2
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_3
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_4
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_5
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_6
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_6
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_7
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_7
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_8
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 法国(yudou789.top 玉豆免费节点)
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_8
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_9
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_9
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_10
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_11
+    type: vmess
+    server: a.cdn-bilibili.cn
+    port: 5431
+    uuid: 9ffb463b-3227-40cf-b476-2ef333b5cdd9
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_12
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_10
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_11
+    type: vmess
+    server: 103.181.164.145
+    port: 51556
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_12
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_13
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_14
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_15
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_16
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_17
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国(yudou789.top 玉豆免费节点)_18
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国(yudou789.top 玉豆免费节点)_13
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国026_73
+    type: vless
+    server: 104.18.32.47
+    port: 2052
+    uuid: 5e62ddcf-78c9-4b15-803a-436c8c839ddc
+    network: ws
+    tls: false
+    ws-opts:
+      path: /
+      headers:
+        Host: oBEDiENt-noiseqJf5ja18yF.wIndLer.CO.UK.
+  - name: 美国026_74
+    type: ss
+    server: efzhuzhu01.whtjdasha.com
+    port: 25603
+    cipher: chacha20-ietf-poly1305
+    password: 1916d75b-ba3b-452b-85a9-2cd11593144b
+  - name: 香港026_2
+    type: ss
+    server: chengbai02.ascwt179.com
+    port: 13223
+    cipher: aes-128-gcm
+    password: JVrsLLN1tkN8oXZO
+  - name: 香港021
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国022
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国023
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国030
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: DE VLESS-103 | free-nodes
+    type: vless
+    server: desta.axinode.sbs
+    port: 10965
+    uuid: d1209ffb-c159-48d5-b40d-542ce11fc768
+    servername: deepl.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: lHxeD2nYtDb1V7JseV-sUTEuqH6_jie7U_iOARX7cT0
+      short-id: 9f3a7c6d2e8b41af
+  - name: 荷兰VLESS-111 | free-nodes
+    type: vless
+    server: 192.200.160.20
+    port: 443
+    uuid: ee248e40-9468-4ef6-81b7-707a1e47c54a
+    network: ws
+    servername: 639073677243557970.camry-perma.info
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /yaeungws
+      headers:
+        Host: 639073677243557970.camry-perma.info
+  - name: 芬兰VLESS-78 | free-nodes
+    type: vless
+    server: dns.dressforida.monster
+    port: 443
+    uuid: 79149019-5abe-46f9-91ae-e1e7d1d2c408
+    servername: www.techradar.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 4YLfHf90V012Oyd2wHbwAXaJNvNUGrKWmatTKc165U8
+      short-id: 174c6cf22e22
+  - name: US_dfeec_0057
+    type: vless
+    server: vip1.kaixincloud.top
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: US_dfeec_0043
+    type: vless
+    server: 162.159.38.78
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: US_dfeec_0059
+    type: vless
+    server: 162.159.44.142
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: US_dfeec_0046
+    type: vless
+    server: 162.159.7.2
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: US_dfeec_0044
+    type: vless
+    server: 162.159.24.111
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: US_dfeec_0056
+    type: vless
+    server: 172.64.156.0
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: KR_dfeec_0021
+    type: trojan
+    server: 211.110.32.47
+    port: 20000
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: true
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: KR_dfeec_0018
+    type: vless
+    server: 220.71.1.32
+    port: 20201
+    uuid: 26524cce-d514-4014-a426-365fb266a14d
+    network: ws
+    servername: itz4m3m5v7.chinav.indevs.in
+    tls: true
+    client-fingerprint: random
+    ws-opts:
+      path: /danfeng?ed=2560
+      headers:
+        Host: itz4m3m5v7.chinav.indevs.in
+  - name: US_dfeec_0040
+    type: vless
+    server: 172.64.229.85
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: RU_dfeec_0033
+    type: vless
+    server: 193.9.49.65
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: US_dfeec_0048
+    type: vless
+    server: www.visa.cn
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: DE_dfeec_0007
+    type: vless
+    server: 45.145.42.170
+    port: 8005
+    uuid: 00000000-0000-4000-8000-000000000000
+    network: ws
+    servername: sub.mot.ip-ddns.com
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sub.mot.ip-ddns.com
+  - name: 🇺🇸 美国 | USA 18_1
+    type: vless
+    server: 172.64.52.210
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇸🇬 新加坡 | SGP 3
+    type: vless
+    server: 162.159.48.142
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇸🇬 新加坡 | SGP
+    type: vless
+    server: 108.162.195.58
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇺🇸 美国 | USA 7
+    type: vless
+    server: vip2.kaixincloud.top
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇦🇺 澳大利亚 | AUS
+    type: ss
+    server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org
+    port: 13143
+    cipher: 2022-blake3-aes-256-gcm
+    password: mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=
+  - name: 🇹🇼 🇨🇳 台湾 | TWN 3
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    alpn:
+      - h2
+    skip-cert-verify: true
+    tls: true
+    udp: false
+  - name: 🇳🇱 荷兰 | NLD
+    type: vless
+    server: 138.226.240.199
+    port: 4433
+    uuid: 00000000-0000-4000-8000-000000000000
+    network: ws
+    servername: sub.mot.ip-ddns.com
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /
+      headers:
+        Host: sub.mot.ip-ddns.com
+  - name: 🇺🇸 美国 | USA_6
+    type: vless
+    server: 172.64.52.210
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇹🇭 泰国 | THA
+    type: ss
+    server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org
+    port: 13142
+    cipher: 2022-blake3-aes-256-gcm
+    password: mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=
+  - name: 🇸🇬 新加坡 | SGP_1
+    type: vless
+    server: 108.162.195.58
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇺🇸 美国 | USA_7
+    type: vless
+    server: vip2.kaixincloud.top
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇸🇬 新加坡 | SGP_2
+    type: vless
+    server: 162.159.48.142
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇺🇸 美国 | USA_8
+    type: vless
+    server: 193.9.49.65
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇺🇸 美国 | USA_9
+    type: vless
+    server: 80.93.202.238
+    port: 2096
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.jpmj.dev
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560&Telegram🇨🇳 @WangCai2
+      headers:
+        Host: sni.jpmj.dev
+  - name: 🇬🇧 英国 | GBR
+    type: vless
+    server: 188.114.98.0
+    port: 2087
+    uuid: fa35cfa7-e61b-4752-b4d3-394f53f0a108
+    network: ws
+    servername: all-tm1.netsnap.ir.
+    tls: true
+    client-fingerprint: firefox
+    ws-opts:
+      path: /
+      headers:
+        Host: all-tm1.netsnap.ir.
+  - name: 🇳🇱 荷兰 | NLD_1
+    type: vless
+    server: 138.226.240.199
+    port: 4433
+    uuid: 00000000-0000-4000-8000-000000000000
+    network: ws
+    servername: sub.mot.ip-ddns.com
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /
+      headers:
+        Host: sub.mot.ip-ddns.com
+  - name: 🇦🇺 澳大利亚 | AUS_1
+    type: trojan
+    server: steady-lemming.rooster465.autos
+    port: 443
+    password: IL37892054
+    sni: steady-lemming.rooster465.autos
+    skip-cert-verify: false
+    tls: true
+  - name: 🇰🇷 韩国 | KOR
+    type: ss
+    server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org
+    port: 14630
+    cipher: 2022-blake3-aes-256-gcm
+    password: mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=
+  - name: 🇺🇸_US_美国_1
+    type: vless
+    server: vip1.kaixincloud.top
+    port: 443
+    uuid: 9e4f36da-8f61-44f8-a9a7-0fd3a8d81234
+    network: ws
+    servername: r.icy.de5.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: r.icy.de5.net
+  - name: 🇧🇬_BG_保加利亚
+    type: trojan
+    server: steady-lemming.rooster465.autos
+    port: 443
+    password: IL37892054
+    skip-cert-verify: true
+    tls: true
+  - name: JP-ss_2
+    type: ss
+    server: cdns.doon.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: " HK-ss_1"
+    type: ss
+    server: cf.zhetengsha.eu.org
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: " JP-ss_2"
+    type: ss
+    server: cdns.doon.eu.org
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: SG-ss_4
+    type: ss
+    server: cf.090227.xyz
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: JP
+    type: ss
+    server: cf.zhetengsha.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: JP_1
+    type: ss
+    server: cf.090227.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇭🇰 香港 16
+    type: ss
+    server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org
+    port: 13155
+    cipher: 2022-blake3-aes-256-gcm
+    password: mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=
+  - name: 🇺🇸US_18 | ⬇️ 2.2MB/s
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    skip-cert-verify: true
+    tls: true
+    udp: false
+  - name: US VLESS-108
+    type: vless
+    server: 157.254.223.44
+    port: 18959
+    uuid: d0b3e27d-bbfc-4a3b-8e60-6973de8fcefa
+    servername: itunes.apple.com
+    tls: true
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: -hwVEdgFkvjku8ESuDoAA7id5yGGv_zXBvBW_RdhmHA
+      short-id: d557c6895d014075
+  - name: 美国节点1
+    type: vless
+    server: 157.254.223.64
+    port: 23000
+    uuid: bcb13ecb-4f63-4257-ae01-ec5aeaa613a5
+    network: http
+    servername: mxj.myanimelist.net
+    tls: true
+    client-fingerprint: chrome
+    http-opts:
+      path:
+        - /alvin9999.com
+    reality-opts:
+      public-key: dJFLqPCinyadJxJk7zA_DwBOEAvexvm7AZT2Pw84_EY
+      short-id: 955275866feece09
+  - name: 🇺🇸US_37 | ⬇️ 4.1MB/s
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    sni: 45.221.98.14
+    alpn:
+      - h2
+    skip-cert-verify: true
+    tls: true
+    udp: false
+  - name: 🇺🇸US_5 | ⬇️ 2.8MB/s
+    type: anytls
+    server: 45.221.98.14
+    port: 59901
+    password: dongtaiwang.com
+    alpn:
+      - h2
+    skip-cert-verify: true
+    tls: true
+    udp: false
+  - name: 🇳🇱NL_3 | ⬇️ 1.7MB/s
+    type: tuic
+    server: ip1.758733.xyz
+    port: 10088
+    uuid: 9bbd1f42-7ae7-4239-bd10-a68de95e3295
+    password: dongtaiwang.com
+    sni: apple.com
+    alpn:
+      - h3
+    congestion-controller: bbr
+    skip-cert-verify: false
+    disable-sni: false
+  - name: 🇭🇰 香港 24
+    type: ss
+    server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org
+    port: 13153
+    cipher: 2022-blake3-aes-256-gcm
+    password: mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=
+  - name: 🇭🇰 香港 10
+    type: ss
+    server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org
+    port: 13157
+    cipher: 2022-blake3-aes-256-gcm
+    password: mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=
+  - name: 🇦🇺AU_1 | ⬇️ 1.8MB/s
+    type: trojan
+    server: steady-lemming.rooster465.autos
+    port: 443
+    password: IL37892054
+    sni: steady-lemming.rooster465.autos
+    skip-cert-verify: false
+    tls: true
+  - name: 荷兰11
+    type: vless
+    server: 192.200.160.20
+    port: 443
+    uuid: ee248e40-9468-4ef6-81b7-707a1e47c54a
+    network: ws
+    servername: 639073677243557970.camry-perma.info
+    tls: true
+    ws-opts:
+      path: /yaeungws
+      headers:
+        Host: 639073677243557970.camry-perma.info
+  - name: 🇺🇸_US_美国_2
+    type: vless
+    server: 192.200.160.20
+    port: 443
+    uuid: ee248e40-9468-4ef6-81b7-707a1e47c54a
+    network: ws
+    servername: 639073677243557970.camry-perma.info
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /yaeungws
+      headers:
+        Host: 639073677243557970.camry-perma.info
+  - name: 🇹🇭 泰国 05
+    type: vless
+    server: 47.81.39.100
+    port: 443
+    uuid: 3e7f67de-648e-4871-b51a-a225214d41ee
+    servername: api.digital-help-prd.autodesk.com
+    tls: true
+    client-fingerprint: random
+    reality-opts:
+      public-key: TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw
+  - name: 🇹🇭 泰国 01
+    type: vless
+    server: 47.81.12.38
+    port: 443
+    uuid: 3e7f67de-648e-4871-b51a-a225214d41ee
+    servername: api.digital-help-prd.autodesk.com
+    tls: true
+    client-fingerprint: random
+    reality-opts:
+      public-key: TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw
+  - name: 🇭🇰 香港 15
+    type: ss
+    server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org
+    port: 14625
+    cipher: 2022-blake3-aes-256-gcm
+    password: mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=
+  - name: 🇭🇰 香港 11
+    type: ss
+    server: toy4lkdzy0c.22b74943-12ad-47f4-b705-f2defb6ffea0.org
+    port: 13242
+    cipher: 2022-blake3-aes-256-gcm
+    password: mtMkp+1FttkSLmDOF9blnNMLigcCRacprQS3ry0nf3o=:AAvo+BsgpvvR5lJsdQU32vrMXL7ZAbZJZfETB7bddhQ=
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - US
+      - 🇸🇬 新加坡 | SGP 12
+      - US_1
+      - 美国
+      - US_337f1_0011
+      - KR-ss
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - HK-ss
+      - 00-Trojan-jp-AI
+      - KR-ss_1
+      - 美国_1
+      - 🇺🇸 美国 | USA
+      - 🇺🇸 美国 | USA 18
+      - 美国_2
+      - " JP-ss"
+      - 美国_3
+      - US_2
+      - US_3
+      - 美国_4
+      - 美国_5
+      - 🇯🇵 日本 | JPN
+      - SG-ss
+      - 美国_6
+      - US_4
+      - 🇺🇸 美国 | USA_1
+      - 美国_7
+      - 🇺🇸 美国 | USA 10
+      - SG-ss_1
+      - SG VLESS-122 | free-nodes
+      - " 美國"
+      - SG-ss_2
+      - 🇺🇸 美国 | USA_2
+      - 美国_8
+      - SG-ss_3
+      - 🇺🇸 美国 | USA_3
+      - 美国_9
+      - 🇺🇸 美国 | USA_4
+      - 美国_10
+      - 01-Trojan-030101.xyz
+      - 美国_11
+      - 俄罗斯
+      - 🇺🇸 美国 | USA_5
+      - 🇺🇸 美国 | USA 14
+      - 🇩🇪 德国 | DEU
+      - HK-ss_1
+      - TR_
+      - 美国33
+      - 🇺🇸US_10 | ⬇️ 2.2MB/s
+      - 🇺🇸US_332 | ⬇️ 2.1MB/s
+      - TR__1
+      - " HK-ss"
+      - Youtube
+      - 🇸🇪 瑞典 | SWE
+      - TW-ss
+      - JP-ss_1
+      - " JP-ss_1"
+      - DE_66e7c_0012
+      - 美国_12
+      - 🇩🇪 德国 | DEU 2
+      - 🇺🇸_US_美国
+      - 美国521
+      - DE VLESS-119 | free-nodes
+      - US VLESS-110 | free-nodes
+      - VLESS-132 | free-nodes
+      - 美国(）
+      - 🇺🇸US_25 | ⬇️ 2.9MB/s
+      - 日本026
+      - 美国026
+      - 美国026_1
+      - 美国026_2
+      - 美国026_3
+      - 美国026_4
+      - 美国026_5
+      - 美国026_6
+      - 美国026_7
+      - 美国026_8
+      - 美国026_9
+      - 美国026_10
+      - 美国026_11
+      - 美国026_12
+      - 美国026_13
+      - 美国026_14
+      - 美国026_15
+      - 美国026_16
+      - 美国026_17
+      - 美国026_18
+      - 美国026_19
+      - 美国026_20
+      - 美国026_21
+      - 美国026_22
+      - 美国026_23
+      - 美国026_24
+      - 美国026_25
+      - 美国026_26
+      - 美国026_27
+      - 美国026_28
+      - 美国026_29
+      - 美国026_30
+      - 美国026_31
+      - 美国026_32
+      - 美国026_33
+      - 美国026_34
+      - 美国026_35
+      - 美国026_36
+      - 新加坡026
+      - 美国026_37
+      - 美国026_38
+      - 香港026
+      - 美国026_39
+      - 美国026_40
+      - 美国026_41
+      - 美国026_42
+      - 美国026_43
+      - 新加坡026_1
+      - 美国026_44
+      - 美国026_45
+      - 新加坡026_2
+      - 美国026_46
+      - 美国026_47
+      - 美国035
+      - 英国027
+      - 英国036
+      - 美国033
+      - 美国026_48
+      - 美国034
+      - 英国037
+      - 英国025
+      - 美国026_49
+      - 美国026_50
+      - 美国026_51
+      - 美国026_52
+      - 美国026_53
+      - 美国026_54
+      - 美国026_55
+      - 英国038
+      - 英国024
+      - 美国026_56
+      - 美国026_57
+      - 美国026_58
+      - 美国026_59
+      - 美国026_60
+      - 澳洲026
+      - 美国026_61
+      - 德国026
+      - 美国026_62
+      - 美国026_63
+      - 美国026_64
+      - 美国026_65
+      - 美国026_66
+      - 香港026_1
+      - 英国031
+      - 美国039
+      - 美国032
+      - 美国029
+      - 英国(yudou789.top 玉豆免费节点)
+      - 美国026_67
+      - 英国028
+      - 美国(yudou789.top 玉豆免费节点)
+      - 美国026_68
+      - 美国026_69
+      - 美国026_70
+      - 美国026_71
+      - 美国026_72
+      - 英国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_2
+      - 美国(yudou789.top 玉豆免费节点)_3
+      - 美国(yudou789.top 玉豆免费节点)_4
+      - 美国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_2
+      - 英国(yudou789.top 玉豆免费节点)_3
+      - 英国(yudou789.top 玉豆免费节点)_4
+      - 英国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_8
+      - 法国(yudou789.top 玉豆免费节点)
+      - 美国(yudou789.top 玉豆免费节点)_8
+      - 美国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_10
+      - 英国(yudou789.top 玉豆免费节点)_11
+      - 英国(yudou789.top 玉豆免费节点)_12
+      - 美国(yudou789.top 玉豆免费节点)_10
+      - 美国(yudou789.top 玉豆免费节点)_11
+      - 美国(yudou789.top 玉豆免费节点)_12
+      - 英国(yudou789.top 玉豆免费节点)_13
+      - 英国(yudou789.top 玉豆免费节点)_14
+      - 英国(yudou789.top 玉豆免费节点)_15
+      - 英国(yudou789.top 玉豆免费节点)_16
+      - 英国(yudou789.top 玉豆免费节点)_17
+      - 英国(yudou789.top 玉豆免费节点)_18
+      - 美国(yudou789.top 玉豆免费节点)_13
+      - 美国026_73
+      - 美国026_74
+      - 香港026_2
+      - 香港021
+      - 美国022
+      - 美国023
+      - 美国030
+      - DE VLESS-103 | free-nodes
+      - 荷兰VLESS-111 | free-nodes
+      - 芬兰VLESS-78 | free-nodes
+      - US_dfeec_0057
+      - US_dfeec_0043
+      - US_dfeec_0059
+      - US_dfeec_0046
+      - US_dfeec_0044
+      - US_dfeec_0056
+      - KR_dfeec_0021
+      - KR_dfeec_0018
+      - US_dfeec_0040
+      - RU_dfeec_0033
+      - US_dfeec_0048
+      - DE_dfeec_0007
+      - 🇺🇸 美国 | USA 18_1
+      - 🇸🇬 新加坡 | SGP 3
+      - 🇸🇬 新加坡 | SGP
+      - 🇺🇸 美国 | USA 7
+      - 🇦🇺 澳大利亚 | AUS
+      - 🇹🇼 🇨🇳 台湾 | TWN 3
+      - 🇳🇱 荷兰 | NLD
+      - 🇺🇸 美国 | USA_6
+      - 🇹🇭 泰国 | THA
+      - 🇸🇬 新加坡 | SGP_1
+      - 🇺🇸 美国 | USA_7
+      - 🇸🇬 新加坡 | SGP_2
+      - 🇺🇸 美国 | USA_8
+      - 🇺🇸 美国 | USA_9
+      - 🇬🇧 英国 | GBR
+      - 🇳🇱 荷兰 | NLD_1
+      - 🇦🇺 澳大利亚 | AUS_1
+      - 🇰🇷 韩国 | KOR
+      - 🇺🇸_US_美国_1
+      - 🇧🇬_BG_保加利亚
+      - JP-ss_2
+      - " HK-ss_1"
+      - " JP-ss_2"
+      - SG-ss_4
+      - JP
+      - JP_1
+      - 🇭🇰 香港 16
+      - 🇺🇸US_18 | ⬇️ 2.2MB/s
+      - US VLESS-108
+      - 美国节点1
+      - 🇺🇸US_37 | ⬇️ 4.1MB/s
+      - 🇺🇸US_5 | ⬇️ 2.8MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇭🇰 香港 24
+      - 🇭🇰 香港 10
+      - 🇦🇺AU_1 | ⬇️ 1.8MB/s
+      - 荷兰11
+      - 🇺🇸_US_美国_2
+      - 🇹🇭 泰国 05
+      - 🇹🇭 泰国 01
+      - 🇭🇰 香港 15
+      - 🇭🇰 香港 11
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - US
+      - 🇸🇬 新加坡 | SGP 12
+      - US_1
+      - 美国
+      - US_337f1_0011
+      - KR-ss
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - HK-ss
+      - 00-Trojan-jp-AI
+      - KR-ss_1
+      - 美国_1
+      - 🇺🇸 美国 | USA
+      - 🇺🇸 美国 | USA 18
+      - 美国_2
+      - " JP-ss"
+      - 美国_3
+      - US_2
+      - US_3
+      - 美国_4
+      - 美国_5
+      - 🇯🇵 日本 | JPN
+      - SG-ss
+      - 美国_6
+      - US_4
+      - 🇺🇸 美国 | USA_1
+      - 美国_7
+      - 🇺🇸 美国 | USA 10
+      - SG-ss_1
+      - SG VLESS-122 | free-nodes
+      - " 美國"
+      - SG-ss_2
+      - 🇺🇸 美国 | USA_2
+      - 美国_8
+      - SG-ss_3
+      - 🇺🇸 美国 | USA_3
+      - 美国_9
+      - 🇺🇸 美国 | USA_4
+      - 美国_10
+      - 01-Trojan-030101.xyz
+      - 美国_11
+      - 俄罗斯
+      - 🇺🇸 美国 | USA_5
+      - 🇺🇸 美国 | USA 14
+      - 🇩🇪 德国 | DEU
+      - HK-ss_1
+      - TR_
+      - 美国33
+      - 🇺🇸US_10 | ⬇️ 2.2MB/s
+      - 🇺🇸US_332 | ⬇️ 2.1MB/s
+      - TR__1
+      - " HK-ss"
+      - Youtube
+      - 🇸🇪 瑞典 | SWE
+      - TW-ss
+      - JP-ss_1
+      - " JP-ss_1"
+      - DE_66e7c_0012
+      - 美国_12
+      - 🇩🇪 德国 | DEU 2
+      - 🇺🇸_US_美国
+      - 美国521
+      - DE VLESS-119 | free-nodes
+      - US VLESS-110 | free-nodes
+      - VLESS-132 | free-nodes
+      - 美国(）
+      - 🇺🇸US_25 | ⬇️ 2.9MB/s
+      - 日本026
+      - 美国026
+      - 美国026_1
+      - 美国026_2
+      - 美国026_3
+      - 美国026_4
+      - 美国026_5
+      - 美国026_6
+      - 美国026_7
+      - 美国026_8
+      - 美国026_9
+      - 美国026_10
+      - 美国026_11
+      - 美国026_12
+      - 美国026_13
+      - 美国026_14
+      - 美国026_15
+      - 美国026_16
+      - 美国026_17
+      - 美国026_18
+      - 美国026_19
+      - 美国026_20
+      - 美国026_21
+      - 美国026_22
+      - 美国026_23
+      - 美国026_24
+      - 美国026_25
+      - 美国026_26
+      - 美国026_27
+      - 美国026_28
+      - 美国026_29
+      - 美国026_30
+      - 美国026_31
+      - 美国026_32
+      - 美国026_33
+      - 美国026_34
+      - 美国026_35
+      - 美国026_36
+      - 新加坡026
+      - 美国026_37
+      - 美国026_38
+      - 香港026
+      - 美国026_39
+      - 美国026_40
+      - 美国026_41
+      - 美国026_42
+      - 美国026_43
+      - 新加坡026_1
+      - 美国026_44
+      - 美国026_45
+      - 新加坡026_2
+      - 美国026_46
+      - 美国026_47
+      - 美国035
+      - 英国027
+      - 英国036
+      - 美国033
+      - 美国026_48
+      - 美国034
+      - 英国037
+      - 英国025
+      - 美国026_49
+      - 美国026_50
+      - 美国026_51
+      - 美国026_52
+      - 美国026_53
+      - 美国026_54
+      - 美国026_55
+      - 英国038
+      - 英国024
+      - 美国026_56
+      - 美国026_57
+      - 美国026_58
+      - 美国026_59
+      - 美国026_60
+      - 澳洲026
+      - 美国026_61
+      - 德国026
+      - 美国026_62
+      - 美国026_63
+      - 美国026_64
+      - 美国026_65
+      - 美国026_66
+      - 香港026_1
+      - 英国031
+      - 美国039
+      - 美国032
+      - 美国029
+      - 英国(yudou789.top 玉豆免费节点)
+      - 美国026_67
+      - 英国028
+      - 美国(yudou789.top 玉豆免费节点)
+      - 美国026_68
+      - 美国026_69
+      - 美国026_70
+      - 美国026_71
+      - 美国026_72
+      - 英国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_2
+      - 美国(yudou789.top 玉豆免费节点)_3
+      - 美国(yudou789.top 玉豆免费节点)_4
+      - 美国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_2
+      - 英国(yudou789.top 玉豆免费节点)_3
+      - 英国(yudou789.top 玉豆免费节点)_4
+      - 英国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_8
+      - 法国(yudou789.top 玉豆免费节点)
+      - 美国(yudou789.top 玉豆免费节点)_8
+      - 美国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_10
+      - 英国(yudou789.top 玉豆免费节点)_11
+      - 英国(yudou789.top 玉豆免费节点)_12
+      - 美国(yudou789.top 玉豆免费节点)_10
+      - 美国(yudou789.top 玉豆免费节点)_11
+      - 美国(yudou789.top 玉豆免费节点)_12
+      - 英国(yudou789.top 玉豆免费节点)_13
+      - 英国(yudou789.top 玉豆免费节点)_14
+      - 英国(yudou789.top 玉豆免费节点)_15
+      - 英国(yudou789.top 玉豆免费节点)_16
+      - 英国(yudou789.top 玉豆免费节点)_17
+      - 英国(yudou789.top 玉豆免费节点)_18
+      - 美国(yudou789.top 玉豆免费节点)_13
+      - 美国026_73
+      - 美国026_74
+      - 香港026_2
+      - 香港021
+      - 美国022
+      - 美国023
+      - 美国030
+      - DE VLESS-103 | free-nodes
+      - 荷兰VLESS-111 | free-nodes
+      - 芬兰VLESS-78 | free-nodes
+      - US_dfeec_0057
+      - US_dfeec_0043
+      - US_dfeec_0059
+      - US_dfeec_0046
+      - US_dfeec_0044
+      - US_dfeec_0056
+      - KR_dfeec_0021
+      - KR_dfeec_0018
+      - US_dfeec_0040
+      - RU_dfeec_0033
+      - US_dfeec_0048
+      - DE_dfeec_0007
+      - 🇺🇸 美国 | USA 18_1
+      - 🇸🇬 新加坡 | SGP 3
+      - 🇸🇬 新加坡 | SGP
+      - 🇺🇸 美国 | USA 7
+      - 🇦🇺 澳大利亚 | AUS
+      - 🇹🇼 🇨🇳 台湾 | TWN 3
+      - 🇳🇱 荷兰 | NLD
+      - 🇺🇸 美国 | USA_6
+      - 🇹🇭 泰国 | THA
+      - 🇸🇬 新加坡 | SGP_1
+      - 🇺🇸 美国 | USA_7
+      - 🇸🇬 新加坡 | SGP_2
+      - 🇺🇸 美国 | USA_8
+      - 🇺🇸 美国 | USA_9
+      - 🇬🇧 英国 | GBR
+      - 🇳🇱 荷兰 | NLD_1
+      - 🇦🇺 澳大利亚 | AUS_1
+      - 🇰🇷 韩国 | KOR
+      - 🇺🇸_US_美国_1
+      - 🇧🇬_BG_保加利亚
+      - JP-ss_2
+      - " HK-ss_1"
+      - " JP-ss_2"
+      - SG-ss_4
+      - JP
+      - JP_1
+      - 🇭🇰 香港 16
+      - 🇺🇸US_18 | ⬇️ 2.2MB/s
+      - US VLESS-108
+      - 美国节点1
+      - 🇺🇸US_37 | ⬇️ 4.1MB/s
+      - 🇺🇸US_5 | ⬇️ 2.8MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇭🇰 香港 24
+      - 🇭🇰 香港 10
+      - 🇦🇺AU_1 | ⬇️ 1.8MB/s
+      - 荷兰11
+      - 🇺🇸_US_美国_2
+      - 🇹🇭 泰国 05
+      - 🇹🇭 泰国 01
+      - 🇭🇰 香港 15
+      - 🇭🇰 香港 11
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - US
+      - 🇸🇬 新加坡 | SGP 12
+      - US_1
+      - 美国
+      - US_337f1_0011
+      - KR-ss
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - HK-ss
+      - 00-Trojan-jp-AI
+      - KR-ss_1
+      - 美国_1
+      - 🇺🇸 美国 | USA
+      - 🇺🇸 美国 | USA 18
+      - 美国_2
+      - " JP-ss"
+      - 美国_3
+      - US_2
+      - US_3
+      - 美国_4
+      - 美国_5
+      - 🇯🇵 日本 | JPN
+      - SG-ss
+      - 美国_6
+      - US_4
+      - 🇺🇸 美国 | USA_1
+      - 美国_7
+      - 🇺🇸 美国 | USA 10
+      - SG-ss_1
+      - SG VLESS-122 | free-nodes
+      - " 美國"
+      - SG-ss_2
+      - 🇺🇸 美国 | USA_2
+      - 美国_8
+      - SG-ss_3
+      - 🇺🇸 美国 | USA_3
+      - 美国_9
+      - 🇺🇸 美国 | USA_4
+      - 美国_10
+      - 01-Trojan-030101.xyz
+      - 美国_11
+      - 俄罗斯
+      - 🇺🇸 美国 | USA_5
+      - 🇺🇸 美国 | USA 14
+      - 🇩🇪 德国 | DEU
+      - HK-ss_1
+      - TR_
+      - 美国33
+      - 🇺🇸US_10 | ⬇️ 2.2MB/s
+      - 🇺🇸US_332 | ⬇️ 2.1MB/s
+      - TR__1
+      - " HK-ss"
+      - Youtube
+      - 🇸🇪 瑞典 | SWE
+      - TW-ss
+      - JP-ss_1
+      - " JP-ss_1"
+      - DE_66e7c_0012
+      - 美国_12
+      - 🇩🇪 德国 | DEU 2
+      - 🇺🇸_US_美国
+      - 美国521
+      - DE VLESS-119 | free-nodes
+      - US VLESS-110 | free-nodes
+      - VLESS-132 | free-nodes
+      - 美国(）
+      - 🇺🇸US_25 | ⬇️ 2.9MB/s
+      - 日本026
+      - 美国026
+      - 美国026_1
+      - 美国026_2
+      - 美国026_3
+      - 美国026_4
+      - 美国026_5
+      - 美国026_6
+      - 美国026_7
+      - 美国026_8
+      - 美国026_9
+      - 美国026_10
+      - 美国026_11
+      - 美国026_12
+      - 美国026_13
+      - 美国026_14
+      - 美国026_15
+      - 美国026_16
+      - 美国026_17
+      - 美国026_18
+      - 美国026_19
+      - 美国026_20
+      - 美国026_21
+      - 美国026_22
+      - 美国026_23
+      - 美国026_24
+      - 美国026_25
+      - 美国026_26
+      - 美国026_27
+      - 美国026_28
+      - 美国026_29
+      - 美国026_30
+      - 美国026_31
+      - 美国026_32
+      - 美国026_33
+      - 美国026_34
+      - 美国026_35
+      - 美国026_36
+      - 新加坡026
+      - 美国026_37
+      - 美国026_38
+      - 香港026
+      - 美国026_39
+      - 美国026_40
+      - 美国026_41
+      - 美国026_42
+      - 美国026_43
+      - 新加坡026_1
+      - 美国026_44
+      - 美国026_45
+      - 新加坡026_2
+      - 美国026_46
+      - 美国026_47
+      - 美国035
+      - 英国027
+      - 英国036
+      - 美国033
+      - 美国026_48
+      - 美国034
+      - 英国037
+      - 英国025
+      - 美国026_49
+      - 美国026_50
+      - 美国026_51
+      - 美国026_52
+      - 美国026_53
+      - 美国026_54
+      - 美国026_55
+      - 英国038
+      - 英国024
+      - 美国026_56
+      - 美国026_57
+      - 美国026_58
+      - 美国026_59
+      - 美国026_60
+      - 澳洲026
+      - 美国026_61
+      - 德国026
+      - 美国026_62
+      - 美国026_63
+      - 美国026_64
+      - 美国026_65
+      - 美国026_66
+      - 香港026_1
+      - 英国031
+      - 美国039
+      - 美国032
+      - 美国029
+      - 英国(yudou789.top 玉豆免费节点)
+      - 美国026_67
+      - 英国028
+      - 美国(yudou789.top 玉豆免费节点)
+      - 美国026_68
+      - 美国026_69
+      - 美国026_70
+      - 美国026_71
+      - 美国026_72
+      - 英国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_2
+      - 美国(yudou789.top 玉豆免费节点)_3
+      - 美国(yudou789.top 玉豆免费节点)_4
+      - 美国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_2
+      - 英国(yudou789.top 玉豆免费节点)_3
+      - 英国(yudou789.top 玉豆免费节点)_4
+      - 英国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_8
+      - 法国(yudou789.top 玉豆免费节点)
+      - 美国(yudou789.top 玉豆免费节点)_8
+      - 美国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_10
+      - 英国(yudou789.top 玉豆免费节点)_11
+      - 英国(yudou789.top 玉豆免费节点)_12
+      - 美国(yudou789.top 玉豆免费节点)_10
+      - 美国(yudou789.top 玉豆免费节点)_11
+      - 美国(yudou789.top 玉豆免费节点)_12
+      - 英国(yudou789.top 玉豆免费节点)_13
+      - 英国(yudou789.top 玉豆免费节点)_14
+      - 英国(yudou789.top 玉豆免费节点)_15
+      - 英国(yudou789.top 玉豆免费节点)_16
+      - 英国(yudou789.top 玉豆免费节点)_17
+      - 英国(yudou789.top 玉豆免费节点)_18
+      - 美国(yudou789.top 玉豆免费节点)_13
+      - 美国026_73
+      - 美国026_74
+      - 香港026_2
+      - 香港021
+      - 美国022
+      - 美国023
+      - 美国030
+      - DE VLESS-103 | free-nodes
+      - 荷兰VLESS-111 | free-nodes
+      - 芬兰VLESS-78 | free-nodes
+      - US_dfeec_0057
+      - US_dfeec_0043
+      - US_dfeec_0059
+      - US_dfeec_0046
+      - US_dfeec_0044
+      - US_dfeec_0056
+      - KR_dfeec_0021
+      - KR_dfeec_0018
+      - US_dfeec_0040
+      - RU_dfeec_0033
+      - US_dfeec_0048
+      - DE_dfeec_0007
+      - 🇺🇸 美国 | USA 18_1
+      - 🇸🇬 新加坡 | SGP 3
+      - 🇸🇬 新加坡 | SGP
+      - 🇺🇸 美国 | USA 7
+      - 🇦🇺 澳大利亚 | AUS
+      - 🇹🇼 🇨🇳 台湾 | TWN 3
+      - 🇳🇱 荷兰 | NLD
+      - 🇺🇸 美国 | USA_6
+      - 🇹🇭 泰国 | THA
+      - 🇸🇬 新加坡 | SGP_1
+      - 🇺🇸 美国 | USA_7
+      - 🇸🇬 新加坡 | SGP_2
+      - 🇺🇸 美国 | USA_8
+      - 🇺🇸 美国 | USA_9
+      - 🇬🇧 英国 | GBR
+      - 🇳🇱 荷兰 | NLD_1
+      - 🇦🇺 澳大利亚 | AUS_1
+      - 🇰🇷 韩国 | KOR
+      - 🇺🇸_US_美国_1
+      - 🇧🇬_BG_保加利亚
+      - JP-ss_2
+      - " HK-ss_1"
+      - " JP-ss_2"
+      - SG-ss_4
+      - JP
+      - JP_1
+      - 🇭🇰 香港 16
+      - 🇺🇸US_18 | ⬇️ 2.2MB/s
+      - US VLESS-108
+      - 美国节点1
+      - 🇺🇸US_37 | ⬇️ 4.1MB/s
+      - 🇺🇸US_5 | ⬇️ 2.8MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇭🇰 香港 24
+      - 🇭🇰 香港 10
+      - 🇦🇺AU_1 | ⬇️ 1.8MB/s
+      - 荷兰11
+      - 🇺🇸_US_美国_2
+      - 🇹🇭 泰国 05
+      - 🇹🇭 泰国 01
+      - 🇭🇰 香港 15
+      - 🇭🇰 香港 11
+  - name: 📲 电报信息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - US
+      - 🇸🇬 新加坡 | SGP 12
+      - US_1
+      - 美国
+      - US_337f1_0011
+      - KR-ss
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - HK-ss
+      - 00-Trojan-jp-AI
+      - KR-ss_1
+      - 美国_1
+      - 🇺🇸 美国 | USA
+      - 🇺🇸 美国 | USA 18
+      - 美国_2
+      - " JP-ss"
+      - 美国_3
+      - US_2
+      - US_3
+      - 美国_4
+      - 美国_5
+      - 🇯🇵 日本 | JPN
+      - SG-ss
+      - 美国_6
+      - US_4
+      - 🇺🇸 美国 | USA_1
+      - 美国_7
+      - 🇺🇸 美国 | USA 10
+      - SG-ss_1
+      - SG VLESS-122 | free-nodes
+      - " 美國"
+      - SG-ss_2
+      - 🇺🇸 美国 | USA_2
+      - 美国_8
+      - SG-ss_3
+      - 🇺🇸 美国 | USA_3
+      - 美国_9
+      - 🇺🇸 美国 | USA_4
+      - 美国_10
+      - 01-Trojan-030101.xyz
+      - 美国_11
+      - 俄罗斯
+      - 🇺🇸 美国 | USA_5
+      - 🇺🇸 美国 | USA 14
+      - 🇩🇪 德国 | DEU
+      - HK-ss_1
+      - TR_
+      - 美国33
+      - 🇺🇸US_10 | ⬇️ 2.2MB/s
+      - 🇺🇸US_332 | ⬇️ 2.1MB/s
+      - TR__1
+      - " HK-ss"
+      - Youtube
+      - 🇸🇪 瑞典 | SWE
+      - TW-ss
+      - JP-ss_1
+      - " JP-ss_1"
+      - DE_66e7c_0012
+      - 美国_12
+      - 🇩🇪 德国 | DEU 2
+      - 🇺🇸_US_美国
+      - 美国521
+      - DE VLESS-119 | free-nodes
+      - US VLESS-110 | free-nodes
+      - VLESS-132 | free-nodes
+      - 美国(）
+      - 🇺🇸US_25 | ⬇️ 2.9MB/s
+      - 日本026
+      - 美国026
+      - 美国026_1
+      - 美国026_2
+      - 美国026_3
+      - 美国026_4
+      - 美国026_5
+      - 美国026_6
+      - 美国026_7
+      - 美国026_8
+      - 美国026_9
+      - 美国026_10
+      - 美国026_11
+      - 美国026_12
+      - 美国026_13
+      - 美国026_14
+      - 美国026_15
+      - 美国026_16
+      - 美国026_17
+      - 美国026_18
+      - 美国026_19
+      - 美国026_20
+      - 美国026_21
+      - 美国026_22
+      - 美国026_23
+      - 美国026_24
+      - 美国026_25
+      - 美国026_26
+      - 美国026_27
+      - 美国026_28
+      - 美国026_29
+      - 美国026_30
+      - 美国026_31
+      - 美国026_32
+      - 美国026_33
+      - 美国026_34
+      - 美国026_35
+      - 美国026_36
+      - 新加坡026
+      - 美国026_37
+      - 美国026_38
+      - 香港026
+      - 美国026_39
+      - 美国026_40
+      - 美国026_41
+      - 美国026_42
+      - 美国026_43
+      - 新加坡026_1
+      - 美国026_44
+      - 美国026_45
+      - 新加坡026_2
+      - 美国026_46
+      - 美国026_47
+      - 美国035
+      - 英国027
+      - 英国036
+      - 美国033
+      - 美国026_48
+      - 美国034
+      - 英国037
+      - 英国025
+      - 美国026_49
+      - 美国026_50
+      - 美国026_51
+      - 美国026_52
+      - 美国026_53
+      - 美国026_54
+      - 美国026_55
+      - 英国038
+      - 英国024
+      - 美国026_56
+      - 美国026_57
+      - 美国026_58
+      - 美国026_59
+      - 美国026_60
+      - 澳洲026
+      - 美国026_61
+      - 德国026
+      - 美国026_62
+      - 美国026_63
+      - 美国026_64
+      - 美国026_65
+      - 美国026_66
+      - 香港026_1
+      - 英国031
+      - 美国039
+      - 美国032
+      - 美国029
+      - 英国(yudou789.top 玉豆免费节点)
+      - 美国026_67
+      - 英国028
+      - 美国(yudou789.top 玉豆免费节点)
+      - 美国026_68
+      - 美国026_69
+      - 美国026_70
+      - 美国026_71
+      - 美国026_72
+      - 英国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_2
+      - 美国(yudou789.top 玉豆免费节点)_3
+      - 美国(yudou789.top 玉豆免费节点)_4
+      - 美国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_2
+      - 英国(yudou789.top 玉豆免费节点)_3
+      - 英国(yudou789.top 玉豆免费节点)_4
+      - 英国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_8
+      - 法国(yudou789.top 玉豆免费节点)
+      - 美国(yudou789.top 玉豆免费节点)_8
+      - 美国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_10
+      - 英国(yudou789.top 玉豆免费节点)_11
+      - 英国(yudou789.top 玉豆免费节点)_12
+      - 美国(yudou789.top 玉豆免费节点)_10
+      - 美国(yudou789.top 玉豆免费节点)_11
+      - 美国(yudou789.top 玉豆免费节点)_12
+      - 英国(yudou789.top 玉豆免费节点)_13
+      - 英国(yudou789.top 玉豆免费节点)_14
+      - 英国(yudou789.top 玉豆免费节点)_15
+      - 英国(yudou789.top 玉豆免费节点)_16
+      - 英国(yudou789.top 玉豆免费节点)_17
+      - 英国(yudou789.top 玉豆免费节点)_18
+      - 美国(yudou789.top 玉豆免费节点)_13
+      - 美国026_73
+      - 美国026_74
+      - 香港026_2
+      - 香港021
+      - 美国022
+      - 美国023
+      - 美国030
+      - DE VLESS-103 | free-nodes
+      - 荷兰VLESS-111 | free-nodes
+      - 芬兰VLESS-78 | free-nodes
+      - US_dfeec_0057
+      - US_dfeec_0043
+      - US_dfeec_0059
+      - US_dfeec_0046
+      - US_dfeec_0044
+      - US_dfeec_0056
+      - KR_dfeec_0021
+      - KR_dfeec_0018
+      - US_dfeec_0040
+      - RU_dfeec_0033
+      - US_dfeec_0048
+      - DE_dfeec_0007
+      - 🇺🇸 美国 | USA 18_1
+      - 🇸🇬 新加坡 | SGP 3
+      - 🇸🇬 新加坡 | SGP
+      - 🇺🇸 美国 | USA 7
+      - 🇦🇺 澳大利亚 | AUS
+      - 🇹🇼 🇨🇳 台湾 | TWN 3
+      - 🇳🇱 荷兰 | NLD
+      - 🇺🇸 美国 | USA_6
+      - 🇹🇭 泰国 | THA
+      - 🇸🇬 新加坡 | SGP_1
+      - 🇺🇸 美国 | USA_7
+      - 🇸🇬 新加坡 | SGP_2
+      - 🇺🇸 美国 | USA_8
+      - 🇺🇸 美国 | USA_9
+      - 🇬🇧 英国 | GBR
+      - 🇳🇱 荷兰 | NLD_1
+      - 🇦🇺 澳大利亚 | AUS_1
+      - 🇰🇷 韩国 | KOR
+      - 🇺🇸_US_美国_1
+      - 🇧🇬_BG_保加利亚
+      - JP-ss_2
+      - " HK-ss_1"
+      - " JP-ss_2"
+      - SG-ss_4
+      - JP
+      - JP_1
+      - 🇭🇰 香港 16
+      - 🇺🇸US_18 | ⬇️ 2.2MB/s
+      - US VLESS-108
+      - 美国节点1
+      - 🇺🇸US_37 | ⬇️ 4.1MB/s
+      - 🇺🇸US_5 | ⬇️ 2.8MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇭🇰 香港 24
+      - 🇭🇰 香港 10
+      - 🇦🇺AU_1 | ⬇️ 1.8MB/s
+      - 荷兰11
+      - 🇺🇸_US_美国_2
+      - 🇹🇭 泰国 05
+      - 🇹🇭 泰国 01
+      - 🇭🇰 香港 15
+      - 🇭🇰 香港 11
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - US
+      - 🇸🇬 新加坡 | SGP 12
+      - US_1
+      - 美国
+      - US_337f1_0011
+      - KR-ss
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - HK-ss
+      - 00-Trojan-jp-AI
+      - KR-ss_1
+      - 美国_1
+      - 🇺🇸 美国 | USA
+      - 🇺🇸 美国 | USA 18
+      - 美国_2
+      - " JP-ss"
+      - 美国_3
+      - US_2
+      - US_3
+      - 美国_4
+      - 美国_5
+      - 🇯🇵 日本 | JPN
+      - SG-ss
+      - 美国_6
+      - US_4
+      - 🇺🇸 美国 | USA_1
+      - 美国_7
+      - 🇺🇸 美国 | USA 10
+      - SG-ss_1
+      - SG VLESS-122 | free-nodes
+      - " 美國"
+      - SG-ss_2
+      - 🇺🇸 美国 | USA_2
+      - 美国_8
+      - SG-ss_3
+      - 🇺🇸 美国 | USA_3
+      - 美国_9
+      - 🇺🇸 美国 | USA_4
+      - 美国_10
+      - 01-Trojan-030101.xyz
+      - 美国_11
+      - 俄罗斯
+      - 🇺🇸 美国 | USA_5
+      - 🇺🇸 美国 | USA 14
+      - 🇩🇪 德国 | DEU
+      - HK-ss_1
+      - TR_
+      - 美国33
+      - 🇺🇸US_10 | ⬇️ 2.2MB/s
+      - 🇺🇸US_332 | ⬇️ 2.1MB/s
+      - TR__1
+      - " HK-ss"
+      - Youtube
+      - 🇸🇪 瑞典 | SWE
+      - TW-ss
+      - JP-ss_1
+      - " JP-ss_1"
+      - DE_66e7c_0012
+      - 美国_12
+      - 🇩🇪 德国 | DEU 2
+      - 🇺🇸_US_美国
+      - 美国521
+      - DE VLESS-119 | free-nodes
+      - US VLESS-110 | free-nodes
+      - VLESS-132 | free-nodes
+      - 美国(）
+      - 🇺🇸US_25 | ⬇️ 2.9MB/s
+      - 日本026
+      - 美国026
+      - 美国026_1
+      - 美国026_2
+      - 美国026_3
+      - 美国026_4
+      - 美国026_5
+      - 美国026_6
+      - 美国026_7
+      - 美国026_8
+      - 美国026_9
+      - 美国026_10
+      - 美国026_11
+      - 美国026_12
+      - 美国026_13
+      - 美国026_14
+      - 美国026_15
+      - 美国026_16
+      - 美国026_17
+      - 美国026_18
+      - 美国026_19
+      - 美国026_20
+      - 美国026_21
+      - 美国026_22
+      - 美国026_23
+      - 美国026_24
+      - 美国026_25
+      - 美国026_26
+      - 美国026_27
+      - 美国026_28
+      - 美国026_29
+      - 美国026_30
+      - 美国026_31
+      - 美国026_32
+      - 美国026_33
+      - 美国026_34
+      - 美国026_35
+      - 美国026_36
+      - 新加坡026
+      - 美国026_37
+      - 美国026_38
+      - 香港026
+      - 美国026_39
+      - 美国026_40
+      - 美国026_41
+      - 美国026_42
+      - 美国026_43
+      - 新加坡026_1
+      - 美国026_44
+      - 美国026_45
+      - 新加坡026_2
+      - 美国026_46
+      - 美国026_47
+      - 美国035
+      - 英国027
+      - 英国036
+      - 美国033
+      - 美国026_48
+      - 美国034
+      - 英国037
+      - 英国025
+      - 美国026_49
+      - 美国026_50
+      - 美国026_51
+      - 美国026_52
+      - 美国026_53
+      - 美国026_54
+      - 美国026_55
+      - 英国038
+      - 英国024
+      - 美国026_56
+      - 美国026_57
+      - 美国026_58
+      - 美国026_59
+      - 美国026_60
+      - 澳洲026
+      - 美国026_61
+      - 德国026
+      - 美国026_62
+      - 美国026_63
+      - 美国026_64
+      - 美国026_65
+      - 美国026_66
+      - 香港026_1
+      - 英国031
+      - 美国039
+      - 美国032
+      - 美国029
+      - 英国(yudou789.top 玉豆免费节点)
+      - 美国026_67
+      - 英国028
+      - 美国(yudou789.top 玉豆免费节点)
+      - 美国026_68
+      - 美国026_69
+      - 美国026_70
+      - 美国026_71
+      - 美国026_72
+      - 英国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_2
+      - 美国(yudou789.top 玉豆免费节点)_3
+      - 美国(yudou789.top 玉豆免费节点)_4
+      - 美国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_2
+      - 英国(yudou789.top 玉豆免费节点)_3
+      - 英国(yudou789.top 玉豆免费节点)_4
+      - 英国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_8
+      - 法国(yudou789.top 玉豆免费节点)
+      - 美国(yudou789.top 玉豆免费节点)_8
+      - 美国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_10
+      - 英国(yudou789.top 玉豆免费节点)_11
+      - 英国(yudou789.top 玉豆免费节点)_12
+      - 美国(yudou789.top 玉豆免费节点)_10
+      - 美国(yudou789.top 玉豆免费节点)_11
+      - 美国(yudou789.top 玉豆免费节点)_12
+      - 英国(yudou789.top 玉豆免费节点)_13
+      - 英国(yudou789.top 玉豆免费节点)_14
+      - 英国(yudou789.top 玉豆免费节点)_15
+      - 英国(yudou789.top 玉豆免费节点)_16
+      - 英国(yudou789.top 玉豆免费节点)_17
+      - 英国(yudou789.top 玉豆免费节点)_18
+      - 美国(yudou789.top 玉豆免费节点)_13
+      - 美国026_73
+      - 美国026_74
+      - 香港026_2
+      - 香港021
+      - 美国022
+      - 美国023
+      - 美国030
+      - DE VLESS-103 | free-nodes
+      - 荷兰VLESS-111 | free-nodes
+      - 芬兰VLESS-78 | free-nodes
+      - US_dfeec_0057
+      - US_dfeec_0043
+      - US_dfeec_0059
+      - US_dfeec_0046
+      - US_dfeec_0044
+      - US_dfeec_0056
+      - KR_dfeec_0021
+      - KR_dfeec_0018
+      - US_dfeec_0040
+      - RU_dfeec_0033
+      - US_dfeec_0048
+      - DE_dfeec_0007
+      - 🇺🇸 美国 | USA 18_1
+      - 🇸🇬 新加坡 | SGP 3
+      - 🇸🇬 新加坡 | SGP
+      - 🇺🇸 美国 | USA 7
+      - 🇦🇺 澳大利亚 | AUS
+      - 🇹🇼 🇨🇳 台湾 | TWN 3
+      - 🇳🇱 荷兰 | NLD
+      - 🇺🇸 美国 | USA_6
+      - 🇹🇭 泰国 | THA
+      - 🇸🇬 新加坡 | SGP_1
+      - 🇺🇸 美国 | USA_7
+      - 🇸🇬 新加坡 | SGP_2
+      - 🇺🇸 美国 | USA_8
+      - 🇺🇸 美国 | USA_9
+      - 🇬🇧 英国 | GBR
+      - 🇳🇱 荷兰 | NLD_1
+      - 🇦🇺 澳大利亚 | AUS_1
+      - 🇰🇷 韩国 | KOR
+      - 🇺🇸_US_美国_1
+      - 🇧🇬_BG_保加利亚
+      - JP-ss_2
+      - " HK-ss_1"
+      - " JP-ss_2"
+      - SG-ss_4
+      - JP
+      - JP_1
+      - 🇭🇰 香港 16
+      - 🇺🇸US_18 | ⬇️ 2.2MB/s
+      - US VLESS-108
+      - 美国节点1
+      - 🇺🇸US_37 | ⬇️ 4.1MB/s
+      - 🇺🇸US_5 | ⬇️ 2.8MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇭🇰 香港 24
+      - 🇭🇰 香港 10
+      - 🇦🇺AU_1 | ⬇️ 1.8MB/s
+      - 荷兰11
+      - 🇺🇸_US_美国_2
+      - 🇹🇭 泰国 05
+      - 🇹🇭 泰国 01
+      - 🇭🇰 香港 15
+      - 🇭🇰 香港 11
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - US
+      - 🇸🇬 新加坡 | SGP 12
+      - US_1
+      - 美国
+      - US_337f1_0011
+      - KR-ss
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - HK-ss
+      - 00-Trojan-jp-AI
+      - KR-ss_1
+      - 美国_1
+      - 🇺🇸 美国 | USA
+      - 🇺🇸 美国 | USA 18
+      - 美国_2
+      - " JP-ss"
+      - 美国_3
+      - US_2
+      - US_3
+      - 美国_4
+      - 美国_5
+      - 🇯🇵 日本 | JPN
+      - SG-ss
+      - 美国_6
+      - US_4
+      - 🇺🇸 美国 | USA_1
+      - 美国_7
+      - 🇺🇸 美国 | USA 10
+      - SG-ss_1
+      - SG VLESS-122 | free-nodes
+      - " 美國"
+      - SG-ss_2
+      - 🇺🇸 美国 | USA_2
+      - 美国_8
+      - SG-ss_3
+      - 🇺🇸 美国 | USA_3
+      - 美国_9
+      - 🇺🇸 美国 | USA_4
+      - 美国_10
+      - 01-Trojan-030101.xyz
+      - 美国_11
+      - 俄罗斯
+      - 🇺🇸 美国 | USA_5
+      - 🇺🇸 美国 | USA 14
+      - 🇩🇪 德国 | DEU
+      - HK-ss_1
+      - TR_
+      - 美国33
+      - 🇺🇸US_10 | ⬇️ 2.2MB/s
+      - 🇺🇸US_332 | ⬇️ 2.1MB/s
+      - TR__1
+      - " HK-ss"
+      - Youtube
+      - 🇸🇪 瑞典 | SWE
+      - TW-ss
+      - JP-ss_1
+      - " JP-ss_1"
+      - DE_66e7c_0012
+      - 美国_12
+      - 🇩🇪 德国 | DEU 2
+      - 🇺🇸_US_美国
+      - 美国521
+      - DE VLESS-119 | free-nodes
+      - US VLESS-110 | free-nodes
+      - VLESS-132 | free-nodes
+      - 美国(）
+      - 🇺🇸US_25 | ⬇️ 2.9MB/s
+      - 日本026
+      - 美国026
+      - 美国026_1
+      - 美国026_2
+      - 美国026_3
+      - 美国026_4
+      - 美国026_5
+      - 美国026_6
+      - 美国026_7
+      - 美国026_8
+      - 美国026_9
+      - 美国026_10
+      - 美国026_11
+      - 美国026_12
+      - 美国026_13
+      - 美国026_14
+      - 美国026_15
+      - 美国026_16
+      - 美国026_17
+      - 美国026_18
+      - 美国026_19
+      - 美国026_20
+      - 美国026_21
+      - 美国026_22
+      - 美国026_23
+      - 美国026_24
+      - 美国026_25
+      - 美国026_26
+      - 美国026_27
+      - 美国026_28
+      - 美国026_29
+      - 美国026_30
+      - 美国026_31
+      - 美国026_32
+      - 美国026_33
+      - 美国026_34
+      - 美国026_35
+      - 美国026_36
+      - 新加坡026
+      - 美国026_37
+      - 美国026_38
+      - 香港026
+      - 美国026_39
+      - 美国026_40
+      - 美国026_41
+      - 美国026_42
+      - 美国026_43
+      - 新加坡026_1
+      - 美国026_44
+      - 美国026_45
+      - 新加坡026_2
+      - 美国026_46
+      - 美国026_47
+      - 美国035
+      - 英国027
+      - 英国036
+      - 美国033
+      - 美国026_48
+      - 美国034
+      - 英国037
+      - 英国025
+      - 美国026_49
+      - 美国026_50
+      - 美国026_51
+      - 美国026_52
+      - 美国026_53
+      - 美国026_54
+      - 美国026_55
+      - 英国038
+      - 英国024
+      - 美国026_56
+      - 美国026_57
+      - 美国026_58
+      - 美国026_59
+      - 美国026_60
+      - 澳洲026
+      - 美国026_61
+      - 德国026
+      - 美国026_62
+      - 美国026_63
+      - 美国026_64
+      - 美国026_65
+      - 美国026_66
+      - 香港026_1
+      - 英国031
+      - 美国039
+      - 美国032
+      - 美国029
+      - 英国(yudou789.top 玉豆免费节点)
+      - 美国026_67
+      - 英国028
+      - 美国(yudou789.top 玉豆免费节点)
+      - 美国026_68
+      - 美国026_69
+      - 美国026_70
+      - 美国026_71
+      - 美国026_72
+      - 英国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_2
+      - 美国(yudou789.top 玉豆免费节点)_3
+      - 美国(yudou789.top 玉豆免费节点)_4
+      - 美国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_2
+      - 英国(yudou789.top 玉豆免费节点)_3
+      - 英国(yudou789.top 玉豆免费节点)_4
+      - 英国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_8
+      - 法国(yudou789.top 玉豆免费节点)
+      - 美国(yudou789.top 玉豆免费节点)_8
+      - 美国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_10
+      - 英国(yudou789.top 玉豆免费节点)_11
+      - 英国(yudou789.top 玉豆免费节点)_12
+      - 美国(yudou789.top 玉豆免费节点)_10
+      - 美国(yudou789.top 玉豆免费节点)_11
+      - 美国(yudou789.top 玉豆免费节点)_12
+      - 英国(yudou789.top 玉豆免费节点)_13
+      - 英国(yudou789.top 玉豆免费节点)_14
+      - 英国(yudou789.top 玉豆免费节点)_15
+      - 英国(yudou789.top 玉豆免费节点)_16
+      - 英国(yudou789.top 玉豆免费节点)_17
+      - 英国(yudou789.top 玉豆免费节点)_18
+      - 美国(yudou789.top 玉豆免费节点)_13
+      - 美国026_73
+      - 美国026_74
+      - 香港026_2
+      - 香港021
+      - 美国022
+      - 美国023
+      - 美国030
+      - DE VLESS-103 | free-nodes
+      - 荷兰VLESS-111 | free-nodes
+      - 芬兰VLESS-78 | free-nodes
+      - US_dfeec_0057
+      - US_dfeec_0043
+      - US_dfeec_0059
+      - US_dfeec_0046
+      - US_dfeec_0044
+      - US_dfeec_0056
+      - KR_dfeec_0021
+      - KR_dfeec_0018
+      - US_dfeec_0040
+      - RU_dfeec_0033
+      - US_dfeec_0048
+      - DE_dfeec_0007
+      - 🇺🇸 美国 | USA 18_1
+      - 🇸🇬 新加坡 | SGP 3
+      - 🇸🇬 新加坡 | SGP
+      - 🇺🇸 美国 | USA 7
+      - 🇦🇺 澳大利亚 | AUS
+      - 🇹🇼 🇨🇳 台湾 | TWN 3
+      - 🇳🇱 荷兰 | NLD
+      - 🇺🇸 美国 | USA_6
+      - 🇹🇭 泰国 | THA
+      - 🇸🇬 新加坡 | SGP_1
+      - 🇺🇸 美国 | USA_7
+      - 🇸🇬 新加坡 | SGP_2
+      - 🇺🇸 美国 | USA_8
+      - 🇺🇸 美国 | USA_9
+      - 🇬🇧 英国 | GBR
+      - 🇳🇱 荷兰 | NLD_1
+      - 🇦🇺 澳大利亚 | AUS_1
+      - 🇰🇷 韩国 | KOR
+      - 🇺🇸_US_美国_1
+      - 🇧🇬_BG_保加利亚
+      - JP-ss_2
+      - " HK-ss_1"
+      - " JP-ss_2"
+      - SG-ss_4
+      - JP
+      - JP_1
+      - 🇭🇰 香港 16
+      - 🇺🇸US_18 | ⬇️ 2.2MB/s
+      - US VLESS-108
+      - 美国节点1
+      - 🇺🇸US_37 | ⬇️ 4.1MB/s
+      - 🇺🇸US_5 | ⬇️ 2.8MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇭🇰 香港 24
+      - 🇭🇰 香港 10
+      - 🇦🇺AU_1 | ⬇️ 1.8MB/s
+      - 荷兰11
+      - 🇺🇸_US_美国_2
+      - 🇹🇭 泰国 05
+      - 🇹🇭 泰国 01
+      - 🇭🇰 香港 15
+      - 🇭🇰 香港 11
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - US
+      - 🇸🇬 新加坡 | SGP 12
+      - US_1
+      - 美国
+      - US_337f1_0011
+      - KR-ss
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - HK-ss
+      - 00-Trojan-jp-AI
+      - KR-ss_1
+      - 美国_1
+      - 🇺🇸 美国 | USA
+      - 🇺🇸 美国 | USA 18
+      - 美国_2
+      - " JP-ss"
+      - 美国_3
+      - US_2
+      - US_3
+      - 美国_4
+      - 美国_5
+      - 🇯🇵 日本 | JPN
+      - SG-ss
+      - 美国_6
+      - US_4
+      - 🇺🇸 美国 | USA_1
+      - 美国_7
+      - 🇺🇸 美国 | USA 10
+      - SG-ss_1
+      - SG VLESS-122 | free-nodes
+      - " 美國"
+      - SG-ss_2
+      - 🇺🇸 美国 | USA_2
+      - 美国_8
+      - SG-ss_3
+      - 🇺🇸 美国 | USA_3
+      - 美国_9
+      - 🇺🇸 美国 | USA_4
+      - 美国_10
+      - 01-Trojan-030101.xyz
+      - 美国_11
+      - 俄罗斯
+      - 🇺🇸 美国 | USA_5
+      - 🇺🇸 美国 | USA 14
+      - 🇩🇪 德国 | DEU
+      - HK-ss_1
+      - TR_
+      - 美国33
+      - 🇺🇸US_10 | ⬇️ 2.2MB/s
+      - 🇺🇸US_332 | ⬇️ 2.1MB/s
+      - TR__1
+      - " HK-ss"
+      - Youtube
+      - 🇸🇪 瑞典 | SWE
+      - TW-ss
+      - JP-ss_1
+      - " JP-ss_1"
+      - DE_66e7c_0012
+      - 美国_12
+      - 🇩🇪 德国 | DEU 2
+      - 🇺🇸_US_美国
+      - 美国521
+      - DE VLESS-119 | free-nodes
+      - US VLESS-110 | free-nodes
+      - VLESS-132 | free-nodes
+      - 美国(）
+      - 🇺🇸US_25 | ⬇️ 2.9MB/s
+      - 日本026
+      - 美国026
+      - 美国026_1
+      - 美国026_2
+      - 美国026_3
+      - 美国026_4
+      - 美国026_5
+      - 美国026_6
+      - 美国026_7
+      - 美国026_8
+      - 美国026_9
+      - 美国026_10
+      - 美国026_11
+      - 美国026_12
+      - 美国026_13
+      - 美国026_14
+      - 美国026_15
+      - 美国026_16
+      - 美国026_17
+      - 美国026_18
+      - 美国026_19
+      - 美国026_20
+      - 美国026_21
+      - 美国026_22
+      - 美国026_23
+      - 美国026_24
+      - 美国026_25
+      - 美国026_26
+      - 美国026_27
+      - 美国026_28
+      - 美国026_29
+      - 美国026_30
+      - 美国026_31
+      - 美国026_32
+      - 美国026_33
+      - 美国026_34
+      - 美国026_35
+      - 美国026_36
+      - 新加坡026
+      - 美国026_37
+      - 美国026_38
+      - 香港026
+      - 美国026_39
+      - 美国026_40
+      - 美国026_41
+      - 美国026_42
+      - 美国026_43
+      - 新加坡026_1
+      - 美国026_44
+      - 美国026_45
+      - 新加坡026_2
+      - 美国026_46
+      - 美国026_47
+      - 美国035
+      - 英国027
+      - 英国036
+      - 美国033
+      - 美国026_48
+      - 美国034
+      - 英国037
+      - 英国025
+      - 美国026_49
+      - 美国026_50
+      - 美国026_51
+      - 美国026_52
+      - 美国026_53
+      - 美国026_54
+      - 美国026_55
+      - 英国038
+      - 英国024
+      - 美国026_56
+      - 美国026_57
+      - 美国026_58
+      - 美国026_59
+      - 美国026_60
+      - 澳洲026
+      - 美国026_61
+      - 德国026
+      - 美国026_62
+      - 美国026_63
+      - 美国026_64
+      - 美国026_65
+      - 美国026_66
+      - 香港026_1
+      - 英国031
+      - 美国039
+      - 美国032
+      - 美国029
+      - 英国(yudou789.top 玉豆免费节点)
+      - 美国026_67
+      - 英国028
+      - 美国(yudou789.top 玉豆免费节点)
+      - 美国026_68
+      - 美国026_69
+      - 美国026_70
+      - 美国026_71
+      - 美国026_72
+      - 英国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_1
+      - 美国(yudou789.top 玉豆免费节点)_2
+      - 美国(yudou789.top 玉豆免费节点)_3
+      - 美国(yudou789.top 玉豆免费节点)_4
+      - 美国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_2
+      - 英国(yudou789.top 玉豆免费节点)_3
+      - 英国(yudou789.top 玉豆免费节点)_4
+      - 英国(yudou789.top 玉豆免费节点)_5
+      - 英国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_6
+      - 美国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_7
+      - 英国(yudou789.top 玉豆免费节点)_8
+      - 法国(yudou789.top 玉豆免费节点)
+      - 美国(yudou789.top 玉豆免费节点)_8
+      - 美国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_9
+      - 英国(yudou789.top 玉豆免费节点)_10
+      - 英国(yudou789.top 玉豆免费节点)_11
+      - 英国(yudou789.top 玉豆免费节点)_12
+      - 美国(yudou789.top 玉豆免费节点)_10
+      - 美国(yudou789.top 玉豆免费节点)_11
+      - 美国(yudou789.top 玉豆免费节点)_12
+      - 英国(yudou789.top 玉豆免费节点)_13
+      - 英国(yudou789.top 玉豆免费节点)_14
+      - 英国(yudou789.top 玉豆免费节点)_15
+      - 英国(yudou789.top 玉豆免费节点)_16
+      - 英国(yudou789.top 玉豆免费节点)_17
+      - 英国(yudou789.top 玉豆免费节点)_18
+      - 美国(yudou789.top 玉豆免费节点)_13
+      - 美国026_73
+      - 美国026_74
+      - 香港026_2
+      - 香港021
+      - 美国022
+      - 美国023
+      - 美国030
+      - DE VLESS-103 | free-nodes
+      - 荷兰VLESS-111 | free-nodes
+      - 芬兰VLESS-78 | free-nodes
+      - US_dfeec_0057
+      - US_dfeec_0043
+      - US_dfeec_0059
+      - US_dfeec_0046
+      - US_dfeec_0044
+      - US_dfeec_0056
+      - KR_dfeec_0021
+      - KR_dfeec_0018
+      - US_dfeec_0040
+      - RU_dfeec_0033
+      - US_dfeec_0048
+      - DE_dfeec_0007
+      - 🇺🇸 美国 | USA 18_1
+      - 🇸🇬 新加坡 | SGP 3
+      - 🇸🇬 新加坡 | SGP
+      - 🇺🇸 美国 | USA 7
+      - 🇦🇺 澳大利亚 | AUS
+      - 🇹🇼 🇨🇳 台湾 | TWN 3
+      - 🇳🇱 荷兰 | NLD
+      - 🇺🇸 美国 | USA_6
+      - 🇹🇭 泰国 | THA
+      - 🇸🇬 新加坡 | SGP_1
+      - 🇺🇸 美国 | USA_7
+      - 🇸🇬 新加坡 | SGP_2
+      - 🇺🇸 美国 | USA_8
+      - 🇺🇸 美国 | USA_9
+      - 🇬🇧 英国 | GBR
+      - 🇳🇱 荷兰 | NLD_1
+      - 🇦🇺 澳大利亚 | AUS_1
+      - 🇰🇷 韩国 | KOR
+      - 🇺🇸_US_美国_1
+      - 🇧🇬_BG_保加利亚
+      - JP-ss_2
+      - " HK-ss_1"
+      - " JP-ss_2"
+      - SG-ss_4
+      - JP
+      - JP_1
+      - 🇭🇰 香港 16
+      - 🇺🇸US_18 | ⬇️ 2.2MB/s
+      - US VLESS-108
+      - 美国节点1
+      - 🇺🇸US_37 | ⬇️ 4.1MB/s
+      - 🇺🇸US_5 | ⬇️ 2.8MB/s
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇭🇰 香港 24
+      - 🇭🇰 香港 10
+      - 🇦🇺AU_1 | ⬇️ 1.8MB/s
+      - 荷兰11
+      - 🇺🇸_US_美国_2
+      - 🇹🇭 泰国 05
+      - 🇹🇭 泰国 01
+      - 🇭🇰 香港 15
+      - 🇭🇰 香港 11
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/LocalAreaNetwork.list
+    path: ./rules/LocalAreaNetwork.yaml
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/BanAD.list
+    path: ./rules/BanAD.yaml
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/BanProgramAD.list
+    path: ./rules/BanProgramAD.yaml
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/GoogleCN.list
+    path: ./rules/GoogleCN.yaml
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/SteamCN.list
+    path: ./rules/SteamCN.yaml
+  Microsoft:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Microsoft.list
+    path: ./rules/Microsoft.yaml
+  Apple:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Apple.list
+    path: ./rules/Apple.yaml
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ProxyMedia.list
+    path: ./rules/ProxyMedia.yaml
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Telegram.list
+    path: ./rules/Telegram.yaml
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ProxyLite.list
+    path: ./rules/ProxyLite.yaml
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaDomain.list
+    path: ./rules/ChinaDomain.yaml
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaCompanyIp.list
+    path: ./rules/ChinaCompanyIp.yaml
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🍃 应用净化
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Microsoft,Ⓜ️ 微软服务
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,ProxyMedia,🌍 国外媒体
+  - RULE-SET,Telegram,📲 电报信息
+  - RULE-SET,ProxyLite,🚀 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
