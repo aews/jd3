@@ -1,0 +1,7116 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: false
+external-controller: 0.0.0.0:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+    - 119.29.29.29
+    - 180.76.76.76
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.example"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - router.asus.com
+    - localhost.sec.qq.com
+    - localhost.ptlogin2.qq.com
+    - +.msftconnecttest.com
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-detect-interface: true
+  dns-hijack:
+    - 114.114.114.114
+    - 180.76.76.76
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+proxies:
+  - name: 🇭🇰 香港 07
+    type: ss
+    server: 47.242.145.136
+    port: 8001
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: 🇸🇬 新加坡 | SGP
+    type: ss
+    server: 47.242.145.136
+    port: 8001
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 香港 | HKG
+    type: ss
+    server: 8.223.63.150
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 00-Trojan-jp-AI
+    type: trojan
+    server: jp.111000.cc.cd
+    port: 443
+    password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    sni: sni.111000.dynv6.net
+    alpn:
+      - http/1.1
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 02-WS1
+    type: vless
+    server: saas.sin.fan
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.dynv6.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 00-WS-jp-AI
+    type: vless
+    server: jp.111000.cc.cd
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.dynv6.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 02-Trojan1
+    type: trojan
+    server: saas.sin.fan
+    port: 443
+    password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    sni: sni.111000.dynv6.net
+    alpn:
+      - http/1.1
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: JP-ss
+    type: ss
+    server: saas.sin.fan
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 03-Trojan-cloudflare88
+    type: trojan
+    server: freeyx.cloudflare88.eu.org
+    port: 443
+    password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    sni: sni.111000.dynv6.net
+    alpn:
+      - http/1.1
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: " JP-ss"
+    type: ss
+    server: saas.sin.fan
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: KR-ss
+    type: ss
+    server: cf.130519.xyz
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: TW-ss
+    type: ss
+    server: sub.danfeng.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: HK-ss
+    type: ss
+    server: cf.008500.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: HK
+    type: trojan
+    server: 58.152.25.253
+    port: 443
+    password: BxceQaOe
+    sni: 58.152.25.253
+    skip-cert-verify: true
+    tls: true
+  - name: 🇯🇵 日本 08
+    type: ss
+    server: cf.008500.xyz
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇭🇰 香港 07_1
+    type: ss
+    server: mfa.gov.ua
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇯🇵 日本 08_1
+    type: ss
+    server: sub.danfeng.eu.org
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 新加坡11
+    type: ss
+    server: store.ubi.com
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇯🇵 日本 09
+    type: ss
+    server: mfa.gov.ua
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇺🇸 美国 14
+    type: ss
+    server: store.ubi.com
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 03-WS-cloudflare88
+    type: vless
+    server: freeyx.cloudflare88.eu.org
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.dynv6.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 🇸🇬 新加坡 078
+    type: ss
+    server: cf.130519.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: SG-ss
+    type: ss
+    server: cf.090227.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇯🇵 日本 14
+    type: ss
+    server: cf.090227.xyz
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: JP-ss_1
+    type: ss
+    server: cdns.doon.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: HK-ss_1
+    type: ss
+    server: cf.zhetengsha.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇰🇷 韩国 01
+    type: ss
+    server: 211.48.77.114
+    port: 12312
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇺🇸 美国 10
+    type: ss
+    server: cdns.doon.eu.org
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇺🇸 美国 13
+    type: ss
+    server: cf.zhetengsha.eu.org
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇭🇰 香港 | HKG_1
+    type: ss
+    server: 203.69.248.40
+    port: 10443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇰🇷 韩国 04
+    type: ss
+    server: 211.48.77.114
+    port: 24095
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 美国44
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国023
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇭🇰 香港 | HKG_2
+    type: ss
+    server: 216.205.52.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇩🇪 德国 13
+    type: vmess
+    server: 82.198.246.46
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: HK_1
+    type: trojan
+    server: 58.152.25.253
+    port: 443
+    password: BxceQaOe
+    sni: t.me%2Fripaojiedian
+    skip-cert-verify: true
+    tls: true
+  - name: 🇺🇸 美国 | USA 5
+    type: hysteria2
+    server: usa-hy2.onetaplink.app
+    port: 443
+    password: 48b36b6a-eaa6-4843-9231-0bb8b38b5da5
+    sni: hy2-usa.onetaplink.app
+    skip-cert-verify: false
+    obfs: salamander
+    obfs-password: OrT7yQQIMqcvKdet
+  - name: 01-Trojan-030101.xyz
+    type: trojan
+    server: bestcf.030101.xyz
+    port: 443
+    password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    sni: sni.111000.dynv6.net
+    alpn:
+      - http/1.1
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 英国58
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国38
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国33
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 香港47
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国 09
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇬🇧 GB_39
+    type: vmess
+    server: 82.198.246.46
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国35
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇺🇸 美国 | USA 4
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: AT
+    type: trojan
+    server: 152.53.60.198
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 🇮🇷 伊朗
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国32
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国33_1
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国51
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 新加坡37
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 新加坡11_1
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇯🇵 日本 | JPN
+    type: ss
+    server: 31.58.50.110
+    port: 2053
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: AT_1
+    type: trojan
+    server: 152.53.200.98
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 美国38_1
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国32_1
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: AT_c017f_0001
+    type: trojan
+    server: 152.53.45.251
+    port: 8888
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 🇸🇪 瑞典 | SWE
+    type: ss
+    server: 51.20.160.11
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\\
+  - name: US
+    type: trojan
+    server: 58.152.25.253
+    port: 443
+    password: BxceQaOe
+    skip-cert-verify: true
+    tls: true
+  - name: 美国12
+    type: trojan
+    server: 152.53.45.251
+    port: 8888
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: //
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: AT_2
+    type: trojan
+    server: 152.53.200.167
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: true
+    tls: true
+    ws-opts:
+      path: /
+  - name: NL
+    type: trojan
+    server: 94.131.105.125
+    port: 4443
+    password: strong-secret-pass-777
+    sni: 94.131.105.125
+    skip-cert-verify: true
+    tls: true
+  - name: 香港54
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: AT_3
+    type: trojan
+    server: 152.53.60.198
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+  - name: 美国45
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国32_2
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: AT_4
+    type: trojan
+    server: 152.53.200.98
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: true
+    tls: true
+    ws-opts:
+      path: //
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 美国331
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇯🇵 日本 05
+    type: ss
+    server: 202.84.53.85
+    port: 17892
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: AT_5
+    type: trojan
+    server: 152.53.200.167
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 🇩🇪 德国 | DEU
+    type: ss
+    server: 94.159.98.140
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: 🇹🇼 台湾 03
+    type: ss
+    server: 125.227.233.197
+    port: 2053
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: NL_1
+    type: trojan
+    server: 94.131.105.125
+    port: 4443
+    password: strong-secret-pass-777
+    skip-cert-verify: true
+    tls: true
+  - name: HK_2
+    type: vless
+    server: 222.167.202.60
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.60:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_3
+    type: vless
+    server: 222.167.202.21
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.21:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_4
+    type: vless
+    server: 222.167.202.3
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.3:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_5
+    type: vless
+    server: 222.167.202.4
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.4:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 美国34
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: HK_6
+    type: vless
+    server: 222.167.202.22
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.22:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_7
+    type: vless
+    server: 222.167.202.36
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.36:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_8
+    type: vless
+    server: 222.167.202.16
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.16:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_9
+    type: vless
+    server: 222.167.202.60
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.60:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_c017f_0047
+    type: vless
+    server: 222.167.202.70
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.70:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_10
+    type: vless
+    server: 222.167.202.22
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.22:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_11
+    type: vless
+    server: 222.167.202.2
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.2:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_12
+    type: vless
+    server: 222.167.202.52
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.52:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_c017f_0053
+    type: vless
+    server: 222.167.202.10
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.10:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_c017f_0054
+    type: vless
+    server: 222.167.202.4
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.4:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_13
+    type: vless
+    server: 222.167.202.26
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.26:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_14
+    type: vless
+    server: 222.167.202.35
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.35:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_15
+    type: vless
+    server: 222.167.202.33
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.33:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_16
+    type: vless
+    server: 222.167.202.50
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.50:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 美国35_1
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: HK_17
+    type: vless
+    server: 222.167.202.47
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.47:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 美国46
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: HK_18
+    type: vless
+    server: 222.167.202.50
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.50:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: IR_c017f_0059
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: HK_19
+    type: vless
+    server: 222.167.202.6
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.6:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_20
+    type: vless
+    server: 222.167.202.15
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.15:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_c017f_0049
+    type: vless
+    server: 222.167.202.31
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.31:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇮🇹 意大利 | ITA 3
+    type: vless
+    server: 222.167.202.6
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.6:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇺🇸 美国 | USA
+    type: ss
+    server: 69.84.182.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: HK_c017f_0046
+    type: vless
+    server: 222.167.202.45
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.45:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_21
+    type: vless
+    server: 222.167.202.23
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.23:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_22
+    type: vless
+    server: 222.167.202.45
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.45:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_23
+    type: vless
+    server: 222.167.202.32
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.32:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_c017f_0040
+    type: vless
+    server: 222.167.202.23
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.23:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_24
+    type: vless
+    server: 222.167.202.21
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.21:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_25
+    type: vless
+    server: 222.167.202.36
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.36:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇯🇵 日本 | JPN_1
+    type: ss
+    server: 116.93.199.28
+    port: 10296
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: HK_26
+    type: vless
+    server: 222.167.202.14
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.14:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_27
+    type: vless
+    server: 222.167.202.14
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.14:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_28
+    type: vless
+    server: 222.167.202.3
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.3:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港12
+    type: vless
+    server: 222.167.202.26
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.26:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港12_1
+    type: vless
+    server: 222.167.202.15
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.15:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_29
+    type: vless
+    server: 222.167.202.33
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.33:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇭🇰 香港 | HKG_3
+    type: ss
+    server: 50.62.90.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇯🇵 日本 | JPN_2
+    type: ss
+    server: 77.110.96.166
+    port: 8443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 01-1
+    type: vless
+    server: bestcf.030101.xyz
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.dynv6.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 🇯🇵 日本 06
+    type: ss
+    server: 202.84.53.85
+    port: 11738
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: 🇯🇵 日本 07
+    type: ss
+    server: 202.84.53.85
+    port: 14740
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: 🇳🇱NL_3 | ⬇️ 1.7MB/s
+    type: tuic
+    server: ip1.758733.xyz
+    port: 10088
+    uuid: 9bbd1f42-7ae7-4239-bd10-a68de95e3295
+    password: dongtaiwang.com
+    sni: apple.com
+    alpn:
+      - h3
+    congestion-controller: bbr
+    skip-cert-verify: false
+    disable-sni: false
+  - name: 🇯🇵 日本 | JPN_3
+    type: ss
+    server: 103.133.1.38
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 新加坡365
+    type: vless
+    server: xinjiapo1.zqjsqapi.com
+    port: 443
+    uuid: 8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19
+    network: ws
+    servername: xinjiapo1.zqjsqapi.com
+    tls: true
+    ws-opts:
+      path: /proxy
+      headers:
+        Host: xinjiapo1.zqjsqapi.com
+  - name: 日本365
+    type: vless
+    server: dongjing1.zqjsqapi.com
+    port: 443
+    uuid: 8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19
+    network: ws
+    servername: dongjing1.zqjsqapi.com
+    tls: true
+    ws-opts:
+      path: /proxy
+      headers:
+        Host: dongjing1.zqjsqapi.com
+  - name: 美国365
+    type: vless
+    server: 43.165.174.229
+    port: 443
+    uuid: 8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19
+    network: ws
+    servername: dongjing1.zqjsqapi.com
+    tls: true
+    ws-opts:
+      path: /proxy
+  - name: 美国365_1
+    type: ss
+    server: nbmrcg0034686rw.cybervena.com
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+  - name: 美国365_2
+    type: vless
+    server: xinjiapo1.zqjsqapi.com
+    port: 443
+    uuid: 8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19
+    network: ws
+    servername: xinjiapo1.zqjsqapi.com
+    tls: true
+    ws-opts:
+      path: /proxy
+  - name: 美国231
+    type: vmess
+    server: m.cnmjin.net
+    port: 16617
+    uuid: b688ce0f-9201-4e8e-a67a-f3be2c6aa201
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: 7a297964a2b31dafd3529ef4d14574b9.mobgslb.tbcache.com
+  - name: 美国365_3
+    type: vless
+    server: 135.84.74.155
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?Telegram🇨🇳@WangCai2=
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 英国232
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国365_4
+    type: vless
+    server: 135.84.74.43
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 美国365_5
+    type: vless
+    server: 135.84.74.155
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 英国233
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国234
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国235
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国236
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国237
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国238
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国365_6
+    type: vless
+    server: dongjing1.zqjsqapi.com
+    port: 443
+    uuid: 8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19
+    network: ws
+    servername: dongjing1.zqjsqapi.com
+    tls: true
+    ws-opts:
+      path: /proxy
+  - name: 美国239
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国251
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 德国252
+    type: vmess
+    server: 82.198.246.46
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国253
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国254
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 香港255
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国256
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国257
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国258
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国259
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国365_7
+    type: trojan
+    server: 152.53.200.167
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 美国365_8
+    type: trojan
+    server: 152.53.200.98
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: //
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 荷兰365
+    type: vless
+    server: 185.243.112.61
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 韩国365
+    type: trojan
+    server: 152.53.60.198
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 美国365_9
+    type: trojan
+    server: 152.53.200.98
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 美国365_10
+    type: vless
+    server: 94.131.101.135
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 英国365
+    type: trojan
+    server: 152.53.45.251
+    port: 8888
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 美国365_11
+    type: vless
+    server: 192.200.160.19
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 加拿大365
+    type: vless
+    server: 82.117.245.125
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 美国365_12
+    type: trojan
+    server: 152.53.45.251
+    port: 8888
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: //
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 美国249
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 香港365
+    type: vless
+    server: 222.167.202.26
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.26:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 美国365_13
+    type: vless
+    server: 185.82.126.185
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?ed=2560&telegram🇨🇳@wangcai2
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 香港365_1
+    type: vless
+    server: 222.167.202.15
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.15:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_2
+    type: vless
+    server: 222.167.202.3
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.3:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_3
+    type: vless
+    server: 222.167.202.10
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.10:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 美国365_14
+    type: vless
+    server: 31.128.32.98
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?ed=2560&telegram🇨🇳@wangcai2
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 香港365_4
+    type: vless
+    server: 222.167.202.60
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.60:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_5
+    type: vless
+    server: 222.167.202.45
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.45:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_6
+    type: vless
+    server: 222.167.202.23
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.23:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_7
+    type: vless
+    server: 222.167.202.32
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.32:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港248
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 香港365_8
+    type: vless
+    server: 222.167.202.33
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.33:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 美国365_15
+    type: vless
+    server: 5.34.209.231
+    port: 8443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?ed=2560&telegram🇨🇳@wangcai2
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 香港365_9
+    type: vless
+    server: 222.167.202.16
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.16:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_10
+    type: vless
+    server: 222.167.202.21
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.21:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_11
+    type: vless
+    server: 222.167.202.47
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.47:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_12
+    type: vless
+    server: 222.167.202.2
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.2:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_13
+    type: vless
+    server: 222.167.202.31
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.31:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_14
+    type: vless
+    server: 222.167.202.70
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.70:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 澳洲365
+    type: vless
+    server: 5.34.209.231
+    port: 8443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 香港365_15
+    type: vless
+    server: 222.167.202.14
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.14:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 美国365_16
+    type: vless
+    server: 77.221.152.21
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 美国365_17
+    type: vless
+    server: 45.43.76.184
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 香港365_16
+    type: vless
+    server: 222.167.202.4
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.4:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_17
+    type: vless
+    server: 222.167.202.6
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.6:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_18
+    type: vless
+    server: 222.167.202.50
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.50:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_19
+    type: vless
+    server: 222.167.202.22
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.22:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港365_20
+    type: vless
+    server: 222.167.202.36
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.36:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 美国365_18
+    type: vless
+    server: 45.43.76.184
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?ed=2560&telegram🇨🇳@wangcai2
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 美国365_19
+    type: vless
+    server: 185.135.86.217
+    port: 8443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?ed=2560&Telegram🇨🇳@WangCai2
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 美国365_20
+    type: vless
+    server: 188.241.241.29
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?Telegram🇨🇳@WangCai2=
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 美国365_21
+    type: vless
+    server: dongjing2.zqjsqapi.com
+    port: 443
+    uuid: 8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19
+    network: ws
+    servername: dongjing2.zqjsqapi.com
+    tls: true
+    ws-opts:
+      path: /proxy
+      headers:
+        Host: dongjing2.zqjsqapi.com
+  - name: 美国365_22
+    type: vless
+    server: shenbaoluo1.zqjsqapi.com
+    port: 443
+    uuid: 8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19
+    network: ws
+    servername: shenbaoluo1.zqjsqapi.com
+    tls: true
+    ws-opts:
+      path: /proxy
+  - name: 日本365_1
+    type: vless
+    server: dongjing3.zqjsqapi.com
+    port: 443
+    uuid: 8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19
+    network: ws
+    servername: dongjing3.zqjsqapi.com
+    tls: true
+    ws-opts:
+      path: /proxy
+      headers:
+        Host: dongjing3.zqjsqapi.com
+  - name: 美国365_23
+    type: vless
+    server: 43.164.198.39
+    port: 443
+    uuid: 8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19
+    network: ws
+    servername: shenbaoluo1.zqjsqapi.com
+    tls: true
+    ws-opts:
+      path: /proxy
+  - name: 美国365_24
+    type: vless
+    server: 43.160.204.190
+    port: 443
+    uuid: 8d5e7f2a-3c1b-4d9e-a6f8-2b5c0e7d4a19
+    network: ws
+    servername: xinjiapo1.zqjsqapi.com
+    tls: true
+    ws-opts:
+      path: /proxy
+  - name: 韩国365_1
+    type: vless
+    server: 209.102.207.120
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 法国365
+    type: vless
+    server: 217.60.252.232
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 美国365_25
+    type: vless
+    server: 192.200.160.19
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 美国247
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国246
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国245
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国244
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国243
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国242
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 美国241
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: TR TROJAN-85 | free-nodes
+    type: trojan
+    server: 94.131.105.125
+    port: 4443
+    password: strong-secret-pass-777
+    sni: 94.131.105.125
+    skip-cert-verify: true
+    tls: true
+  - name: GB VLESS-92 | free-nodes
+    type: vless
+    server: uk1.fromblancwithlove.com
+    port: 8443
+    uuid: 394f6981-a782-4779-9a85-e6cf22935d93
+    tls: true
+  - name: DE VLESS-132 | free-nodes
+    type: vless
+    server: 188.114.98.0
+    port: 2082
+    uuid: f0ff4425-8c26-4d81-8662-f34593060c8d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /
+      headers:
+        Host: DOFF.mehrsazi.ir
+  - name: 英国 11
+    type: vmess
+    server: m.cnmjin.net
+    port: 16616
+    uuid: b688ce0f-9201-4e8e-a67a-f3be2c6aa201
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: 7a297964a2b31dafd3529ef4d14574b9.mobgslb.tbcache.com
+  - name: 英国 22
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 英国 33
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: IR_a412a_0034
+    type: vmess
+    server: v12.hdacd.com
+    port: 30812
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: NL_a412a_0040
+    type: trojan
+    server: 94.131.105.125
+    port: 4443
+    password: strong-secret-pass-777
+    sni: 94.131.105.125
+    skip-cert-verify: true
+    tls: true
+  - name: AT_a412a_0002
+    type: trojan
+    server: 152.53.200.98
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: LV_a412a_0038
+    type: vless
+    server: 31.128.32.98
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: sni.111000.v6.navy
+  - name: AT_a412a_0001
+    type: trojan
+    server: 152.53.200.167
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: US_a412a_0044
+    type: vless
+    server: 94.131.101.135
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: sni.111000.v6.navy
+  - name: NL_a412a_0039
+    type: vless
+    server: 185.243.112.61
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: sni.111000.v6.navy
+  - name: HK_a412a_0014
+    type: vless
+    server: 222.167.202.14
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.14:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇸🇬 新加坡 | SGP 2
+    type: hysteria2
+    server: sg.mjhy2.com
+    port: 1443
+    password: b688ce0f-9201-4e8e-a67a-f3be2c6aa201
+    sni: sg.mjhy2.com
+    skip-cert-verify: true
+  - name: 🇺🇸 美国 | USA 3
+    type: vmess
+    server: 67.220.72.237
+    port: 22324
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 1
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇺🇸 美国 | USA 2
+    type: vmess
+    server: 82.198.246.46
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇭🇰 香港 | HKG 25
+    type: hysteria2
+    server: 156.226.173.8
+    port: 8443
+    password: 9c23940e-efd8-4763-bfb5-54739b50893d
+    sni: hy5.hy2yydsapi.top
+    skip-cert-verify: true
+  - name: 🇯🇵 日本 | JPN_4
+    type: ss
+    server: 3.112.89.102
+    port: 8443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇭🇰 香港 | HKG_4
+    type: ss
+    server: 168.107.5.23
+    port: 8443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 香港 | HKG_5
+    type: ss
+    server: 203.69.248.40
+    port: 10443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 香港 | HKG_6
+    type: ss
+    server: 155.248.181.189
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇹🇼 🇨🇳 台湾 | TWN
+    type: vmess
+    server: m.cnmjin.net
+    port: 16616
+    uuid: b688ce0f-9201-4e8e-a67a-f3be2c6aa201
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: 7a297964a2b31dafd3529ef4d14574b9.mobgslb.tbcache.com
+  - name: 🇫🇷 法国 | FRA
+    type: vless
+    server: www.visa.com.sg
+    port: 2052
+    uuid: 25efc727-e853-49ba-9609-3c20009d0e7a
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: winbiss-0tpka6-v1.winbiss.workers.dev
+  - name: 🇺🇸 美国 | USA_1
+    type: hysteria2
+    server: vpn-us-023.fastervpn.world
+    port: 443
+    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+    sni: vpn-us-023.fastervpn.world
+    skip-cert-verify: true
+  - name: 🇺🇸 美国 | USA_2
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇭🇰 香港 | HKG_7
+    type: ss
+    server: 202.84.53.85
+    port: 21353
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇯🇵 日本 | JPN_5
+    type: ss
+    server: 51.20.160.11
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇦🇪 阿联酋 | ARE
+    type: vless
+    server: 51.91.251.16
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 🇱🇻 拉脱维亚 | LVA
+    type: vless
+    server: 57.128.177.206
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?telegram
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 🇯🇵 日本 | JPN_6
+    type: ss
+    server: 5.253.189.215
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇸🇨 塞舌尔 | SYC
+    type: ss
+    server: 172.104.143.156
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇮🇹 意大利 | ITA
+    type: vless
+    server: 222.167.202.70
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.70:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇮🇹 意大利 | ITA_1
+    type: vless
+    server: 222.167.202.45
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.45:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇯🇵 日本 | JPN_7
+    type: ss
+    server: 91.223.169.88
+    port: 8443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇯🇵 日本 | JPN_8
+    type: ss
+    server: 188.126.77.155
+    port: 8443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇮🇹 意大利 | ITA_2
+    type: vless
+    server: 222.167.202.3
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.3:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇭🇰 香港 | HKG_8
+    type: ss
+    server: 194.233.167.228
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇮🇹 意大利 | ITA_3
+    type: vless
+    server: 222.167.202.26
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.26:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇮🇹 意大利 | ITA_4
+    type: vless
+    server: 222.167.202.2
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.2:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇱🇻 拉脱维亚 | LVA_1
+    type: vless
+    server: 5.34.209.231
+    port: 8443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /?ed=2560&telegram🇨🇳@wangcai2
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 🇱🇻 拉脱维亚 | LVA_2
+    type: vless
+    server: 77.221.152.21
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 🇭🇰 香港 | HKG_9
+    type: ss
+    server: 129.154.220.126
+    port: 2083
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 香港 | HKG_10
+    type: ss
+    server: 188.239.21.47
+    port: 8443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇺🇦 乌克兰 | UKR
+    type: vless
+    server: 95.164.36.217
+    port: 443
+    uuid: 43488128-319e-f480-64ea-0acdc712e2a8
+    servername: www.booking.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: P7XdTB-V3VEV_B5Wenifit6OriVM5YUQ8ir-SSqes0U
+      short-id: 7a4f4b55a899ae1d
+  - name: 🇯🇵 日本 | JPN_9
+    type: ss
+    server: 199.181.197.38
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇱🇻 拉脱维亚 | LVA_3
+    type: vless
+    server: 192.200.160.19
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 🇭🇰 香港 | HKG_11
+    type: ss
+    server: 50.62.195.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 香港 | HKG_12
+    type: ss
+    server: 140.83.34.214
+    port: 8443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇨🇳_CN_中国->🇮🇹_IT_意大利
+    type: vless
+    server: 222.167.202.60
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.60:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇨🇳_CN_中国->🇮🇹_IT_意大利_1
+    type: vless
+    server: 222.167.202.21
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.21:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇨🇳_CN_中国->🇮🇹_IT_意大利_2
+    type: vless
+    server: 222.167.202.36
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.36:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇨🇳_CN_中国->🇺🇸_US_美国
+    type: vless
+    server: 222.167.202.16
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.16:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇺🇸_US_美国->🇳🇿_NZ_新西兰
+    type: vless
+    server: 69.84.182.13
+    port: 443
+    uuid: 340dee85-bfd7-4395-8d2e-87dbc2781a13
+    network: ws
+    servername: jp1-jp1.aiopen.sbs
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /kbjc/jp1
+      headers:
+        Host: jp1-jp1.aiopen.sbs
+  - name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
+    type: vless
+    server: 222.167.202.33
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.33:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇨🇳_CN_中国
+    type: vless
+    server: 222.167.202.47
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.47:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇨🇳_CN_中国->🇺🇸_US_美国_2
+    type: vless
+    server: 222.167.202.2
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.2:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇭🇰香港HK 005 0.5MB/s
+    type: ss
+    server: 103.43.191.121
+    port: 8443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: HK_30
+    type: ss
+    server: 8.223.63.150
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇯🇵 JP 245 | ⬇️ 18MB/s
+    type: ss
+    server: mfa.gov.ua
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇯🇵日本JP 006 12.9MB/s
+    type: ss
+    server: cf.130519.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇯🇵 JP 177 | ⬇️ 13MB/s
+    type: ss
+    server: saas.sin.fan
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 00-WS-jp-AI_1
+    type: vless
+    server: jp.111000.cc.cd
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.dynv6.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: HK-ss_2
+    type: ss
+    server: cf.008500.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇯🇵 JP 069 | ⬇️ 9MB/s
+    type: ss
+    server: sub.danfeng.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇯🇵 日本 09_1
+    type: ss
+    server: cf.008500.xyz
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 00-Trojan-jp-AI_1
+    type: trojan
+    server: jp.111000.cc.cd
+    port: 443
+    password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    sni: sni.111000.dynv6.net
+    alpn:
+      - http/1.1
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 🇭🇰HK 09
+    type: ss
+    server: sub.danfeng.eu.org
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇸🇬新加坡SG 005 1.5MB/s
+    type: ss
+    server: 188.239.43.6
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 02-Trojan-saas.sin.fan
+    type: trojan
+    server: saas.sin.fan
+    port: 443
+    password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    sni: sni.111000.dynv6.net
+    alpn:
+      - http/1.1
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 🇯🇵 JP 124 | ⬇️ 5MB/s
+    type: ss
+    server: cdns.doon.eu.org
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇭🇰HK 06
+    type: ss
+    server: registry.cyou
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 02-WS-saas.sin.fan
+    type: vless
+    server: saas.sin.fan
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.dynv6.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 🇯🇵 JP 065 | ⬇️ 2MB/s
+    type: ss
+    server: cf.090227.xyz
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇺🇸 美国 13_1
+    type: ss
+    server: cf.zhetengsha.eu.org
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇯🇵 日本 08_2
+    type: ss
+    server: sub.danfeng.eu.org
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 03-WS-cloudflare88_1
+    type: vless
+    server: freeyx.cloudflare88.eu.org
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.dynv6.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 🇸🇬新加坡SG 019 10.4MB/s
+    type: ss
+    server: cf.zhetengsha.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇭🇰 HK 001 | ⬇️ 20MB/s
+    type: ss
+    server: 115.163.106.137
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 HK 104 | ⬇️ 3MB/s
+    type: ss
+    server: 168.107.5.23
+    port: 8443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇯🇵 日本 14_1
+    type: ss
+    server: cf.090227.xyz
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇯🇵 JP 149 | ⬇️ 3MB/s
+    type: ss
+    server: cdns.doon.eu.org
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇭🇰 香港 07_2
+    type: ss
+    server: mfa.gov.ua
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇸🇬新加坡SG 017 7.0MB/s
+    type: ss
+    server: store.ubi.com
+    port: 443
+    cipher: none
+    password: 79960b0b-7d31-4263-8915-6511b0e137a8
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: woshinidie-et3.pages.dev
+      path: /79960b0b-7d31-4263-8915-6511b0e137a8/?ed\=2560
+  - name: 🇯🇵 JP 075 | ⬇️ 2MB/s
+    type: ss
+    server: store.ubi.com
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: /3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇭🇰HK 13
+    type: ss
+    server: cdns.doon.eu.org
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 HK 032 | ⬇️ 5MB/s
+    type: ss
+    server: 203.69.248.40
+    port: 10443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 HK 221 | ⬇️ 3MB/s
+    type: ss
+    server: 211.48.77.114
+    port: 24095
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 HK 092 | ⬇️ 1MB/s
+    type: ss
+    server: 104.238.70.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 HK 086 | ⬇️ 1MB/s
+    type: ss
+    server: 50.62.90.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 HK 129 | ⬇️ 3MB/s
+    type: ss
+    server: 211.48.77.114
+    port: 19655
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇭🇰 HK 133 | ⬇️ 1MB/s
+    type: ss
+    server: 45.40.147.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇰🇷 韩国 02
+    type: ss
+    server: 211.48.77.114
+    port: 24095
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇺🇸 美国 25
+    type: ss
+    server: 50.62.195.16
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇬🇧 GB_37
+    type: vmess
+    server: 82.198.246.97
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇩🇪 德国 01
+    type: vmess
+    server: 82.198.246.46
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇬🇧 GB_35
+    type: vmess
+    server: 82.198.246.46
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 德国
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇩🇪 德国 02
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 🇬🇧 GB_36
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+  - name: 01-Trojan-030101.xyz_1
+    type: trojan
+    server: bestcf.030101.xyz
+    port: 443
+    password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    sni: sni.111000.dynv6.net
+    alpn:
+      - http/1.1
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 🇨🇳TW 3
+    type: ss
+    server: 125.227.233.197
+    port: 2083
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇹🇼 台湾 02
+    type: ss
+    server: 125.227.233.197
+    port: 2053
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: 🇭🇰 HK 081 | ⬇️ 1MB/s
+    type: ss
+    server: 188.241.241.3
+    port: 2053
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇨🇦 CA 229 | ⬇️ 1MB/s
+    type: vless
+    server: 188.241.241.29
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?Telegram🇨🇳+@WangCai2=
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 🇨🇳TW 2
+    type: ss
+    server: 125.227.233.197
+    port: 2053
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: AT_6
+    type: trojan
+    server: 152.53.200.167
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 🇸🇬新加坡SG 007 0.5MB/s
+    type: ss
+    server: 8.219.154.217
+    port: 8443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇯🇵 日本 01
+    type: ss
+    server: 202.84.53.85
+    port: 14740
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: AT_7
+    type: trojan
+    server: 152.53.60.198
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+  - name: AT_8
+    type: trojan
+    server: 152.53.200.167
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: true
+    tls: true
+    ws-opts:
+      path: /
+  - name: AT_9
+    type: trojan
+    server: 152.53.200.98
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: true
+    tls: true
+    ws-opts:
+      path: //
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 5D-美国 -0x-18
+    type: vless
+    server: 94.131.101.135
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 5D-荷兰 -0x-05
+    type: vless
+    server: 185.243.112.61
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 5D-法国 -0x-03
+    type: vless
+    server: 188.130.207.92
+    port: 8443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560&Telegram🇨🇳+@WangCai2
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 5D-美国 -0x-09
+    type: vless
+    server: 192.200.160.19
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: sni.111000.v6.navy
+  - name: AT_10
+    type: trojan
+    server: 152.53.60.198
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 5D-瑞典 -0x-01
+    type: vless
+    server: 31.128.32.98
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: AT_11
+    type: trojan
+    server: 152.53.200.98
+    port: 8444
+    password: trojan
+    sni: jflsjlaf.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: jflsjlaf.pages.dev
+  - name: 🇸🇬新加坡SG 006 1.8MB/s
+    type: ss
+    server: 47.237.71.245
+    port: 15430
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 🇯🇵 JP 152 | ⬇️ 1MB/s
+    type: ss
+    server: 46.246.96.59
+    port: 8443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 5D-香港 -0x-06
+    type: vless
+    server: 222.167.202.15
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.15:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_31
+    type: vless
+    server: 222.167.202.14
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.14:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_32
+    type: vless
+    server: 222.167.202.16
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.16:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_33
+    type: vless
+    server: 222.167.202.60
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.60:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_34
+    type: vless
+    server: 222.167.202.50
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.50:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_35
+    type: vless
+    server: 222.167.202.4
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.4:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-香港 -0x-02
+    type: vless
+    server: 222.167.202.4
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.4:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_36
+    type: vless
+    server: 222.167.202.16
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.16:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_37
+    type: vless
+    server: 222.167.202.45
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.45:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-香港 -0x-12
+    type: vless
+    server: 222.167.202.2
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.2:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_38
+    type: vless
+    server: 222.167.202.52
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.52:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_39
+    type: vless
+    server: 222.167.202.3
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.3:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_40
+    type: vless
+    server: 222.167.202.21
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.21:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-意大利 -0x-04
+    type: vless
+    server: 222.167.202.10
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.10:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-法国 -0x-02
+    type: vless
+    server: 217.60.252.232
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: HK_41
+    type: vless
+    server: 222.167.202.50
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.50:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_42
+    type: ss
+    server: 47.242.145.136
+    port: 8001
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: HK_43
+    type: vless
+    server: 222.167.202.2
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.2:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_44
+    type: vless
+    server: 222.167.202.35
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.35:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇭🇰 HK 054 | ⬇️ 2MB/s
+    type: ss
+    server: 103.181.177.88
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: 🇯🇵 JP 157 | ⬇️ 2MB/s
+    type: ss
+    server: 94.141.123.231
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: 01-WS-030101.xyz
+    type: vless
+    server: bestcf.030101.xyz
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.dynv6.net
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560&proxyip=ip.111000.de5.net:443
+      headers:
+        Host: sni.111000.dynv6.net
+  - name: 🇭🇰 HK 065 | ⬇️ 4MB/s
+    type: ss
+    server: 139.162.141.75
+    port: 443
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: /14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\=2560
+  - name: HK_45
+    type: vless
+    server: 222.167.202.21
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.21:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-瑞典 -0x-02
+    type: vless
+    server: 185.82.126.185
+    port: 2053
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 意大利
+    type: vless
+    server: 222.167.202.36
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.36:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-意大利 -0x-05
+    type: vless
+    server: 222.167.202.60
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.60:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 意大利3
+    type: vless
+    server: 222.167.202.23
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.23:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_46
+    type: vless
+    server: 222.167.202.32
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.32:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_47
+    type: vless
+    server: 222.167.202.3
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.3:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_48
+    type: vless
+    server: 222.167.202.47
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.47:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-香港 -0x-08
+    type: vless
+    server: 222.167.202.52
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.52:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-意大利 -0x-03
+    type: vless
+    server: 222.167.202.32
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.32:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-香港 -0x-05
+    type: vless
+    server: 222.167.202.33
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.33:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇭🇰 香港 02
+    type: vless
+    server: 222.167.202.14
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.14:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-香港 -0x-11
+    type: vless
+    server: 222.167.202.47
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.47:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_49
+    type: vless
+    server: 222.167.202.45
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.45:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-加拿大 -0x-01
+    type: vless
+    server: 77.221.152.21
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 意大利_1
+    type: vless
+    server: 222.167.202.70
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.70:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_50
+    type: vless
+    server: 222.167.202.35
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.35:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_51
+    type: vless
+    server: 222.167.202.22
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.22:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇭🇰 香港 05
+    type: vless
+    server: 222.167.202.6
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.6:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: HK_52
+    type: vless
+    server: 222.167.202.22
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    ws-opts:
+      path: /222.167.202.22:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 5D-意大利 -0x-01
+    type: vless
+    server: 222.167.202.26
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.26:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 香港
+    type: vless
+    server: 222.167.202.36
+    port: 7443
+    uuid: 06ef598c-1555-4887-b3f9-08214a2f6792
+    network: ws
+    servername: 2026.hhhhh.eu.org
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /222.167.202.36:7443
+      headers:
+        Host: 2026.hhhhh.eu.org
+  - name: 🇸🇬 新加坡 03
+    type: ss
+    server: 199.181.197.38
+    port: 443
+    cipher: none
+    password: 3e96ef7d-8637-42c2-ac73-75182196e755
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: mfvpn.fuchen.indevs.in
+      path: 3e96ef7d-8637-42c2-ac73-75182196e755/?ed\=2560
+  - name: NL_2
+    type: trojan
+    server: 94.131.105.125
+    port: 4443
+    password: strong-secret-pass-777
+    skip-cert-verify: true
+    tls: true
+  - name: 🇨🇦 CA 144 | ⬇️ 1MB/s
+    type: vless
+    server: 135.84.74.43
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: NL_3
+    type: trojan
+    server: 94.131.105.125
+    port: 4443
+    password: strong-secret-pass-777
+    sni: 94.131.105.125
+    skip-cert-verify: true
+    tls: true
+  - name: 🇨🇦 CA 139 | ⬇️ 1MB/s
+    type: vless
+    server: 192.200.160.19
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    servername: sni.111000.v6.navy
+    tls: true
+    client-fingerprint: chrome
+    ws-opts:
+      path: /
+      headers:
+        Host: sni.111000.v6.navy
+  - name: 🇯🇵 日本 05_1
+    type: ss
+    server: 202.84.53.85
+    port: 17892
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+  - name: 🇯🇵 日本 04
+    type: ss
+    server: 202.84.53.85
+    port: 11738
+    cipher: none
+    password: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ylnhh.us.ci
+      path: 14b02e2a-8930-4afb-8412-ea4a4954ca5b/?ed\\
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - 🇭🇰 香港 07
+      - 🇸🇬 新加坡 | SGP
+      - 🇭🇰 香港 | HKG
+      - 00-Trojan-jp-AI
+      - 02-WS1
+      - 00-WS-jp-AI
+      - 02-Trojan1
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - " JP-ss"
+      - KR-ss
+      - TW-ss
+      - HK-ss
+      - HK
+      - 🇯🇵 日本 08
+      - 🇭🇰 香港 07_1
+      - 🇯🇵 日本 08_1
+      - 新加坡11
+      - 🇯🇵 日本 09
+      - 🇺🇸 美国 14
+      - 03-WS-cloudflare88
+      - 🇸🇬 新加坡 078
+      - SG-ss
+      - 🇯🇵 日本 14
+      - JP-ss_1
+      - HK-ss_1
+      - 🇰🇷 韩国 01
+      - 🇺🇸 美国 10
+      - 🇺🇸 美国 13
+      - 🇭🇰 香港 | HKG_1
+      - 🇰🇷 韩国 04
+      - 美国44
+      - 美国023
+      - 🇭🇰 香港 | HKG_2
+      - 🇩🇪 德国 13
+      - HK_1
+      - 🇺🇸 美国 | USA 5
+      - 01-Trojan-030101.xyz
+      - 英国58
+      - 美国38
+      - 美国33
+      - 香港47
+      - 英国 09
+      - 🇬🇧 GB_39
+      - 美国35
+      - 🇺🇸 美国 | USA 4
+      - AT
+      - 🇮🇷 伊朗
+      - 美国32
+      - 美国33_1
+      - 美国51
+      - 新加坡37
+      - 新加坡11_1
+      - 🇯🇵 日本 | JPN
+      - AT_1
+      - 美国38_1
+      - 美国32_1
+      - AT_c017f_0001
+      - 🇸🇪 瑞典 | SWE
+      - US
+      - 美国12
+      - AT_2
+      - NL
+      - 香港54
+      - AT_3
+      - 美国45
+      - 美国32_2
+      - AT_4
+      - 美国331
+      - 🇯🇵 日本 05
+      - AT_5
+      - 🇩🇪 德国 | DEU
+      - 🇹🇼 台湾 03
+      - NL_1
+      - HK_2
+      - HK_3
+      - HK_4
+      - HK_5
+      - 美国34
+      - HK_6
+      - HK_7
+      - HK_8
+      - HK_9
+      - HK_c017f_0047
+      - HK_10
+      - HK_11
+      - HK_12
+      - HK_c017f_0053
+      - HK_c017f_0054
+      - HK_13
+      - HK_14
+      - HK_15
+      - HK_16
+      - 美国35_1
+      - HK_17
+      - 美国46
+      - HK_18
+      - IR_c017f_0059
+      - HK_19
+      - HK_20
+      - HK_c017f_0049
+      - 🇮🇹 意大利 | ITA 3
+      - 🇺🇸 美国 | USA
+      - HK_c017f_0046
+      - HK_21
+      - HK_22
+      - HK_23
+      - HK_c017f_0040
+      - HK_24
+      - HK_25
+      - 🇯🇵 日本 | JPN_1
+      - HK_26
+      - HK_27
+      - HK_28
+      - 香港12
+      - 香港12_1
+      - HK_29
+      - 🇭🇰 香港 | HKG_3
+      - 🇯🇵 日本 | JPN_2
+      - 01-1
+      - 🇯🇵 日本 06
+      - 🇯🇵 日本 07
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇯🇵 日本 | JPN_3
+      - 新加坡365
+      - 日本365
+      - 美国365
+      - 美国365_1
+      - 美国365_2
+      - 美国231
+      - 美国365_3
+      - 英国232
+      - 美国365_4
+      - 美国365_5
+      - 英国233
+      - 英国234
+      - 英国235
+      - 英国236
+      - 英国237
+      - 英国238
+      - 美国365_6
+      - 美国239
+      - 英国251
+      - 德国252
+      - 英国253
+      - 美国254
+      - 香港255
+      - 英国256
+      - 英国257
+      - 英国258
+      - 英国259
+      - 美国365_7
+      - 美国365_8
+      - 荷兰365
+      - 韩国365
+      - 美国365_9
+      - 美国365_10
+      - 英国365
+      - 美国365_11
+      - 加拿大365
+      - 美国365_12
+      - 美国249
+      - 香港365
+      - 美国365_13
+      - 香港365_1
+      - 香港365_2
+      - 香港365_3
+      - 美国365_14
+      - 香港365_4
+      - 香港365_5
+      - 香港365_6
+      - 香港365_7
+      - 香港248
+      - 香港365_8
+      - 美国365_15
+      - 香港365_9
+      - 香港365_10
+      - 香港365_11
+      - 香港365_12
+      - 香港365_13
+      - 香港365_14
+      - 澳洲365
+      - 香港365_15
+      - 美国365_16
+      - 美国365_17
+      - 香港365_16
+      - 香港365_17
+      - 香港365_18
+      - 香港365_19
+      - 香港365_20
+      - 美国365_18
+      - 美国365_19
+      - 美国365_20
+      - 美国365_21
+      - 美国365_22
+      - 日本365_1
+      - 美国365_23
+      - 美国365_24
+      - 韩国365_1
+      - 法国365
+      - 美国365_25
+      - 美国247
+      - 美国246
+      - 美国245
+      - 美国244
+      - 美国243
+      - 美国242
+      - 美国241
+      - TR TROJAN-85 | free-nodes
+      - GB VLESS-92 | free-nodes
+      - DE VLESS-132 | free-nodes
+      - 英国 11
+      - 英国 22
+      - 英国 33
+      - IR_a412a_0034
+      - NL_a412a_0040
+      - AT_a412a_0002
+      - LV_a412a_0038
+      - AT_a412a_0001
+      - US_a412a_0044
+      - NL_a412a_0039
+      - HK_a412a_0014
+      - 🇸🇬 新加坡 | SGP 2
+      - 🇺🇸 美国 | USA 3
+      - 🇺🇸 美国 | USA 2
+      - 🇭🇰 香港 | HKG 25
+      - 🇯🇵 日本 | JPN_4
+      - 🇭🇰 香港 | HKG_4
+      - 🇭🇰 香港 | HKG_5
+      - 🇭🇰 香港 | HKG_6
+      - 🇹🇼 🇨🇳 台湾 | TWN
+      - 🇫🇷 法国 | FRA
+      - 🇺🇸 美国 | USA_1
+      - 🇺🇸 美国 | USA_2
+      - 🇭🇰 香港 | HKG_7
+      - 🇯🇵 日本 | JPN_5
+      - 🇦🇪 阿联酋 | ARE
+      - 🇱🇻 拉脱维亚 | LVA
+      - 🇯🇵 日本 | JPN_6
+      - 🇸🇨 塞舌尔 | SYC
+      - 🇮🇹 意大利 | ITA
+      - 🇮🇹 意大利 | ITA_1
+      - 🇯🇵 日本 | JPN_7
+      - 🇯🇵 日本 | JPN_8
+      - 🇮🇹 意大利 | ITA_2
+      - 🇭🇰 香港 | HKG_8
+      - 🇮🇹 意大利 | ITA_3
+      - 🇮🇹 意大利 | ITA_4
+      - 🇱🇻 拉脱维亚 | LVA_1
+      - 🇱🇻 拉脱维亚 | LVA_2
+      - 🇭🇰 香港 | HKG_9
+      - 🇭🇰 香港 | HKG_10
+      - 🇺🇦 乌克兰 | UKR
+      - 🇯🇵 日本 | JPN_9
+      - 🇱🇻 拉脱维亚 | LVA_3
+      - 🇭🇰 香港 | HKG_11
+      - 🇭🇰 香港 | HKG_12
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_1
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_2
+      - 🇨🇳_CN_中国->🇺🇸_US_美国
+      - 🇺🇸_US_美国->🇳🇿_NZ_新西兰
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_2
+      - 🇭🇰香港HK 005 0.5MB/s
+      - HK_30
+      - 🇯🇵 JP 245 | ⬇️ 18MB/s
+      - 🇯🇵日本JP 006 12.9MB/s
+      - 🇯🇵 JP 177 | ⬇️ 13MB/s
+      - 00-WS-jp-AI_1
+      - HK-ss_2
+      - 🇯🇵 JP 069 | ⬇️ 9MB/s
+      - 🇯🇵 日本 09_1
+      - 00-Trojan-jp-AI_1
+      - 🇭🇰HK 09
+      - 🇸🇬新加坡SG 005 1.5MB/s
+      - 02-Trojan-saas.sin.fan
+      - 🇯🇵 JP 124 | ⬇️ 5MB/s
+      - 🇭🇰HK 06
+      - 02-WS-saas.sin.fan
+      - 🇯🇵 JP 065 | ⬇️ 2MB/s
+      - 🇺🇸 美国 13_1
+      - 🇯🇵 日本 08_2
+      - 03-WS-cloudflare88_1
+      - 🇸🇬新加坡SG 019 10.4MB/s
+      - 🇭🇰 HK 001 | ⬇️ 20MB/s
+      - 🇭🇰 HK 104 | ⬇️ 3MB/s
+      - 🇯🇵 日本 14_1
+      - 🇯🇵 JP 149 | ⬇️ 3MB/s
+      - 🇭🇰 香港 07_2
+      - 🇸🇬新加坡SG 017 7.0MB/s
+      - 🇯🇵 JP 075 | ⬇️ 2MB/s
+      - 🇭🇰HK 13
+      - 🇭🇰 HK 032 | ⬇️ 5MB/s
+      - 🇭🇰 HK 221 | ⬇️ 3MB/s
+      - 🇭🇰 HK 092 | ⬇️ 1MB/s
+      - 🇭🇰 HK 086 | ⬇️ 1MB/s
+      - 🇭🇰 HK 129 | ⬇️ 3MB/s
+      - 🇭🇰 HK 133 | ⬇️ 1MB/s
+      - 🇰🇷 韩国 02
+      - 🇺🇸 美国 25
+      - 🇬🇧 GB_37
+      - 🇩🇪 德国 01
+      - 🇬🇧 GB_35
+      - 德国
+      - 🇩🇪 德国 02
+      - 🇬🇧 GB_36
+      - 01-Trojan-030101.xyz_1
+      - 🇨🇳TW 3
+      - 🇹🇼 台湾 02
+      - 🇭🇰 HK 081 | ⬇️ 1MB/s
+      - 🇨🇦 CA 229 | ⬇️ 1MB/s
+      - 🇨🇳TW 2
+      - AT_6
+      - 🇸🇬新加坡SG 007 0.5MB/s
+      - 🇯🇵 日本 01
+      - AT_7
+      - AT_8
+      - AT_9
+      - 5D-美国 -0x-18
+      - 5D-荷兰 -0x-05
+      - 5D-法国 -0x-03
+      - 5D-美国 -0x-09
+      - AT_10
+      - 5D-瑞典 -0x-01
+      - AT_11
+      - 🇸🇬新加坡SG 006 1.8MB/s
+      - 🇯🇵 JP 152 | ⬇️ 1MB/s
+      - 5D-香港 -0x-06
+      - HK_31
+      - HK_32
+      - HK_33
+      - HK_34
+      - HK_35
+      - 5D-香港 -0x-02
+      - HK_36
+      - HK_37
+      - 5D-香港 -0x-12
+      - HK_38
+      - HK_39
+      - HK_40
+      - 5D-意大利 -0x-04
+      - 5D-法国 -0x-02
+      - HK_41
+      - HK_42
+      - HK_43
+      - HK_44
+      - 🇭🇰 HK 054 | ⬇️ 2MB/s
+      - 🇯🇵 JP 157 | ⬇️ 2MB/s
+      - 01-WS-030101.xyz
+      - 🇭🇰 HK 065 | ⬇️ 4MB/s
+      - HK_45
+      - 5D-瑞典 -0x-02
+      - 意大利
+      - 5D-意大利 -0x-05
+      - 意大利3
+      - HK_46
+      - HK_47
+      - HK_48
+      - 5D-香港 -0x-08
+      - 5D-意大利 -0x-03
+      - 5D-香港 -0x-05
+      - 🇭🇰 香港 02
+      - 5D-香港 -0x-11
+      - HK_49
+      - 5D-加拿大 -0x-01
+      - 意大利_1
+      - HK_50
+      - HK_51
+      - 🇭🇰 香港 05
+      - HK_52
+      - 5D-意大利 -0x-01
+      - 香港
+      - 🇸🇬 新加坡 03
+      - NL_2
+      - 🇨🇦 CA 144 | ⬇️ 1MB/s
+      - NL_3
+      - 🇨🇦 CA 139 | ⬇️ 1MB/s
+      - 🇯🇵 日本 05_1
+      - 🇯🇵 日本 04
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - 🇭🇰 香港 07
+      - 🇸🇬 新加坡 | SGP
+      - 🇭🇰 香港 | HKG
+      - 00-Trojan-jp-AI
+      - 02-WS1
+      - 00-WS-jp-AI
+      - 02-Trojan1
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - " JP-ss"
+      - KR-ss
+      - TW-ss
+      - HK-ss
+      - HK
+      - 🇯🇵 日本 08
+      - 🇭🇰 香港 07_1
+      - 🇯🇵 日本 08_1
+      - 新加坡11
+      - 🇯🇵 日本 09
+      - 🇺🇸 美国 14
+      - 03-WS-cloudflare88
+      - 🇸🇬 新加坡 078
+      - SG-ss
+      - 🇯🇵 日本 14
+      - JP-ss_1
+      - HK-ss_1
+      - 🇰🇷 韩国 01
+      - 🇺🇸 美国 10
+      - 🇺🇸 美国 13
+      - 🇭🇰 香港 | HKG_1
+      - 🇰🇷 韩国 04
+      - 美国44
+      - 美国023
+      - 🇭🇰 香港 | HKG_2
+      - 🇩🇪 德国 13
+      - HK_1
+      - 🇺🇸 美国 | USA 5
+      - 01-Trojan-030101.xyz
+      - 英国58
+      - 美国38
+      - 美国33
+      - 香港47
+      - 英国 09
+      - 🇬🇧 GB_39
+      - 美国35
+      - 🇺🇸 美国 | USA 4
+      - AT
+      - 🇮🇷 伊朗
+      - 美国32
+      - 美国33_1
+      - 美国51
+      - 新加坡37
+      - 新加坡11_1
+      - 🇯🇵 日本 | JPN
+      - AT_1
+      - 美国38_1
+      - 美国32_1
+      - AT_c017f_0001
+      - 🇸🇪 瑞典 | SWE
+      - US
+      - 美国12
+      - AT_2
+      - NL
+      - 香港54
+      - AT_3
+      - 美国45
+      - 美国32_2
+      - AT_4
+      - 美国331
+      - 🇯🇵 日本 05
+      - AT_5
+      - 🇩🇪 德国 | DEU
+      - 🇹🇼 台湾 03
+      - NL_1
+      - HK_2
+      - HK_3
+      - HK_4
+      - HK_5
+      - 美国34
+      - HK_6
+      - HK_7
+      - HK_8
+      - HK_9
+      - HK_c017f_0047
+      - HK_10
+      - HK_11
+      - HK_12
+      - HK_c017f_0053
+      - HK_c017f_0054
+      - HK_13
+      - HK_14
+      - HK_15
+      - HK_16
+      - 美国35_1
+      - HK_17
+      - 美国46
+      - HK_18
+      - IR_c017f_0059
+      - HK_19
+      - HK_20
+      - HK_c017f_0049
+      - 🇮🇹 意大利 | ITA 3
+      - 🇺🇸 美国 | USA
+      - HK_c017f_0046
+      - HK_21
+      - HK_22
+      - HK_23
+      - HK_c017f_0040
+      - HK_24
+      - HK_25
+      - 🇯🇵 日本 | JPN_1
+      - HK_26
+      - HK_27
+      - HK_28
+      - 香港12
+      - 香港12_1
+      - HK_29
+      - 🇭🇰 香港 | HKG_3
+      - 🇯🇵 日本 | JPN_2
+      - 01-1
+      - 🇯🇵 日本 06
+      - 🇯🇵 日本 07
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇯🇵 日本 | JPN_3
+      - 新加坡365
+      - 日本365
+      - 美国365
+      - 美国365_1
+      - 美国365_2
+      - 美国231
+      - 美国365_3
+      - 英国232
+      - 美国365_4
+      - 美国365_5
+      - 英国233
+      - 英国234
+      - 英国235
+      - 英国236
+      - 英国237
+      - 英国238
+      - 美国365_6
+      - 美国239
+      - 英国251
+      - 德国252
+      - 英国253
+      - 美国254
+      - 香港255
+      - 英国256
+      - 英国257
+      - 英国258
+      - 英国259
+      - 美国365_7
+      - 美国365_8
+      - 荷兰365
+      - 韩国365
+      - 美国365_9
+      - 美国365_10
+      - 英国365
+      - 美国365_11
+      - 加拿大365
+      - 美国365_12
+      - 美国249
+      - 香港365
+      - 美国365_13
+      - 香港365_1
+      - 香港365_2
+      - 香港365_3
+      - 美国365_14
+      - 香港365_4
+      - 香港365_5
+      - 香港365_6
+      - 香港365_7
+      - 香港248
+      - 香港365_8
+      - 美国365_15
+      - 香港365_9
+      - 香港365_10
+      - 香港365_11
+      - 香港365_12
+      - 香港365_13
+      - 香港365_14
+      - 澳洲365
+      - 香港365_15
+      - 美国365_16
+      - 美国365_17
+      - 香港365_16
+      - 香港365_17
+      - 香港365_18
+      - 香港365_19
+      - 香港365_20
+      - 美国365_18
+      - 美国365_19
+      - 美国365_20
+      - 美国365_21
+      - 美国365_22
+      - 日本365_1
+      - 美国365_23
+      - 美国365_24
+      - 韩国365_1
+      - 法国365
+      - 美国365_25
+      - 美国247
+      - 美国246
+      - 美国245
+      - 美国244
+      - 美国243
+      - 美国242
+      - 美国241
+      - TR TROJAN-85 | free-nodes
+      - GB VLESS-92 | free-nodes
+      - DE VLESS-132 | free-nodes
+      - 英国 11
+      - 英国 22
+      - 英国 33
+      - IR_a412a_0034
+      - NL_a412a_0040
+      - AT_a412a_0002
+      - LV_a412a_0038
+      - AT_a412a_0001
+      - US_a412a_0044
+      - NL_a412a_0039
+      - HK_a412a_0014
+      - 🇸🇬 新加坡 | SGP 2
+      - 🇺🇸 美国 | USA 3
+      - 🇺🇸 美国 | USA 2
+      - 🇭🇰 香港 | HKG 25
+      - 🇯🇵 日本 | JPN_4
+      - 🇭🇰 香港 | HKG_4
+      - 🇭🇰 香港 | HKG_5
+      - 🇭🇰 香港 | HKG_6
+      - 🇹🇼 🇨🇳 台湾 | TWN
+      - 🇫🇷 法国 | FRA
+      - 🇺🇸 美国 | USA_1
+      - 🇺🇸 美国 | USA_2
+      - 🇭🇰 香港 | HKG_7
+      - 🇯🇵 日本 | JPN_5
+      - 🇦🇪 阿联酋 | ARE
+      - 🇱🇻 拉脱维亚 | LVA
+      - 🇯🇵 日本 | JPN_6
+      - 🇸🇨 塞舌尔 | SYC
+      - 🇮🇹 意大利 | ITA
+      - 🇮🇹 意大利 | ITA_1
+      - 🇯🇵 日本 | JPN_7
+      - 🇯🇵 日本 | JPN_8
+      - 🇮🇹 意大利 | ITA_2
+      - 🇭🇰 香港 | HKG_8
+      - 🇮🇹 意大利 | ITA_3
+      - 🇮🇹 意大利 | ITA_4
+      - 🇱🇻 拉脱维亚 | LVA_1
+      - 🇱🇻 拉脱维亚 | LVA_2
+      - 🇭🇰 香港 | HKG_9
+      - 🇭🇰 香港 | HKG_10
+      - 🇺🇦 乌克兰 | UKR
+      - 🇯🇵 日本 | JPN_9
+      - 🇱🇻 拉脱维亚 | LVA_3
+      - 🇭🇰 香港 | HKG_11
+      - 🇭🇰 香港 | HKG_12
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_1
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_2
+      - 🇨🇳_CN_中国->🇺🇸_US_美国
+      - 🇺🇸_US_美国->🇳🇿_NZ_新西兰
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_2
+      - 🇭🇰香港HK 005 0.5MB/s
+      - HK_30
+      - 🇯🇵 JP 245 | ⬇️ 18MB/s
+      - 🇯🇵日本JP 006 12.9MB/s
+      - 🇯🇵 JP 177 | ⬇️ 13MB/s
+      - 00-WS-jp-AI_1
+      - HK-ss_2
+      - 🇯🇵 JP 069 | ⬇️ 9MB/s
+      - 🇯🇵 日本 09_1
+      - 00-Trojan-jp-AI_1
+      - 🇭🇰HK 09
+      - 🇸🇬新加坡SG 005 1.5MB/s
+      - 02-Trojan-saas.sin.fan
+      - 🇯🇵 JP 124 | ⬇️ 5MB/s
+      - 🇭🇰HK 06
+      - 02-WS-saas.sin.fan
+      - 🇯🇵 JP 065 | ⬇️ 2MB/s
+      - 🇺🇸 美国 13_1
+      - 🇯🇵 日本 08_2
+      - 03-WS-cloudflare88_1
+      - 🇸🇬新加坡SG 019 10.4MB/s
+      - 🇭🇰 HK 001 | ⬇️ 20MB/s
+      - 🇭🇰 HK 104 | ⬇️ 3MB/s
+      - 🇯🇵 日本 14_1
+      - 🇯🇵 JP 149 | ⬇️ 3MB/s
+      - 🇭🇰 香港 07_2
+      - 🇸🇬新加坡SG 017 7.0MB/s
+      - 🇯🇵 JP 075 | ⬇️ 2MB/s
+      - 🇭🇰HK 13
+      - 🇭🇰 HK 032 | ⬇️ 5MB/s
+      - 🇭🇰 HK 221 | ⬇️ 3MB/s
+      - 🇭🇰 HK 092 | ⬇️ 1MB/s
+      - 🇭🇰 HK 086 | ⬇️ 1MB/s
+      - 🇭🇰 HK 129 | ⬇️ 3MB/s
+      - 🇭🇰 HK 133 | ⬇️ 1MB/s
+      - 🇰🇷 韩国 02
+      - 🇺🇸 美国 25
+      - 🇬🇧 GB_37
+      - 🇩🇪 德国 01
+      - 🇬🇧 GB_35
+      - 德国
+      - 🇩🇪 德国 02
+      - 🇬🇧 GB_36
+      - 01-Trojan-030101.xyz_1
+      - 🇨🇳TW 3
+      - 🇹🇼 台湾 02
+      - 🇭🇰 HK 081 | ⬇️ 1MB/s
+      - 🇨🇦 CA 229 | ⬇️ 1MB/s
+      - 🇨🇳TW 2
+      - AT_6
+      - 🇸🇬新加坡SG 007 0.5MB/s
+      - 🇯🇵 日本 01
+      - AT_7
+      - AT_8
+      - AT_9
+      - 5D-美国 -0x-18
+      - 5D-荷兰 -0x-05
+      - 5D-法国 -0x-03
+      - 5D-美国 -0x-09
+      - AT_10
+      - 5D-瑞典 -0x-01
+      - AT_11
+      - 🇸🇬新加坡SG 006 1.8MB/s
+      - 🇯🇵 JP 152 | ⬇️ 1MB/s
+      - 5D-香港 -0x-06
+      - HK_31
+      - HK_32
+      - HK_33
+      - HK_34
+      - HK_35
+      - 5D-香港 -0x-02
+      - HK_36
+      - HK_37
+      - 5D-香港 -0x-12
+      - HK_38
+      - HK_39
+      - HK_40
+      - 5D-意大利 -0x-04
+      - 5D-法国 -0x-02
+      - HK_41
+      - HK_42
+      - HK_43
+      - HK_44
+      - 🇭🇰 HK 054 | ⬇️ 2MB/s
+      - 🇯🇵 JP 157 | ⬇️ 2MB/s
+      - 01-WS-030101.xyz
+      - 🇭🇰 HK 065 | ⬇️ 4MB/s
+      - HK_45
+      - 5D-瑞典 -0x-02
+      - 意大利
+      - 5D-意大利 -0x-05
+      - 意大利3
+      - HK_46
+      - HK_47
+      - HK_48
+      - 5D-香港 -0x-08
+      - 5D-意大利 -0x-03
+      - 5D-香港 -0x-05
+      - 🇭🇰 香港 02
+      - 5D-香港 -0x-11
+      - HK_49
+      - 5D-加拿大 -0x-01
+      - 意大利_1
+      - HK_50
+      - HK_51
+      - 🇭🇰 香港 05
+      - HK_52
+      - 5D-意大利 -0x-01
+      - 香港
+      - 🇸🇬 新加坡 03
+      - NL_2
+      - 🇨🇦 CA 144 | ⬇️ 1MB/s
+      - NL_3
+      - 🇨🇦 CA 139 | ⬇️ 1MB/s
+      - 🇯🇵 日本 05_1
+      - 🇯🇵 日本 04
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 🇭🇰 香港 07
+      - 🇸🇬 新加坡 | SGP
+      - 🇭🇰 香港 | HKG
+      - 00-Trojan-jp-AI
+      - 02-WS1
+      - 00-WS-jp-AI
+      - 02-Trojan1
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - " JP-ss"
+      - KR-ss
+      - TW-ss
+      - HK-ss
+      - HK
+      - 🇯🇵 日本 08
+      - 🇭🇰 香港 07_1
+      - 🇯🇵 日本 08_1
+      - 新加坡11
+      - 🇯🇵 日本 09
+      - 🇺🇸 美国 14
+      - 03-WS-cloudflare88
+      - 🇸🇬 新加坡 078
+      - SG-ss
+      - 🇯🇵 日本 14
+      - JP-ss_1
+      - HK-ss_1
+      - 🇰🇷 韩国 01
+      - 🇺🇸 美国 10
+      - 🇺🇸 美国 13
+      - 🇭🇰 香港 | HKG_1
+      - 🇰🇷 韩国 04
+      - 美国44
+      - 美国023
+      - 🇭🇰 香港 | HKG_2
+      - 🇩🇪 德国 13
+      - HK_1
+      - 🇺🇸 美国 | USA 5
+      - 01-Trojan-030101.xyz
+      - 英国58
+      - 美国38
+      - 美国33
+      - 香港47
+      - 英国 09
+      - 🇬🇧 GB_39
+      - 美国35
+      - 🇺🇸 美国 | USA 4
+      - AT
+      - 🇮🇷 伊朗
+      - 美国32
+      - 美国33_1
+      - 美国51
+      - 新加坡37
+      - 新加坡11_1
+      - 🇯🇵 日本 | JPN
+      - AT_1
+      - 美国38_1
+      - 美国32_1
+      - AT_c017f_0001
+      - 🇸🇪 瑞典 | SWE
+      - US
+      - 美国12
+      - AT_2
+      - NL
+      - 香港54
+      - AT_3
+      - 美国45
+      - 美国32_2
+      - AT_4
+      - 美国331
+      - 🇯🇵 日本 05
+      - AT_5
+      - 🇩🇪 德国 | DEU
+      - 🇹🇼 台湾 03
+      - NL_1
+      - HK_2
+      - HK_3
+      - HK_4
+      - HK_5
+      - 美国34
+      - HK_6
+      - HK_7
+      - HK_8
+      - HK_9
+      - HK_c017f_0047
+      - HK_10
+      - HK_11
+      - HK_12
+      - HK_c017f_0053
+      - HK_c017f_0054
+      - HK_13
+      - HK_14
+      - HK_15
+      - HK_16
+      - 美国35_1
+      - HK_17
+      - 美国46
+      - HK_18
+      - IR_c017f_0059
+      - HK_19
+      - HK_20
+      - HK_c017f_0049
+      - 🇮🇹 意大利 | ITA 3
+      - 🇺🇸 美国 | USA
+      - HK_c017f_0046
+      - HK_21
+      - HK_22
+      - HK_23
+      - HK_c017f_0040
+      - HK_24
+      - HK_25
+      - 🇯🇵 日本 | JPN_1
+      - HK_26
+      - HK_27
+      - HK_28
+      - 香港12
+      - 香港12_1
+      - HK_29
+      - 🇭🇰 香港 | HKG_3
+      - 🇯🇵 日本 | JPN_2
+      - 01-1
+      - 🇯🇵 日本 06
+      - 🇯🇵 日本 07
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇯🇵 日本 | JPN_3
+      - 新加坡365
+      - 日本365
+      - 美国365
+      - 美国365_1
+      - 美国365_2
+      - 美国231
+      - 美国365_3
+      - 英国232
+      - 美国365_4
+      - 美国365_5
+      - 英国233
+      - 英国234
+      - 英国235
+      - 英国236
+      - 英国237
+      - 英国238
+      - 美国365_6
+      - 美国239
+      - 英国251
+      - 德国252
+      - 英国253
+      - 美国254
+      - 香港255
+      - 英国256
+      - 英国257
+      - 英国258
+      - 英国259
+      - 美国365_7
+      - 美国365_8
+      - 荷兰365
+      - 韩国365
+      - 美国365_9
+      - 美国365_10
+      - 英国365
+      - 美国365_11
+      - 加拿大365
+      - 美国365_12
+      - 美国249
+      - 香港365
+      - 美国365_13
+      - 香港365_1
+      - 香港365_2
+      - 香港365_3
+      - 美国365_14
+      - 香港365_4
+      - 香港365_5
+      - 香港365_6
+      - 香港365_7
+      - 香港248
+      - 香港365_8
+      - 美国365_15
+      - 香港365_9
+      - 香港365_10
+      - 香港365_11
+      - 香港365_12
+      - 香港365_13
+      - 香港365_14
+      - 澳洲365
+      - 香港365_15
+      - 美国365_16
+      - 美国365_17
+      - 香港365_16
+      - 香港365_17
+      - 香港365_18
+      - 香港365_19
+      - 香港365_20
+      - 美国365_18
+      - 美国365_19
+      - 美国365_20
+      - 美国365_21
+      - 美国365_22
+      - 日本365_1
+      - 美国365_23
+      - 美国365_24
+      - 韩国365_1
+      - 法国365
+      - 美国365_25
+      - 美国247
+      - 美国246
+      - 美国245
+      - 美国244
+      - 美国243
+      - 美国242
+      - 美国241
+      - TR TROJAN-85 | free-nodes
+      - GB VLESS-92 | free-nodes
+      - DE VLESS-132 | free-nodes
+      - 英国 11
+      - 英国 22
+      - 英国 33
+      - IR_a412a_0034
+      - NL_a412a_0040
+      - AT_a412a_0002
+      - LV_a412a_0038
+      - AT_a412a_0001
+      - US_a412a_0044
+      - NL_a412a_0039
+      - HK_a412a_0014
+      - 🇸🇬 新加坡 | SGP 2
+      - 🇺🇸 美国 | USA 3
+      - 🇺🇸 美国 | USA 2
+      - 🇭🇰 香港 | HKG 25
+      - 🇯🇵 日本 | JPN_4
+      - 🇭🇰 香港 | HKG_4
+      - 🇭🇰 香港 | HKG_5
+      - 🇭🇰 香港 | HKG_6
+      - 🇹🇼 🇨🇳 台湾 | TWN
+      - 🇫🇷 法国 | FRA
+      - 🇺🇸 美国 | USA_1
+      - 🇺🇸 美国 | USA_2
+      - 🇭🇰 香港 | HKG_7
+      - 🇯🇵 日本 | JPN_5
+      - 🇦🇪 阿联酋 | ARE
+      - 🇱🇻 拉脱维亚 | LVA
+      - 🇯🇵 日本 | JPN_6
+      - 🇸🇨 塞舌尔 | SYC
+      - 🇮🇹 意大利 | ITA
+      - 🇮🇹 意大利 | ITA_1
+      - 🇯🇵 日本 | JPN_7
+      - 🇯🇵 日本 | JPN_8
+      - 🇮🇹 意大利 | ITA_2
+      - 🇭🇰 香港 | HKG_8
+      - 🇮🇹 意大利 | ITA_3
+      - 🇮🇹 意大利 | ITA_4
+      - 🇱🇻 拉脱维亚 | LVA_1
+      - 🇱🇻 拉脱维亚 | LVA_2
+      - 🇭🇰 香港 | HKG_9
+      - 🇭🇰 香港 | HKG_10
+      - 🇺🇦 乌克兰 | UKR
+      - 🇯🇵 日本 | JPN_9
+      - 🇱🇻 拉脱维亚 | LVA_3
+      - 🇭🇰 香港 | HKG_11
+      - 🇭🇰 香港 | HKG_12
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_1
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_2
+      - 🇨🇳_CN_中国->🇺🇸_US_美国
+      - 🇺🇸_US_美国->🇳🇿_NZ_新西兰
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_2
+      - 🇭🇰香港HK 005 0.5MB/s
+      - HK_30
+      - 🇯🇵 JP 245 | ⬇️ 18MB/s
+      - 🇯🇵日本JP 006 12.9MB/s
+      - 🇯🇵 JP 177 | ⬇️ 13MB/s
+      - 00-WS-jp-AI_1
+      - HK-ss_2
+      - 🇯🇵 JP 069 | ⬇️ 9MB/s
+      - 🇯🇵 日本 09_1
+      - 00-Trojan-jp-AI_1
+      - 🇭🇰HK 09
+      - 🇸🇬新加坡SG 005 1.5MB/s
+      - 02-Trojan-saas.sin.fan
+      - 🇯🇵 JP 124 | ⬇️ 5MB/s
+      - 🇭🇰HK 06
+      - 02-WS-saas.sin.fan
+      - 🇯🇵 JP 065 | ⬇️ 2MB/s
+      - 🇺🇸 美国 13_1
+      - 🇯🇵 日本 08_2
+      - 03-WS-cloudflare88_1
+      - 🇸🇬新加坡SG 019 10.4MB/s
+      - 🇭🇰 HK 001 | ⬇️ 20MB/s
+      - 🇭🇰 HK 104 | ⬇️ 3MB/s
+      - 🇯🇵 日本 14_1
+      - 🇯🇵 JP 149 | ⬇️ 3MB/s
+      - 🇭🇰 香港 07_2
+      - 🇸🇬新加坡SG 017 7.0MB/s
+      - 🇯🇵 JP 075 | ⬇️ 2MB/s
+      - 🇭🇰HK 13
+      - 🇭🇰 HK 032 | ⬇️ 5MB/s
+      - 🇭🇰 HK 221 | ⬇️ 3MB/s
+      - 🇭🇰 HK 092 | ⬇️ 1MB/s
+      - 🇭🇰 HK 086 | ⬇️ 1MB/s
+      - 🇭🇰 HK 129 | ⬇️ 3MB/s
+      - 🇭🇰 HK 133 | ⬇️ 1MB/s
+      - 🇰🇷 韩国 02
+      - 🇺🇸 美国 25
+      - 🇬🇧 GB_37
+      - 🇩🇪 德国 01
+      - 🇬🇧 GB_35
+      - 德国
+      - 🇩🇪 德国 02
+      - 🇬🇧 GB_36
+      - 01-Trojan-030101.xyz_1
+      - 🇨🇳TW 3
+      - 🇹🇼 台湾 02
+      - 🇭🇰 HK 081 | ⬇️ 1MB/s
+      - 🇨🇦 CA 229 | ⬇️ 1MB/s
+      - 🇨🇳TW 2
+      - AT_6
+      - 🇸🇬新加坡SG 007 0.5MB/s
+      - 🇯🇵 日本 01
+      - AT_7
+      - AT_8
+      - AT_9
+      - 5D-美国 -0x-18
+      - 5D-荷兰 -0x-05
+      - 5D-法国 -0x-03
+      - 5D-美国 -0x-09
+      - AT_10
+      - 5D-瑞典 -0x-01
+      - AT_11
+      - 🇸🇬新加坡SG 006 1.8MB/s
+      - 🇯🇵 JP 152 | ⬇️ 1MB/s
+      - 5D-香港 -0x-06
+      - HK_31
+      - HK_32
+      - HK_33
+      - HK_34
+      - HK_35
+      - 5D-香港 -0x-02
+      - HK_36
+      - HK_37
+      - 5D-香港 -0x-12
+      - HK_38
+      - HK_39
+      - HK_40
+      - 5D-意大利 -0x-04
+      - 5D-法国 -0x-02
+      - HK_41
+      - HK_42
+      - HK_43
+      - HK_44
+      - 🇭🇰 HK 054 | ⬇️ 2MB/s
+      - 🇯🇵 JP 157 | ⬇️ 2MB/s
+      - 01-WS-030101.xyz
+      - 🇭🇰 HK 065 | ⬇️ 4MB/s
+      - HK_45
+      - 5D-瑞典 -0x-02
+      - 意大利
+      - 5D-意大利 -0x-05
+      - 意大利3
+      - HK_46
+      - HK_47
+      - HK_48
+      - 5D-香港 -0x-08
+      - 5D-意大利 -0x-03
+      - 5D-香港 -0x-05
+      - 🇭🇰 香港 02
+      - 5D-香港 -0x-11
+      - HK_49
+      - 5D-加拿大 -0x-01
+      - 意大利_1
+      - HK_50
+      - HK_51
+      - 🇭🇰 香港 05
+      - HK_52
+      - 5D-意大利 -0x-01
+      - 香港
+      - 🇸🇬 新加坡 03
+      - NL_2
+      - 🇨🇦 CA 144 | ⬇️ 1MB/s
+      - NL_3
+      - 🇨🇦 CA 139 | ⬇️ 1MB/s
+      - 🇯🇵 日本 05_1
+      - 🇯🇵 日本 04
+  - name: 📲 电报信息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港 07
+      - 🇸🇬 新加坡 | SGP
+      - 🇭🇰 香港 | HKG
+      - 00-Trojan-jp-AI
+      - 02-WS1
+      - 00-WS-jp-AI
+      - 02-Trojan1
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - " JP-ss"
+      - KR-ss
+      - TW-ss
+      - HK-ss
+      - HK
+      - 🇯🇵 日本 08
+      - 🇭🇰 香港 07_1
+      - 🇯🇵 日本 08_1
+      - 新加坡11
+      - 🇯🇵 日本 09
+      - 🇺🇸 美国 14
+      - 03-WS-cloudflare88
+      - 🇸🇬 新加坡 078
+      - SG-ss
+      - 🇯🇵 日本 14
+      - JP-ss_1
+      - HK-ss_1
+      - 🇰🇷 韩国 01
+      - 🇺🇸 美国 10
+      - 🇺🇸 美国 13
+      - 🇭🇰 香港 | HKG_1
+      - 🇰🇷 韩国 04
+      - 美国44
+      - 美国023
+      - 🇭🇰 香港 | HKG_2
+      - 🇩🇪 德国 13
+      - HK_1
+      - 🇺🇸 美国 | USA 5
+      - 01-Trojan-030101.xyz
+      - 英国58
+      - 美国38
+      - 美国33
+      - 香港47
+      - 英国 09
+      - 🇬🇧 GB_39
+      - 美国35
+      - 🇺🇸 美国 | USA 4
+      - AT
+      - 🇮🇷 伊朗
+      - 美国32
+      - 美国33_1
+      - 美国51
+      - 新加坡37
+      - 新加坡11_1
+      - 🇯🇵 日本 | JPN
+      - AT_1
+      - 美国38_1
+      - 美国32_1
+      - AT_c017f_0001
+      - 🇸🇪 瑞典 | SWE
+      - US
+      - 美国12
+      - AT_2
+      - NL
+      - 香港54
+      - AT_3
+      - 美国45
+      - 美国32_2
+      - AT_4
+      - 美国331
+      - 🇯🇵 日本 05
+      - AT_5
+      - 🇩🇪 德国 | DEU
+      - 🇹🇼 台湾 03
+      - NL_1
+      - HK_2
+      - HK_3
+      - HK_4
+      - HK_5
+      - 美国34
+      - HK_6
+      - HK_7
+      - HK_8
+      - HK_9
+      - HK_c017f_0047
+      - HK_10
+      - HK_11
+      - HK_12
+      - HK_c017f_0053
+      - HK_c017f_0054
+      - HK_13
+      - HK_14
+      - HK_15
+      - HK_16
+      - 美国35_1
+      - HK_17
+      - 美国46
+      - HK_18
+      - IR_c017f_0059
+      - HK_19
+      - HK_20
+      - HK_c017f_0049
+      - 🇮🇹 意大利 | ITA 3
+      - 🇺🇸 美国 | USA
+      - HK_c017f_0046
+      - HK_21
+      - HK_22
+      - HK_23
+      - HK_c017f_0040
+      - HK_24
+      - HK_25
+      - 🇯🇵 日本 | JPN_1
+      - HK_26
+      - HK_27
+      - HK_28
+      - 香港12
+      - 香港12_1
+      - HK_29
+      - 🇭🇰 香港 | HKG_3
+      - 🇯🇵 日本 | JPN_2
+      - 01-1
+      - 🇯🇵 日本 06
+      - 🇯🇵 日本 07
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇯🇵 日本 | JPN_3
+      - 新加坡365
+      - 日本365
+      - 美国365
+      - 美国365_1
+      - 美国365_2
+      - 美国231
+      - 美国365_3
+      - 英国232
+      - 美国365_4
+      - 美国365_5
+      - 英国233
+      - 英国234
+      - 英国235
+      - 英国236
+      - 英国237
+      - 英国238
+      - 美国365_6
+      - 美国239
+      - 英国251
+      - 德国252
+      - 英国253
+      - 美国254
+      - 香港255
+      - 英国256
+      - 英国257
+      - 英国258
+      - 英国259
+      - 美国365_7
+      - 美国365_8
+      - 荷兰365
+      - 韩国365
+      - 美国365_9
+      - 美国365_10
+      - 英国365
+      - 美国365_11
+      - 加拿大365
+      - 美国365_12
+      - 美国249
+      - 香港365
+      - 美国365_13
+      - 香港365_1
+      - 香港365_2
+      - 香港365_3
+      - 美国365_14
+      - 香港365_4
+      - 香港365_5
+      - 香港365_6
+      - 香港365_7
+      - 香港248
+      - 香港365_8
+      - 美国365_15
+      - 香港365_9
+      - 香港365_10
+      - 香港365_11
+      - 香港365_12
+      - 香港365_13
+      - 香港365_14
+      - 澳洲365
+      - 香港365_15
+      - 美国365_16
+      - 美国365_17
+      - 香港365_16
+      - 香港365_17
+      - 香港365_18
+      - 香港365_19
+      - 香港365_20
+      - 美国365_18
+      - 美国365_19
+      - 美国365_20
+      - 美国365_21
+      - 美国365_22
+      - 日本365_1
+      - 美国365_23
+      - 美国365_24
+      - 韩国365_1
+      - 法国365
+      - 美国365_25
+      - 美国247
+      - 美国246
+      - 美国245
+      - 美国244
+      - 美国243
+      - 美国242
+      - 美国241
+      - TR TROJAN-85 | free-nodes
+      - GB VLESS-92 | free-nodes
+      - DE VLESS-132 | free-nodes
+      - 英国 11
+      - 英国 22
+      - 英国 33
+      - IR_a412a_0034
+      - NL_a412a_0040
+      - AT_a412a_0002
+      - LV_a412a_0038
+      - AT_a412a_0001
+      - US_a412a_0044
+      - NL_a412a_0039
+      - HK_a412a_0014
+      - 🇸🇬 新加坡 | SGP 2
+      - 🇺🇸 美国 | USA 3
+      - 🇺🇸 美国 | USA 2
+      - 🇭🇰 香港 | HKG 25
+      - 🇯🇵 日本 | JPN_4
+      - 🇭🇰 香港 | HKG_4
+      - 🇭🇰 香港 | HKG_5
+      - 🇭🇰 香港 | HKG_6
+      - 🇹🇼 🇨🇳 台湾 | TWN
+      - 🇫🇷 法国 | FRA
+      - 🇺🇸 美国 | USA_1
+      - 🇺🇸 美国 | USA_2
+      - 🇭🇰 香港 | HKG_7
+      - 🇯🇵 日本 | JPN_5
+      - 🇦🇪 阿联酋 | ARE
+      - 🇱🇻 拉脱维亚 | LVA
+      - 🇯🇵 日本 | JPN_6
+      - 🇸🇨 塞舌尔 | SYC
+      - 🇮🇹 意大利 | ITA
+      - 🇮🇹 意大利 | ITA_1
+      - 🇯🇵 日本 | JPN_7
+      - 🇯🇵 日本 | JPN_8
+      - 🇮🇹 意大利 | ITA_2
+      - 🇭🇰 香港 | HKG_8
+      - 🇮🇹 意大利 | ITA_3
+      - 🇮🇹 意大利 | ITA_4
+      - 🇱🇻 拉脱维亚 | LVA_1
+      - 🇱🇻 拉脱维亚 | LVA_2
+      - 🇭🇰 香港 | HKG_9
+      - 🇭🇰 香港 | HKG_10
+      - 🇺🇦 乌克兰 | UKR
+      - 🇯🇵 日本 | JPN_9
+      - 🇱🇻 拉脱维亚 | LVA_3
+      - 🇭🇰 香港 | HKG_11
+      - 🇭🇰 香港 | HKG_12
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_1
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_2
+      - 🇨🇳_CN_中国->🇺🇸_US_美国
+      - 🇺🇸_US_美国->🇳🇿_NZ_新西兰
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_2
+      - 🇭🇰香港HK 005 0.5MB/s
+      - HK_30
+      - 🇯🇵 JP 245 | ⬇️ 18MB/s
+      - 🇯🇵日本JP 006 12.9MB/s
+      - 🇯🇵 JP 177 | ⬇️ 13MB/s
+      - 00-WS-jp-AI_1
+      - HK-ss_2
+      - 🇯🇵 JP 069 | ⬇️ 9MB/s
+      - 🇯🇵 日本 09_1
+      - 00-Trojan-jp-AI_1
+      - 🇭🇰HK 09
+      - 🇸🇬新加坡SG 005 1.5MB/s
+      - 02-Trojan-saas.sin.fan
+      - 🇯🇵 JP 124 | ⬇️ 5MB/s
+      - 🇭🇰HK 06
+      - 02-WS-saas.sin.fan
+      - 🇯🇵 JP 065 | ⬇️ 2MB/s
+      - 🇺🇸 美国 13_1
+      - 🇯🇵 日本 08_2
+      - 03-WS-cloudflare88_1
+      - 🇸🇬新加坡SG 019 10.4MB/s
+      - 🇭🇰 HK 001 | ⬇️ 20MB/s
+      - 🇭🇰 HK 104 | ⬇️ 3MB/s
+      - 🇯🇵 日本 14_1
+      - 🇯🇵 JP 149 | ⬇️ 3MB/s
+      - 🇭🇰 香港 07_2
+      - 🇸🇬新加坡SG 017 7.0MB/s
+      - 🇯🇵 JP 075 | ⬇️ 2MB/s
+      - 🇭🇰HK 13
+      - 🇭🇰 HK 032 | ⬇️ 5MB/s
+      - 🇭🇰 HK 221 | ⬇️ 3MB/s
+      - 🇭🇰 HK 092 | ⬇️ 1MB/s
+      - 🇭🇰 HK 086 | ⬇️ 1MB/s
+      - 🇭🇰 HK 129 | ⬇️ 3MB/s
+      - 🇭🇰 HK 133 | ⬇️ 1MB/s
+      - 🇰🇷 韩国 02
+      - 🇺🇸 美国 25
+      - 🇬🇧 GB_37
+      - 🇩🇪 德国 01
+      - 🇬🇧 GB_35
+      - 德国
+      - 🇩🇪 德国 02
+      - 🇬🇧 GB_36
+      - 01-Trojan-030101.xyz_1
+      - 🇨🇳TW 3
+      - 🇹🇼 台湾 02
+      - 🇭🇰 HK 081 | ⬇️ 1MB/s
+      - 🇨🇦 CA 229 | ⬇️ 1MB/s
+      - 🇨🇳TW 2
+      - AT_6
+      - 🇸🇬新加坡SG 007 0.5MB/s
+      - 🇯🇵 日本 01
+      - AT_7
+      - AT_8
+      - AT_9
+      - 5D-美国 -0x-18
+      - 5D-荷兰 -0x-05
+      - 5D-法国 -0x-03
+      - 5D-美国 -0x-09
+      - AT_10
+      - 5D-瑞典 -0x-01
+      - AT_11
+      - 🇸🇬新加坡SG 006 1.8MB/s
+      - 🇯🇵 JP 152 | ⬇️ 1MB/s
+      - 5D-香港 -0x-06
+      - HK_31
+      - HK_32
+      - HK_33
+      - HK_34
+      - HK_35
+      - 5D-香港 -0x-02
+      - HK_36
+      - HK_37
+      - 5D-香港 -0x-12
+      - HK_38
+      - HK_39
+      - HK_40
+      - 5D-意大利 -0x-04
+      - 5D-法国 -0x-02
+      - HK_41
+      - HK_42
+      - HK_43
+      - HK_44
+      - 🇭🇰 HK 054 | ⬇️ 2MB/s
+      - 🇯🇵 JP 157 | ⬇️ 2MB/s
+      - 01-WS-030101.xyz
+      - 🇭🇰 HK 065 | ⬇️ 4MB/s
+      - HK_45
+      - 5D-瑞典 -0x-02
+      - 意大利
+      - 5D-意大利 -0x-05
+      - 意大利3
+      - HK_46
+      - HK_47
+      - HK_48
+      - 5D-香港 -0x-08
+      - 5D-意大利 -0x-03
+      - 5D-香港 -0x-05
+      - 🇭🇰 香港 02
+      - 5D-香港 -0x-11
+      - HK_49
+      - 5D-加拿大 -0x-01
+      - 意大利_1
+      - HK_50
+      - HK_51
+      - 🇭🇰 香港 05
+      - HK_52
+      - 5D-意大利 -0x-01
+      - 香港
+      - 🇸🇬 新加坡 03
+      - NL_2
+      - 🇨🇦 CA 144 | ⬇️ 1MB/s
+      - NL_3
+      - 🇨🇦 CA 139 | ⬇️ 1MB/s
+      - 🇯🇵 日本 05_1
+      - 🇯🇵 日本 04
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - 🇭🇰 香港 07
+      - 🇸🇬 新加坡 | SGP
+      - 🇭🇰 香港 | HKG
+      - 00-Trojan-jp-AI
+      - 02-WS1
+      - 00-WS-jp-AI
+      - 02-Trojan1
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - " JP-ss"
+      - KR-ss
+      - TW-ss
+      - HK-ss
+      - HK
+      - 🇯🇵 日本 08
+      - 🇭🇰 香港 07_1
+      - 🇯🇵 日本 08_1
+      - 新加坡11
+      - 🇯🇵 日本 09
+      - 🇺🇸 美国 14
+      - 03-WS-cloudflare88
+      - 🇸🇬 新加坡 078
+      - SG-ss
+      - 🇯🇵 日本 14
+      - JP-ss_1
+      - HK-ss_1
+      - 🇰🇷 韩国 01
+      - 🇺🇸 美国 10
+      - 🇺🇸 美国 13
+      - 🇭🇰 香港 | HKG_1
+      - 🇰🇷 韩国 04
+      - 美国44
+      - 美国023
+      - 🇭🇰 香港 | HKG_2
+      - 🇩🇪 德国 13
+      - HK_1
+      - 🇺🇸 美国 | USA 5
+      - 01-Trojan-030101.xyz
+      - 英国58
+      - 美国38
+      - 美国33
+      - 香港47
+      - 英国 09
+      - 🇬🇧 GB_39
+      - 美国35
+      - 🇺🇸 美国 | USA 4
+      - AT
+      - 🇮🇷 伊朗
+      - 美国32
+      - 美国33_1
+      - 美国51
+      - 新加坡37
+      - 新加坡11_1
+      - 🇯🇵 日本 | JPN
+      - AT_1
+      - 美国38_1
+      - 美国32_1
+      - AT_c017f_0001
+      - 🇸🇪 瑞典 | SWE
+      - US
+      - 美国12
+      - AT_2
+      - NL
+      - 香港54
+      - AT_3
+      - 美国45
+      - 美国32_2
+      - AT_4
+      - 美国331
+      - 🇯🇵 日本 05
+      - AT_5
+      - 🇩🇪 德国 | DEU
+      - 🇹🇼 台湾 03
+      - NL_1
+      - HK_2
+      - HK_3
+      - HK_4
+      - HK_5
+      - 美国34
+      - HK_6
+      - HK_7
+      - HK_8
+      - HK_9
+      - HK_c017f_0047
+      - HK_10
+      - HK_11
+      - HK_12
+      - HK_c017f_0053
+      - HK_c017f_0054
+      - HK_13
+      - HK_14
+      - HK_15
+      - HK_16
+      - 美国35_1
+      - HK_17
+      - 美国46
+      - HK_18
+      - IR_c017f_0059
+      - HK_19
+      - HK_20
+      - HK_c017f_0049
+      - 🇮🇹 意大利 | ITA 3
+      - 🇺🇸 美国 | USA
+      - HK_c017f_0046
+      - HK_21
+      - HK_22
+      - HK_23
+      - HK_c017f_0040
+      - HK_24
+      - HK_25
+      - 🇯🇵 日本 | JPN_1
+      - HK_26
+      - HK_27
+      - HK_28
+      - 香港12
+      - 香港12_1
+      - HK_29
+      - 🇭🇰 香港 | HKG_3
+      - 🇯🇵 日本 | JPN_2
+      - 01-1
+      - 🇯🇵 日本 06
+      - 🇯🇵 日本 07
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇯🇵 日本 | JPN_3
+      - 新加坡365
+      - 日本365
+      - 美国365
+      - 美国365_1
+      - 美国365_2
+      - 美国231
+      - 美国365_3
+      - 英国232
+      - 美国365_4
+      - 美国365_5
+      - 英国233
+      - 英国234
+      - 英国235
+      - 英国236
+      - 英国237
+      - 英国238
+      - 美国365_6
+      - 美国239
+      - 英国251
+      - 德国252
+      - 英国253
+      - 美国254
+      - 香港255
+      - 英国256
+      - 英国257
+      - 英国258
+      - 英国259
+      - 美国365_7
+      - 美国365_8
+      - 荷兰365
+      - 韩国365
+      - 美国365_9
+      - 美国365_10
+      - 英国365
+      - 美国365_11
+      - 加拿大365
+      - 美国365_12
+      - 美国249
+      - 香港365
+      - 美国365_13
+      - 香港365_1
+      - 香港365_2
+      - 香港365_3
+      - 美国365_14
+      - 香港365_4
+      - 香港365_5
+      - 香港365_6
+      - 香港365_7
+      - 香港248
+      - 香港365_8
+      - 美国365_15
+      - 香港365_9
+      - 香港365_10
+      - 香港365_11
+      - 香港365_12
+      - 香港365_13
+      - 香港365_14
+      - 澳洲365
+      - 香港365_15
+      - 美国365_16
+      - 美国365_17
+      - 香港365_16
+      - 香港365_17
+      - 香港365_18
+      - 香港365_19
+      - 香港365_20
+      - 美国365_18
+      - 美国365_19
+      - 美国365_20
+      - 美国365_21
+      - 美国365_22
+      - 日本365_1
+      - 美国365_23
+      - 美国365_24
+      - 韩国365_1
+      - 法国365
+      - 美国365_25
+      - 美国247
+      - 美国246
+      - 美国245
+      - 美国244
+      - 美国243
+      - 美国242
+      - 美国241
+      - TR TROJAN-85 | free-nodes
+      - GB VLESS-92 | free-nodes
+      - DE VLESS-132 | free-nodes
+      - 英国 11
+      - 英国 22
+      - 英国 33
+      - IR_a412a_0034
+      - NL_a412a_0040
+      - AT_a412a_0002
+      - LV_a412a_0038
+      - AT_a412a_0001
+      - US_a412a_0044
+      - NL_a412a_0039
+      - HK_a412a_0014
+      - 🇸🇬 新加坡 | SGP 2
+      - 🇺🇸 美国 | USA 3
+      - 🇺🇸 美国 | USA 2
+      - 🇭🇰 香港 | HKG 25
+      - 🇯🇵 日本 | JPN_4
+      - 🇭🇰 香港 | HKG_4
+      - 🇭🇰 香港 | HKG_5
+      - 🇭🇰 香港 | HKG_6
+      - 🇹🇼 🇨🇳 台湾 | TWN
+      - 🇫🇷 法国 | FRA
+      - 🇺🇸 美国 | USA_1
+      - 🇺🇸 美国 | USA_2
+      - 🇭🇰 香港 | HKG_7
+      - 🇯🇵 日本 | JPN_5
+      - 🇦🇪 阿联酋 | ARE
+      - 🇱🇻 拉脱维亚 | LVA
+      - 🇯🇵 日本 | JPN_6
+      - 🇸🇨 塞舌尔 | SYC
+      - 🇮🇹 意大利 | ITA
+      - 🇮🇹 意大利 | ITA_1
+      - 🇯🇵 日本 | JPN_7
+      - 🇯🇵 日本 | JPN_8
+      - 🇮🇹 意大利 | ITA_2
+      - 🇭🇰 香港 | HKG_8
+      - 🇮🇹 意大利 | ITA_3
+      - 🇮🇹 意大利 | ITA_4
+      - 🇱🇻 拉脱维亚 | LVA_1
+      - 🇱🇻 拉脱维亚 | LVA_2
+      - 🇭🇰 香港 | HKG_9
+      - 🇭🇰 香港 | HKG_10
+      - 🇺🇦 乌克兰 | UKR
+      - 🇯🇵 日本 | JPN_9
+      - 🇱🇻 拉脱维亚 | LVA_3
+      - 🇭🇰 香港 | HKG_11
+      - 🇭🇰 香港 | HKG_12
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_1
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_2
+      - 🇨🇳_CN_中国->🇺🇸_US_美国
+      - 🇺🇸_US_美国->🇳🇿_NZ_新西兰
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_2
+      - 🇭🇰香港HK 005 0.5MB/s
+      - HK_30
+      - 🇯🇵 JP 245 | ⬇️ 18MB/s
+      - 🇯🇵日本JP 006 12.9MB/s
+      - 🇯🇵 JP 177 | ⬇️ 13MB/s
+      - 00-WS-jp-AI_1
+      - HK-ss_2
+      - 🇯🇵 JP 069 | ⬇️ 9MB/s
+      - 🇯🇵 日本 09_1
+      - 00-Trojan-jp-AI_1
+      - 🇭🇰HK 09
+      - 🇸🇬新加坡SG 005 1.5MB/s
+      - 02-Trojan-saas.sin.fan
+      - 🇯🇵 JP 124 | ⬇️ 5MB/s
+      - 🇭🇰HK 06
+      - 02-WS-saas.sin.fan
+      - 🇯🇵 JP 065 | ⬇️ 2MB/s
+      - 🇺🇸 美国 13_1
+      - 🇯🇵 日本 08_2
+      - 03-WS-cloudflare88_1
+      - 🇸🇬新加坡SG 019 10.4MB/s
+      - 🇭🇰 HK 001 | ⬇️ 20MB/s
+      - 🇭🇰 HK 104 | ⬇️ 3MB/s
+      - 🇯🇵 日本 14_1
+      - 🇯🇵 JP 149 | ⬇️ 3MB/s
+      - 🇭🇰 香港 07_2
+      - 🇸🇬新加坡SG 017 7.0MB/s
+      - 🇯🇵 JP 075 | ⬇️ 2MB/s
+      - 🇭🇰HK 13
+      - 🇭🇰 HK 032 | ⬇️ 5MB/s
+      - 🇭🇰 HK 221 | ⬇️ 3MB/s
+      - 🇭🇰 HK 092 | ⬇️ 1MB/s
+      - 🇭🇰 HK 086 | ⬇️ 1MB/s
+      - 🇭🇰 HK 129 | ⬇️ 3MB/s
+      - 🇭🇰 HK 133 | ⬇️ 1MB/s
+      - 🇰🇷 韩国 02
+      - 🇺🇸 美国 25
+      - 🇬🇧 GB_37
+      - 🇩🇪 德国 01
+      - 🇬🇧 GB_35
+      - 德国
+      - 🇩🇪 德国 02
+      - 🇬🇧 GB_36
+      - 01-Trojan-030101.xyz_1
+      - 🇨🇳TW 3
+      - 🇹🇼 台湾 02
+      - 🇭🇰 HK 081 | ⬇️ 1MB/s
+      - 🇨🇦 CA 229 | ⬇️ 1MB/s
+      - 🇨🇳TW 2
+      - AT_6
+      - 🇸🇬新加坡SG 007 0.5MB/s
+      - 🇯🇵 日本 01
+      - AT_7
+      - AT_8
+      - AT_9
+      - 5D-美国 -0x-18
+      - 5D-荷兰 -0x-05
+      - 5D-法国 -0x-03
+      - 5D-美国 -0x-09
+      - AT_10
+      - 5D-瑞典 -0x-01
+      - AT_11
+      - 🇸🇬新加坡SG 006 1.8MB/s
+      - 🇯🇵 JP 152 | ⬇️ 1MB/s
+      - 5D-香港 -0x-06
+      - HK_31
+      - HK_32
+      - HK_33
+      - HK_34
+      - HK_35
+      - 5D-香港 -0x-02
+      - HK_36
+      - HK_37
+      - 5D-香港 -0x-12
+      - HK_38
+      - HK_39
+      - HK_40
+      - 5D-意大利 -0x-04
+      - 5D-法国 -0x-02
+      - HK_41
+      - HK_42
+      - HK_43
+      - HK_44
+      - 🇭🇰 HK 054 | ⬇️ 2MB/s
+      - 🇯🇵 JP 157 | ⬇️ 2MB/s
+      - 01-WS-030101.xyz
+      - 🇭🇰 HK 065 | ⬇️ 4MB/s
+      - HK_45
+      - 5D-瑞典 -0x-02
+      - 意大利
+      - 5D-意大利 -0x-05
+      - 意大利3
+      - HK_46
+      - HK_47
+      - HK_48
+      - 5D-香港 -0x-08
+      - 5D-意大利 -0x-03
+      - 5D-香港 -0x-05
+      - 🇭🇰 香港 02
+      - 5D-香港 -0x-11
+      - HK_49
+      - 5D-加拿大 -0x-01
+      - 意大利_1
+      - HK_50
+      - HK_51
+      - 🇭🇰 香港 05
+      - HK_52
+      - 5D-意大利 -0x-01
+      - 香港
+      - 🇸🇬 新加坡 03
+      - NL_2
+      - 🇨🇦 CA 144 | ⬇️ 1MB/s
+      - NL_3
+      - 🇨🇦 CA 139 | ⬇️ 1MB/s
+      - 🇯🇵 日本 05_1
+      - 🇯🇵 日本 04
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇭🇰 香港 07
+      - 🇸🇬 新加坡 | SGP
+      - 🇭🇰 香港 | HKG
+      - 00-Trojan-jp-AI
+      - 02-WS1
+      - 00-WS-jp-AI
+      - 02-Trojan1
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - " JP-ss"
+      - KR-ss
+      - TW-ss
+      - HK-ss
+      - HK
+      - 🇯🇵 日本 08
+      - 🇭🇰 香港 07_1
+      - 🇯🇵 日本 08_1
+      - 新加坡11
+      - 🇯🇵 日本 09
+      - 🇺🇸 美国 14
+      - 03-WS-cloudflare88
+      - 🇸🇬 新加坡 078
+      - SG-ss
+      - 🇯🇵 日本 14
+      - JP-ss_1
+      - HK-ss_1
+      - 🇰🇷 韩国 01
+      - 🇺🇸 美国 10
+      - 🇺🇸 美国 13
+      - 🇭🇰 香港 | HKG_1
+      - 🇰🇷 韩国 04
+      - 美国44
+      - 美国023
+      - 🇭🇰 香港 | HKG_2
+      - 🇩🇪 德国 13
+      - HK_1
+      - 🇺🇸 美国 | USA 5
+      - 01-Trojan-030101.xyz
+      - 英国58
+      - 美国38
+      - 美国33
+      - 香港47
+      - 英国 09
+      - 🇬🇧 GB_39
+      - 美国35
+      - 🇺🇸 美国 | USA 4
+      - AT
+      - 🇮🇷 伊朗
+      - 美国32
+      - 美国33_1
+      - 美国51
+      - 新加坡37
+      - 新加坡11_1
+      - 🇯🇵 日本 | JPN
+      - AT_1
+      - 美国38_1
+      - 美国32_1
+      - AT_c017f_0001
+      - 🇸🇪 瑞典 | SWE
+      - US
+      - 美国12
+      - AT_2
+      - NL
+      - 香港54
+      - AT_3
+      - 美国45
+      - 美国32_2
+      - AT_4
+      - 美国331
+      - 🇯🇵 日本 05
+      - AT_5
+      - 🇩🇪 德国 | DEU
+      - 🇹🇼 台湾 03
+      - NL_1
+      - HK_2
+      - HK_3
+      - HK_4
+      - HK_5
+      - 美国34
+      - HK_6
+      - HK_7
+      - HK_8
+      - HK_9
+      - HK_c017f_0047
+      - HK_10
+      - HK_11
+      - HK_12
+      - HK_c017f_0053
+      - HK_c017f_0054
+      - HK_13
+      - HK_14
+      - HK_15
+      - HK_16
+      - 美国35_1
+      - HK_17
+      - 美国46
+      - HK_18
+      - IR_c017f_0059
+      - HK_19
+      - HK_20
+      - HK_c017f_0049
+      - 🇮🇹 意大利 | ITA 3
+      - 🇺🇸 美国 | USA
+      - HK_c017f_0046
+      - HK_21
+      - HK_22
+      - HK_23
+      - HK_c017f_0040
+      - HK_24
+      - HK_25
+      - 🇯🇵 日本 | JPN_1
+      - HK_26
+      - HK_27
+      - HK_28
+      - 香港12
+      - 香港12_1
+      - HK_29
+      - 🇭🇰 香港 | HKG_3
+      - 🇯🇵 日本 | JPN_2
+      - 01-1
+      - 🇯🇵 日本 06
+      - 🇯🇵 日本 07
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇯🇵 日本 | JPN_3
+      - 新加坡365
+      - 日本365
+      - 美国365
+      - 美国365_1
+      - 美国365_2
+      - 美国231
+      - 美国365_3
+      - 英国232
+      - 美国365_4
+      - 美国365_5
+      - 英国233
+      - 英国234
+      - 英国235
+      - 英国236
+      - 英国237
+      - 英国238
+      - 美国365_6
+      - 美国239
+      - 英国251
+      - 德国252
+      - 英国253
+      - 美国254
+      - 香港255
+      - 英国256
+      - 英国257
+      - 英国258
+      - 英国259
+      - 美国365_7
+      - 美国365_8
+      - 荷兰365
+      - 韩国365
+      - 美国365_9
+      - 美国365_10
+      - 英国365
+      - 美国365_11
+      - 加拿大365
+      - 美国365_12
+      - 美国249
+      - 香港365
+      - 美国365_13
+      - 香港365_1
+      - 香港365_2
+      - 香港365_3
+      - 美国365_14
+      - 香港365_4
+      - 香港365_5
+      - 香港365_6
+      - 香港365_7
+      - 香港248
+      - 香港365_8
+      - 美国365_15
+      - 香港365_9
+      - 香港365_10
+      - 香港365_11
+      - 香港365_12
+      - 香港365_13
+      - 香港365_14
+      - 澳洲365
+      - 香港365_15
+      - 美国365_16
+      - 美国365_17
+      - 香港365_16
+      - 香港365_17
+      - 香港365_18
+      - 香港365_19
+      - 香港365_20
+      - 美国365_18
+      - 美国365_19
+      - 美国365_20
+      - 美国365_21
+      - 美国365_22
+      - 日本365_1
+      - 美国365_23
+      - 美国365_24
+      - 韩国365_1
+      - 法国365
+      - 美国365_25
+      - 美国247
+      - 美国246
+      - 美国245
+      - 美国244
+      - 美国243
+      - 美国242
+      - 美国241
+      - TR TROJAN-85 | free-nodes
+      - GB VLESS-92 | free-nodes
+      - DE VLESS-132 | free-nodes
+      - 英国 11
+      - 英国 22
+      - 英国 33
+      - IR_a412a_0034
+      - NL_a412a_0040
+      - AT_a412a_0002
+      - LV_a412a_0038
+      - AT_a412a_0001
+      - US_a412a_0044
+      - NL_a412a_0039
+      - HK_a412a_0014
+      - 🇸🇬 新加坡 | SGP 2
+      - 🇺🇸 美国 | USA 3
+      - 🇺🇸 美国 | USA 2
+      - 🇭🇰 香港 | HKG 25
+      - 🇯🇵 日本 | JPN_4
+      - 🇭🇰 香港 | HKG_4
+      - 🇭🇰 香港 | HKG_5
+      - 🇭🇰 香港 | HKG_6
+      - 🇹🇼 🇨🇳 台湾 | TWN
+      - 🇫🇷 法国 | FRA
+      - 🇺🇸 美国 | USA_1
+      - 🇺🇸 美国 | USA_2
+      - 🇭🇰 香港 | HKG_7
+      - 🇯🇵 日本 | JPN_5
+      - 🇦🇪 阿联酋 | ARE
+      - 🇱🇻 拉脱维亚 | LVA
+      - 🇯🇵 日本 | JPN_6
+      - 🇸🇨 塞舌尔 | SYC
+      - 🇮🇹 意大利 | ITA
+      - 🇮🇹 意大利 | ITA_1
+      - 🇯🇵 日本 | JPN_7
+      - 🇯🇵 日本 | JPN_8
+      - 🇮🇹 意大利 | ITA_2
+      - 🇭🇰 香港 | HKG_8
+      - 🇮🇹 意大利 | ITA_3
+      - 🇮🇹 意大利 | ITA_4
+      - 🇱🇻 拉脱维亚 | LVA_1
+      - 🇱🇻 拉脱维亚 | LVA_2
+      - 🇭🇰 香港 | HKG_9
+      - 🇭🇰 香港 | HKG_10
+      - 🇺🇦 乌克兰 | UKR
+      - 🇯🇵 日本 | JPN_9
+      - 🇱🇻 拉脱维亚 | LVA_3
+      - 🇭🇰 香港 | HKG_11
+      - 🇭🇰 香港 | HKG_12
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_1
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_2
+      - 🇨🇳_CN_中国->🇺🇸_US_美国
+      - 🇺🇸_US_美国->🇳🇿_NZ_新西兰
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_2
+      - 🇭🇰香港HK 005 0.5MB/s
+      - HK_30
+      - 🇯🇵 JP 245 | ⬇️ 18MB/s
+      - 🇯🇵日本JP 006 12.9MB/s
+      - 🇯🇵 JP 177 | ⬇️ 13MB/s
+      - 00-WS-jp-AI_1
+      - HK-ss_2
+      - 🇯🇵 JP 069 | ⬇️ 9MB/s
+      - 🇯🇵 日本 09_1
+      - 00-Trojan-jp-AI_1
+      - 🇭🇰HK 09
+      - 🇸🇬新加坡SG 005 1.5MB/s
+      - 02-Trojan-saas.sin.fan
+      - 🇯🇵 JP 124 | ⬇️ 5MB/s
+      - 🇭🇰HK 06
+      - 02-WS-saas.sin.fan
+      - 🇯🇵 JP 065 | ⬇️ 2MB/s
+      - 🇺🇸 美国 13_1
+      - 🇯🇵 日本 08_2
+      - 03-WS-cloudflare88_1
+      - 🇸🇬新加坡SG 019 10.4MB/s
+      - 🇭🇰 HK 001 | ⬇️ 20MB/s
+      - 🇭🇰 HK 104 | ⬇️ 3MB/s
+      - 🇯🇵 日本 14_1
+      - 🇯🇵 JP 149 | ⬇️ 3MB/s
+      - 🇭🇰 香港 07_2
+      - 🇸🇬新加坡SG 017 7.0MB/s
+      - 🇯🇵 JP 075 | ⬇️ 2MB/s
+      - 🇭🇰HK 13
+      - 🇭🇰 HK 032 | ⬇️ 5MB/s
+      - 🇭🇰 HK 221 | ⬇️ 3MB/s
+      - 🇭🇰 HK 092 | ⬇️ 1MB/s
+      - 🇭🇰 HK 086 | ⬇️ 1MB/s
+      - 🇭🇰 HK 129 | ⬇️ 3MB/s
+      - 🇭🇰 HK 133 | ⬇️ 1MB/s
+      - 🇰🇷 韩国 02
+      - 🇺🇸 美国 25
+      - 🇬🇧 GB_37
+      - 🇩🇪 德国 01
+      - 🇬🇧 GB_35
+      - 德国
+      - 🇩🇪 德国 02
+      - 🇬🇧 GB_36
+      - 01-Trojan-030101.xyz_1
+      - 🇨🇳TW 3
+      - 🇹🇼 台湾 02
+      - 🇭🇰 HK 081 | ⬇️ 1MB/s
+      - 🇨🇦 CA 229 | ⬇️ 1MB/s
+      - 🇨🇳TW 2
+      - AT_6
+      - 🇸🇬新加坡SG 007 0.5MB/s
+      - 🇯🇵 日本 01
+      - AT_7
+      - AT_8
+      - AT_9
+      - 5D-美国 -0x-18
+      - 5D-荷兰 -0x-05
+      - 5D-法国 -0x-03
+      - 5D-美国 -0x-09
+      - AT_10
+      - 5D-瑞典 -0x-01
+      - AT_11
+      - 🇸🇬新加坡SG 006 1.8MB/s
+      - 🇯🇵 JP 152 | ⬇️ 1MB/s
+      - 5D-香港 -0x-06
+      - HK_31
+      - HK_32
+      - HK_33
+      - HK_34
+      - HK_35
+      - 5D-香港 -0x-02
+      - HK_36
+      - HK_37
+      - 5D-香港 -0x-12
+      - HK_38
+      - HK_39
+      - HK_40
+      - 5D-意大利 -0x-04
+      - 5D-法国 -0x-02
+      - HK_41
+      - HK_42
+      - HK_43
+      - HK_44
+      - 🇭🇰 HK 054 | ⬇️ 2MB/s
+      - 🇯🇵 JP 157 | ⬇️ 2MB/s
+      - 01-WS-030101.xyz
+      - 🇭🇰 HK 065 | ⬇️ 4MB/s
+      - HK_45
+      - 5D-瑞典 -0x-02
+      - 意大利
+      - 5D-意大利 -0x-05
+      - 意大利3
+      - HK_46
+      - HK_47
+      - HK_48
+      - 5D-香港 -0x-08
+      - 5D-意大利 -0x-03
+      - 5D-香港 -0x-05
+      - 🇭🇰 香港 02
+      - 5D-香港 -0x-11
+      - HK_49
+      - 5D-加拿大 -0x-01
+      - 意大利_1
+      - HK_50
+      - HK_51
+      - 🇭🇰 香港 05
+      - HK_52
+      - 5D-意大利 -0x-01
+      - 香港
+      - 🇸🇬 新加坡 03
+      - NL_2
+      - 🇨🇦 CA 144 | ⬇️ 1MB/s
+      - NL_3
+      - 🇨🇦 CA 139 | ⬇️ 1MB/s
+      - 🇯🇵 日本 05_1
+      - 🇯🇵 日本 04
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇭🇰 香港 07
+      - 🇸🇬 新加坡 | SGP
+      - 🇭🇰 香港 | HKG
+      - 00-Trojan-jp-AI
+      - 02-WS1
+      - 00-WS-jp-AI
+      - 02-Trojan1
+      - JP-ss
+      - 03-Trojan-cloudflare88
+      - " JP-ss"
+      - KR-ss
+      - TW-ss
+      - HK-ss
+      - HK
+      - 🇯🇵 日本 08
+      - 🇭🇰 香港 07_1
+      - 🇯🇵 日本 08_1
+      - 新加坡11
+      - 🇯🇵 日本 09
+      - 🇺🇸 美国 14
+      - 03-WS-cloudflare88
+      - 🇸🇬 新加坡 078
+      - SG-ss
+      - 🇯🇵 日本 14
+      - JP-ss_1
+      - HK-ss_1
+      - 🇰🇷 韩国 01
+      - 🇺🇸 美国 10
+      - 🇺🇸 美国 13
+      - 🇭🇰 香港 | HKG_1
+      - 🇰🇷 韩国 04
+      - 美国44
+      - 美国023
+      - 🇭🇰 香港 | HKG_2
+      - 🇩🇪 德国 13
+      - HK_1
+      - 🇺🇸 美国 | USA 5
+      - 01-Trojan-030101.xyz
+      - 英国58
+      - 美国38
+      - 美国33
+      - 香港47
+      - 英国 09
+      - 🇬🇧 GB_39
+      - 美国35
+      - 🇺🇸 美国 | USA 4
+      - AT
+      - 🇮🇷 伊朗
+      - 美国32
+      - 美国33_1
+      - 美国51
+      - 新加坡37
+      - 新加坡11_1
+      - 🇯🇵 日本 | JPN
+      - AT_1
+      - 美国38_1
+      - 美国32_1
+      - AT_c017f_0001
+      - 🇸🇪 瑞典 | SWE
+      - US
+      - 美国12
+      - AT_2
+      - NL
+      - 香港54
+      - AT_3
+      - 美国45
+      - 美国32_2
+      - AT_4
+      - 美国331
+      - 🇯🇵 日本 05
+      - AT_5
+      - 🇩🇪 德国 | DEU
+      - 🇹🇼 台湾 03
+      - NL_1
+      - HK_2
+      - HK_3
+      - HK_4
+      - HK_5
+      - 美国34
+      - HK_6
+      - HK_7
+      - HK_8
+      - HK_9
+      - HK_c017f_0047
+      - HK_10
+      - HK_11
+      - HK_12
+      - HK_c017f_0053
+      - HK_c017f_0054
+      - HK_13
+      - HK_14
+      - HK_15
+      - HK_16
+      - 美国35_1
+      - HK_17
+      - 美国46
+      - HK_18
+      - IR_c017f_0059
+      - HK_19
+      - HK_20
+      - HK_c017f_0049
+      - 🇮🇹 意大利 | ITA 3
+      - 🇺🇸 美国 | USA
+      - HK_c017f_0046
+      - HK_21
+      - HK_22
+      - HK_23
+      - HK_c017f_0040
+      - HK_24
+      - HK_25
+      - 🇯🇵 日本 | JPN_1
+      - HK_26
+      - HK_27
+      - HK_28
+      - 香港12
+      - 香港12_1
+      - HK_29
+      - 🇭🇰 香港 | HKG_3
+      - 🇯🇵 日本 | JPN_2
+      - 01-1
+      - 🇯🇵 日本 06
+      - 🇯🇵 日本 07
+      - 🇳🇱NL_3 | ⬇️ 1.7MB/s
+      - 🇯🇵 日本 | JPN_3
+      - 新加坡365
+      - 日本365
+      - 美国365
+      - 美国365_1
+      - 美国365_2
+      - 美国231
+      - 美国365_3
+      - 英国232
+      - 美国365_4
+      - 美国365_5
+      - 英国233
+      - 英国234
+      - 英国235
+      - 英国236
+      - 英国237
+      - 英国238
+      - 美国365_6
+      - 美国239
+      - 英国251
+      - 德国252
+      - 英国253
+      - 美国254
+      - 香港255
+      - 英国256
+      - 英国257
+      - 英国258
+      - 英国259
+      - 美国365_7
+      - 美国365_8
+      - 荷兰365
+      - 韩国365
+      - 美国365_9
+      - 美国365_10
+      - 英国365
+      - 美国365_11
+      - 加拿大365
+      - 美国365_12
+      - 美国249
+      - 香港365
+      - 美国365_13
+      - 香港365_1
+      - 香港365_2
+      - 香港365_3
+      - 美国365_14
+      - 香港365_4
+      - 香港365_5
+      - 香港365_6
+      - 香港365_7
+      - 香港248
+      - 香港365_8
+      - 美国365_15
+      - 香港365_9
+      - 香港365_10
+      - 香港365_11
+      - 香港365_12
+      - 香港365_13
+      - 香港365_14
+      - 澳洲365
+      - 香港365_15
+      - 美国365_16
+      - 美国365_17
+      - 香港365_16
+      - 香港365_17
+      - 香港365_18
+      - 香港365_19
+      - 香港365_20
+      - 美国365_18
+      - 美国365_19
+      - 美国365_20
+      - 美国365_21
+      - 美国365_22
+      - 日本365_1
+      - 美国365_23
+      - 美国365_24
+      - 韩国365_1
+      - 法国365
+      - 美国365_25
+      - 美国247
+      - 美国246
+      - 美国245
+      - 美国244
+      - 美国243
+      - 美国242
+      - 美国241
+      - TR TROJAN-85 | free-nodes
+      - GB VLESS-92 | free-nodes
+      - DE VLESS-132 | free-nodes
+      - 英国 11
+      - 英国 22
+      - 英国 33
+      - IR_a412a_0034
+      - NL_a412a_0040
+      - AT_a412a_0002
+      - LV_a412a_0038
+      - AT_a412a_0001
+      - US_a412a_0044
+      - NL_a412a_0039
+      - HK_a412a_0014
+      - 🇸🇬 新加坡 | SGP 2
+      - 🇺🇸 美国 | USA 3
+      - 🇺🇸 美国 | USA 2
+      - 🇭🇰 香港 | HKG 25
+      - 🇯🇵 日本 | JPN_4
+      - 🇭🇰 香港 | HKG_4
+      - 🇭🇰 香港 | HKG_5
+      - 🇭🇰 香港 | HKG_6
+      - 🇹🇼 🇨🇳 台湾 | TWN
+      - 🇫🇷 法国 | FRA
+      - 🇺🇸 美国 | USA_1
+      - 🇺🇸 美国 | USA_2
+      - 🇭🇰 香港 | HKG_7
+      - 🇯🇵 日本 | JPN_5
+      - 🇦🇪 阿联酋 | ARE
+      - 🇱🇻 拉脱维亚 | LVA
+      - 🇯🇵 日本 | JPN_6
+      - 🇸🇨 塞舌尔 | SYC
+      - 🇮🇹 意大利 | ITA
+      - 🇮🇹 意大利 | ITA_1
+      - 🇯🇵 日本 | JPN_7
+      - 🇯🇵 日本 | JPN_8
+      - 🇮🇹 意大利 | ITA_2
+      - 🇭🇰 香港 | HKG_8
+      - 🇮🇹 意大利 | ITA_3
+      - 🇮🇹 意大利 | ITA_4
+      - 🇱🇻 拉脱维亚 | LVA_1
+      - 🇱🇻 拉脱维亚 | LVA_2
+      - 🇭🇰 香港 | HKG_9
+      - 🇭🇰 香港 | HKG_10
+      - 🇺🇦 乌克兰 | UKR
+      - 🇯🇵 日本 | JPN_9
+      - 🇱🇻 拉脱维亚 | LVA_3
+      - 🇭🇰 香港 | HKG_11
+      - 🇭🇰 香港 | HKG_12
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_1
+      - 🇨🇳_CN_中国->🇮🇹_IT_意大利_2
+      - 🇨🇳_CN_中国->🇺🇸_US_美国
+      - 🇺🇸_US_美国->🇳🇿_NZ_新西兰
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_1
+      - 🇨🇳_CN_中国
+      - 🇨🇳_CN_中国->🇺🇸_US_美国_2
+      - 🇭🇰香港HK 005 0.5MB/s
+      - HK_30
+      - 🇯🇵 JP 245 | ⬇️ 18MB/s
+      - 🇯🇵日本JP 006 12.9MB/s
+      - 🇯🇵 JP 177 | ⬇️ 13MB/s
+      - 00-WS-jp-AI_1
+      - HK-ss_2
+      - 🇯🇵 JP 069 | ⬇️ 9MB/s
+      - 🇯🇵 日本 09_1
+      - 00-Trojan-jp-AI_1
+      - 🇭🇰HK 09
+      - 🇸🇬新加坡SG 005 1.5MB/s
+      - 02-Trojan-saas.sin.fan
+      - 🇯🇵 JP 124 | ⬇️ 5MB/s
+      - 🇭🇰HK 06
+      - 02-WS-saas.sin.fan
+      - 🇯🇵 JP 065 | ⬇️ 2MB/s
+      - 🇺🇸 美国 13_1
+      - 🇯🇵 日本 08_2
+      - 03-WS-cloudflare88_1
+      - 🇸🇬新加坡SG 019 10.4MB/s
+      - 🇭🇰 HK 001 | ⬇️ 20MB/s
+      - 🇭🇰 HK 104 | ⬇️ 3MB/s
+      - 🇯🇵 日本 14_1
+      - 🇯🇵 JP 149 | ⬇️ 3MB/s
+      - 🇭🇰 香港 07_2
+      - 🇸🇬新加坡SG 017 7.0MB/s
+      - 🇯🇵 JP 075 | ⬇️ 2MB/s
+      - 🇭🇰HK 13
+      - 🇭🇰 HK 032 | ⬇️ 5MB/s
+      - 🇭🇰 HK 221 | ⬇️ 3MB/s
+      - 🇭🇰 HK 092 | ⬇️ 1MB/s
+      - 🇭🇰 HK 086 | ⬇️ 1MB/s
+      - 🇭🇰 HK 129 | ⬇️ 3MB/s
+      - 🇭🇰 HK 133 | ⬇️ 1MB/s
+      - 🇰🇷 韩国 02
+      - 🇺🇸 美国 25
+      - 🇬🇧 GB_37
+      - 🇩🇪 德国 01
+      - 🇬🇧 GB_35
+      - 德国
+      - 🇩🇪 德国 02
+      - 🇬🇧 GB_36
+      - 01-Trojan-030101.xyz_1
+      - 🇨🇳TW 3
+      - 🇹🇼 台湾 02
+      - 🇭🇰 HK 081 | ⬇️ 1MB/s
+      - 🇨🇦 CA 229 | ⬇️ 1MB/s
+      - 🇨🇳TW 2
+      - AT_6
+      - 🇸🇬新加坡SG 007 0.5MB/s
+      - 🇯🇵 日本 01
+      - AT_7
+      - AT_8
+      - AT_9
+      - 5D-美国 -0x-18
+      - 5D-荷兰 -0x-05
+      - 5D-法国 -0x-03
+      - 5D-美国 -0x-09
+      - AT_10
+      - 5D-瑞典 -0x-01
+      - AT_11
+      - 🇸🇬新加坡SG 006 1.8MB/s
+      - 🇯🇵 JP 152 | ⬇️ 1MB/s
+      - 5D-香港 -0x-06
+      - HK_31
+      - HK_32
+      - HK_33
+      - HK_34
+      - HK_35
+      - 5D-香港 -0x-02
+      - HK_36
+      - HK_37
+      - 5D-香港 -0x-12
+      - HK_38
+      - HK_39
+      - HK_40
+      - 5D-意大利 -0x-04
+      - 5D-法国 -0x-02
+      - HK_41
+      - HK_42
+      - HK_43
+      - HK_44
+      - 🇭🇰 HK 054 | ⬇️ 2MB/s
+      - 🇯🇵 JP 157 | ⬇️ 2MB/s
+      - 01-WS-030101.xyz
+      - 🇭🇰 HK 065 | ⬇️ 4MB/s
+      - HK_45
+      - 5D-瑞典 -0x-02
+      - 意大利
+      - 5D-意大利 -0x-05
+      - 意大利3
+      - HK_46
+      - HK_47
+      - HK_48
+      - 5D-香港 -0x-08
+      - 5D-意大利 -0x-03
+      - 5D-香港 -0x-05
+      - 🇭🇰 香港 02
+      - 5D-香港 -0x-11
+      - HK_49
+      - 5D-加拿大 -0x-01
+      - 意大利_1
+      - HK_50
+      - HK_51
+      - 🇭🇰 香港 05
+      - HK_52
+      - 5D-意大利 -0x-01
+      - 香港
+      - 🇸🇬 新加坡 03
+      - NL_2
+      - 🇨🇦 CA 144 | ⬇️ 1MB/s
+      - NL_3
+      - 🇨🇦 CA 139 | ⬇️ 1MB/s
+      - 🇯🇵 日本 05_1
+      - 🇯🇵 日本 04
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/LocalAreaNetwork.list
+    path: ./rules/LocalAreaNetwork.yaml
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/BanAD.list
+    path: ./rules/BanAD.yaml
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/BanProgramAD.list
+    path: ./rules/BanProgramAD.yaml
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/GoogleCN.list
+    path: ./rules/GoogleCN.yaml
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/SteamCN.list
+    path: ./rules/SteamCN.yaml
+  Microsoft:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Microsoft.list
+    path: ./rules/Microsoft.yaml
+  Apple:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Apple.list
+    path: ./rules/Apple.yaml
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ProxyMedia.list
+    path: ./rules/ProxyMedia.yaml
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Telegram.list
+    path: ./rules/Telegram.yaml
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ProxyLite.list
+    path: ./rules/ProxyLite.yaml
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaDomain.list
+    path: ./rules/ChinaDomain.yaml
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ChinaCompanyIp.list
+    path: ./rules/ChinaCompanyIp.yaml
+rules:
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🍃 应用净化
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,Microsoft,Ⓜ️ 微软服务
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,ProxyMedia,🌍 国外媒体
+  - RULE-SET,Telegram,📲 电报信息
+  - RULE-SET,ProxyLite,🚀 节点选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼
